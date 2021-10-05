@@ -1,0 +1,24 @@
+
+**** Build of configuration Debug for project Exin_AB_encoder ****
+
+"D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building target: "Exin_AB_encoder.out"
+Invoking: ARM Linker
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Exin_AB_encoder.map" --heap_size=1024 --stack_size=512 -i"D:/CCS/ccs/ccs_base/arm/include" -i"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/lib" -i"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Exin_AB_encoder_linkInfo.xml" --rom_model -o "Exin_AB_encoder.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./exinlibs/ADS1292.obj" "./exinlibs/ADS_RCV.obj" "./exinlibs/LMT70RD.obj" "./exinlibs/OV_RCV.obj" "./exinlibs/Oscill_OLED.obj" "./exinlibs/exinADC.obj" "./exinlibs/exinHC_SR04.obj" "./exinlibs/exin_library_map_guide.obj" "./exinlibs/exin_pit.obj" "./exinlibs/exinadjust.obj" "./exinlibs/exinencoder.obj" "./exinlibs/exinfilter.obj" "./exinlibs/exingpio.obj" "./exinlibs/exinisr.obj" "./exinlibs/exinkey.obj" "./exinlibs/exinmotor.obj" "./exinlibs/exinpwm.obj" "./exinlibs/exinsteer.obj" "./exinlibs/exinsystem.obj" "./exinlibs/exinuart.obj" "./exinlibs/oled.obj" "./exinlibs/serial.obj" "../msp432p401r.cmd"  -llibc.a -l"C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Exin_AB_encoder.out"
+ 
+
+**** Build Finished ****

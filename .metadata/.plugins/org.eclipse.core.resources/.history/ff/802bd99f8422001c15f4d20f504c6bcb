@@ -1,0 +1,131 @@
+/*
+ * exinIIC.c
+ *
+ *  Created on: 2021年9月27日
+ *      Author: 93793
+ */
+
+#include "headfile.h"
+#include "exinIIC.h"
+
+
+void IIC_init()
+{
+    IIC_SCL_OUT;
+    IIC_SDA_OUT;
+}
+//IIC起始信号
+void IIC_start()
+{
+    IIC_SCL_HIGH;
+    IIC_SDA_HIGH;//起始均为高电平
+    IIC_delay;
+    IIC_SDA_LOW;//先把SDA拉低
+    IIC_delay;
+    IIC_SCL_LOW;//再把SCL拉低
+    IIC_delay;
+}
+//IIC停止信号
+void IIC_stop()
+{
+    IIC_SDA_OUT;
+    IIC_SCL_HIGH;
+    IIC_SDA_LOW;
+    IIC_delay;
+    IIC_SDA_HIGH;
+    IIC_delay;
+}
+
+//主机应答从机
+void IIC_ACK(uint8 ACK_FLAG)
+{
+    IIC_SDA_OUT;
+    IIC_SCL_LOW;
+    IIC_delay;
+    if(ACK_FLAG==1)//主机应答
+    {
+        IIC_SDA_LOW;IIC_delay;
+    }
+
+    else if(ACK_FLAG==0)//主机不应答
+    {
+        IIC_SDA_HIGH;IIC_delay;
+    }
+    IIC_SCL_HIGH;
+    IIC_delay;
+    IIC_SCL_LOW;
+}
+//主机检查从机是否应答
+unsigned char Check_ACK()
+{
+    IIC_SDA_IN;
+    uint8 ACK_DATA,error_time;
+    error_time=0;
+    IIC_SCL_LOW;//设置为低电平
+    IIC_delay;//进行延时
+    IIC_SCL_HIGH;//拉高时钟线
+    IIC_delay;
+    while(IIC_SDA_READ)
+    {
+        error_time++;
+        if(error_time>500)
+        {
+            IIC_stop();
+            return 0;
+        }
+    }
+
+    IIC_delay;
+    IIC_SCL_LOW;
+    return 1;
+}
+
+void IIC_Send_Byte(uint8 Data)
+{
+    IIC_SDA_OUT;
+    IIC_delay;
+    uint8 i;
+    for(i=0;i<8;i++)
+    {
+        IIC_SCL_LOW;
+        IIC_delay;
+        if(Data & 0x80)
+        {
+            IIC_SDA_HIGH;
+        }
+        else
+        {
+            IIC_SDA_LOW;
+        }
+        IIC_delay;
+        IIC_SCL_HIGH;
+        IIC_delay;
+        Data = Data << 1;
+    }
+    IIC_SCL_LOW;
+}
+
+unsigned char IIC_Read_Byte()
+{
+    IIC_SDA_IN;
+    uint8 i,temp;
+    temp=0;
+    for(i=0;i<8;i++)
+    {
+        IIC_SDA_LOW;
+        IIC_delay;
+        IIC_SDA_HIGH;
+        temp = temp <<1;
+        if(IIC_SDA_READ==1)
+        {
+            temp |= 0x01;
+        }
+        else
+        {
+            temp |= 0x00;
+        }
+    }
+    IIC_delay;
+    IIC_SDA_LOW;
+    return temp;
+}

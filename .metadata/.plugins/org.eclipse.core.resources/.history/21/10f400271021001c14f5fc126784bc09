@@ -1,0 +1,49 @@
+#include "msp.h"
+
+void LED_init()
+{
+    P1->DIR |= BIT0;//设置为输出
+}
+
+
+void LED_toggle()
+{
+    P1->DIR ^= BIT0;//设置为输出
+}
+
+
+void soft_ware_delay(int n)
+{
+    while(n--);
+}
+
+void set_DCO_48M()
+{
+    CS -> KEY = CS_KEY_VAL ;//CS_KEY_VAL=0x0000_695A   解锁
+    CS->CTL0 = 0x00000000;                           // 重置CTL0寄存器
+    CS->CTL0 = CS_CTL0_DCORSEL_5;           // CS_CTL0_DCORSEL_5=0005_0000 第18-16位为101
+                                            //设置DCO时钟为48M
+    CS -> KEY = 0x00000000 ;
+}
+
+void set_DCO_3M()
+{
+    CS -> KEY = CS_KEY_VAL ;//CS_KEY_VAL=0x0000_695A   解锁
+    CS->CTL0 = 0x00000000;                           // 重置CTL0寄存器
+    CS->CTL0 = CS_CTL0_DCORSEL_1;           // CS_CTL0_DCORSEL_5=0001_0000 第18-16位为101
+                                            //设置DCO时钟为48M
+    CS -> KEY = 0x00000000 ;
+}
+
+void main(void)
+{
+	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
+	LED_init();
+	set_DCO_3M();
+	//set_DCO_48M();
+	while(1)
+	{
+	        soft_ware_delay(50000);
+	        LED_toggle();
+	}
+}

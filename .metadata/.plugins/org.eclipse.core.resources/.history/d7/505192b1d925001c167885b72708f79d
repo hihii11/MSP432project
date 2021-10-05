@@ -1,0 +1,11 @@
+#include "headfile.h"
+#include "exinOscill.h"
+
+/**************/
+
+void Oscill_init()
+{
+
+}
+
+

@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project 17.Exin_MPU6050_0 ****
+
+"D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: '17.Exin_MPU6050_0.out' is up to date.
+
+**** Build Finished ****

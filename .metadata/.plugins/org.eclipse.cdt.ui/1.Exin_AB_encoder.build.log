@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project 1.Exin_AB_encoder ****
+
+"D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: '1.Exin_AB_encoder.out' is up to date.
+
+**** Build Finished ****

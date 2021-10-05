@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+	</section>
+	<section name="MemoryDumperFillAction">
+		<item key="com.ti.ccstudio.system.setup.ui.editors.connectionName" value="TI MSP430 USB1"/>
+		<item key="com.ti.ccstudio.system.setup.ui.editors.connectionType" value="MSP430"/>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="446"/>
+		<item key="DIALOG_Y_ORIGIN" value="85"/>
+	</section>
+</section>

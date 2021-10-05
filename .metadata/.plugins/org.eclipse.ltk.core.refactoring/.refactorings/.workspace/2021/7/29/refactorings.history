@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Exin_timer&apos;" deleteContents="false" description="Delete resource &apos;Exin_timer&apos;" element1="/Exin_timer" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1626343129308"/>
+</session>

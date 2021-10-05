@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project 7.Exin_roatekey ****
+
+"D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: '7.Exin_roatekey.out' is up to date.
+
+**** Build Finished ****

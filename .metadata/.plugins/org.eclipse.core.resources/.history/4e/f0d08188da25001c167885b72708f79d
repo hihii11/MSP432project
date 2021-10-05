@@ -1,0 +1,44 @@
+#ifndef  _exinOscill_h
+#define  _exinOscill_h
+
+
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+typedef enum
+{
+  POWER1=0,
+  POWER2=1,
+  SMPLRT_DIV,
+  FILTER,
+  GYRO_CONFIG,
+  ACCEL_CONFIG,
+  AX_H,
+  AX_L,
+  AY_H,
+  AY_L,
+  AZ_H,
+  AZ_L,
+  TEMP_H,
+  TEMP_L,
+  GX_H,
+  GX_L,
+  GY_H,
+  GY_L,
+  GZ_H,
+  GZ_L,
+  FIFO,
+  I2C_MST,
+  INT_ENABLE,
+  INT_PIN,
+  USER,
+  ID,
+} MPU_Reg_Name;
+
+
+#ifdef __cplusplus
+}
+#endif
