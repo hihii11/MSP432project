@@ -1,34 +1,34 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.1                     
 ******************************************************************************
->> Linked Sun Sep 26 18:50:03 2021
+>> Linked Fri Dec 17 23:48:45 2021
 
 OUTPUT FILE NAME:   <11.Exin_key.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004159
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000042b9
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  MAIN                  00000000   00040000  00004cb2  0003b34e  R  X
+  MAIN                  00000000   00040000  00004e12  0003b1ee  R  X
   INFO                  00200000   00004000  00000000  00004000  R  X
-  SRAM_CODE             01000000   00010000  00002d4d  0000d2b3  RW X
-  SRAM_DATA             20000000   00010000  00002d4d  0000d2b3  RW  
+  SRAM_CODE             01000000   00010000  00002cf0  0000d310  RW X
+  SRAM_DATA             20000000   00010000  00002cf0  0000d310  RW  
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00004cb8   00004cb8    r-x
+00000000    00000000    00004e18   00004e18    r-x
   00000000    00000000    000000e4   000000e4    r-- .intvecs
-  000000e4    000000e4    00004552   00004552    r-x .text
-  00004638    00004638    0000060c   0000060c    r-- .const
-  00004c48    00004c48    00000070   00000070    r-- .cinit
-20000000    20000000    00002b4e   00000000    rw-
-  20000000    20000000    00002acb   00000000    rw- .data
-  20002acc    20002acc    00000082   00000000    rw- .bss
+  000000e4    000000e4    000046b2   000046b2    r-x .text
+  00004798    00004798    0000060c   0000060c    r-- .const
+  00004da8    00004da8    00000070   00000070    r-- .cinit
+20000000    20000000    00002af1   00000000    rw-
+  20000000    20000000    00002ab3   00000000    rw- .data
+  20002ab4    20002ab4    0000003d   00000000    rw- .bss
 2000fe00    2000fe00    00000200   00000000    rw-
   2000fe00    2000fe00    00000200   00000000    rw- .stack
 
@@ -41,168 +41,163 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    000000e4     
                   00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
 
-.text      0    000000e4    00004552     
+.text      0    000000e4    000046b2     
                   000000e4    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
                   00000b32    00000002                                   : div0.asm.obj (.text)
                   00000b34    000007dc     oled.obj (.text)
-                  00001310    000003f0     exinencoder.obj (.text)
-                  00001700    000003cc     exinADC.obj (.text)
-                  00001acc    00000334     system_msp432p401r.obj (.text)
-                  00001e00    000002d4     exinisr.obj (.text)
-                  000020d4    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
-                  00002344    00000268     exingpio.obj (.text)
-                  000025ac    00000240     exinsystem.obj (.text)
-                  000027ec    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
-                  000029bc    000001c0     exinkey.obj (.text)
-                  00002b7c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
-                  00002d32    00000002     --HOLE-- [fill = 0]
-                  00002d34    000001b4     ADS_RCV.obj (.text)
-                  00002ee8    00000184     exinuart.obj (.text)
-                  0000306c    00000148     exin_pit.obj (.text)
-                  000031b4    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
-                  000032f0    00000136                                   : fd_div_t2.asm.obj (.text)
-                  00003426    00000002     --HOLE-- [fill = 0]
-                  00003428    00000124                                   : _printfi.c.obj (.text:fcvt)
-                  0000354c    00000110                                   : s_scalbn.c.obj (.text:scalbn)
-                  0000365c    000000fc                                   : fd_mul_t2.asm.obj (.text)
-                  00003758    000000dc     msp432p4xx_driverlib.lib : pcm.o (.text:__PCM_setPowerModeAdvanced)
-                  00003834    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
-                  000038e5    00000003     --HOLE-- [fill = 0]
-                  000038e8    000000b0     msp432p4xx_driverlib.lib : pcm.o (.text:__PCM_setCoreVoltageLevelAdvanced)
-                  00003998    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
-                  00003a34    00000096                                   : ull_div_t2.asm.obj (.text)
-                  00003aca    00000002     --HOLE-- [fill = 0]
-                  00003acc    00000094     msp432p4xx_driverlib.lib : uart.o (.text:UART_initModule)
-                  00003b60    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
-                  00003be6    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
-                  00003c6c    0000007a                                   : memset_t2.asm.obj (.text)
-                  00003ce6    0000006e                                   : _printfi.c.obj (.text:_mcpy)
-                  00003d54    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00003dbc    00000064     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableInterrupt)
-                  00003e20    00000064     rtsv7M4_T_le_v4SPD16_eabi.lib : s_frexp.c.obj (.text:frexp)
-                  00003e84    00000056                                   : _printfi.c.obj (.text:_pconv_f)
-                  00003eda    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
-                  00003f2e    00000052                                   : _printfi.c.obj (.text:_ecpy)
-                  00003f80    0000004c                                   : atoi.c.obj (.text:atoi)
-                  00003fcc    00000048     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
-                  00004014    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
-                  0000405c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000040a0    00000040                                   : sprintf.c.obj (.text:sprintf)
-                  000040e0    0000003e                                   : _printfi.c.obj (.text:_fcpy)
-                  0000411e    00000038                                   : fs_tod_t2.asm.obj (.text)
-                  00004156    00000002     --HOLE-- [fill = 0]
-                  00004158    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  0000418c    00000032     main.obj (.text)
-                  000041be    00000002     --HOLE-- [fill = 0]
-                  000041c0    00000030     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_getEnabledInterruptStatus)
-                  000041f0    00000030                              : gpio.o (.text:GPIO_setAsInputPinWithPullUpResistor)
-                  00004220    00000030                              : uart.o (.text:UART_getEnabledInterruptStatus)
-                  00004250    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.asm.obj (.text)
-                  0000427e    00000002     --HOLE-- [fill = 0]
-                  00004280    0000002c     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsInputPin)
-                  000042ac    0000002c                              : pcm.o (.text:PCM_getCoreVoltageLevel)
-                  000042d8    0000002a                              : pcm.o (.text:PCM_getPowerMode)
-                  00004302    00000002     --HOLE-- [fill = 0]
-                  00004304    00000028                              : flash.o (.text:FlashCtl_setWaitState)
-                  0000432c    00000024                              : cs.o (.text:CS_setDCOCenteredFrequency)
-                  00004350    00000024                              : gpio.o (.text:GPIO_setAsOutputPin)
-                  00004374    00000024                              : interrupt.o (.text:Interrupt_setPriority)
-                  00004398    00000024                              : uart.o (.text:UART_disableInterrupt)
-                  000043bc    00000024                              : uart.o (.text:UART_receiveData)
-                  000043e0    00000024                              : uart.o (.text:UART_transmitData)
-                  00004404    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.asm.obj (.text)
-                  00004424    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  00004440    0000001c                                   : memccpy.c.obj (.text:memccpy)
-                  0000445c    0000001a                                   : s_copysign.c.obj (.text:copysign)
-                  00004476    00000002     --HOLE-- [fill = 0]
-                  00004478    00000018     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_clearInterruptFlag)
-                  00004490    00000018                              : gpio.o (.text:GPIO_getInputPinValue)
-                  000044a8    00000018                              : gpio.o (.text:GPIO_setOutputLowOnPin)
-                  000044c0    00000018                              : wdt_a.o (.text:WDT_A_holdTimer)
-                  000044d8    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:_outs)
-                  000044f0    00000016     msp432p4xx_driverlib.lib : uart.o (.text:UART_enableInterrupt)
-                  00004506    00000016     rtsv7M4_T_le_v4SPD16_eabi.lib : strchr.c.obj (.text:strchr)
-                  0000451c    00000014     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_enableInterrupt)
-                  00004530    00000014                              : gpio.o (.text:GPIO_setOutputHighOnPin)
-                  00004544    00000014                              : gpio.o (.text:GPIO_toggleOutputOnPin)
-                  00004558    00000014                              : sysctl.o (.text:SysCtl_enableSRAMBankRetention)
-                  0000456c    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : strlen.c.obj (.text:strlen)
-                  00004580    00000012                                   : wcslen.c.obj (.text:wcslen)
-                  00004592    00000002     --HOLE-- [fill = 0]
-                  00004594    00000010     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_getInterruptStatus)
-                  000045a4    00000010                              : interrupt.o (.text:Interrupt_enableMaster)
-                  000045b4    0000000e                              : uart.o (.text:UART_clearInterruptFlag)
-                  000045c2    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  000045d0    0000000e     startup_msp432p401r_ccs.obj (.text)
-                  000045de    0000000c     msp432p4xx_driverlib.lib : cpu.o (.text:CPU_cpsie)
-                  000045ea    00000002     --HOLE-- [fill = 0]
-                  000045ec    0000000c                              : pcm.o (.text:PCM_getPowerState)
-                  000045f8    0000000c                              : uart.o (.text:UART_enableModule)
-                  00004604    0000000a     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:_outc)
-                  0000460e    00000008     msp432p4xx_driverlib.lib : pcm.o (.text:PCM_setCoreVoltageLevel)
-                  00004616    00000008                              : pcm.o (.text:PCM_setPowerMode)
-                  0000461e    00000002     --HOLE-- [fill = 0]
-                  00004620    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.text:__aeabi_errno_addr)
-                  00004628    00000006     msp432p4xx_driverlib.lib : uart.o (.text:UART_getInterruptStatus)
-                  0000462e    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
-                  00004632    00000004                                   : exit.c.obj (.text:abort:abort)
+                  00001310    00000538     exinADC.obj (.text)
+                  00001848    000003f0     exinencoder.obj (.text)
+                  00001c38    00000334     system_msp432p401r.obj (.text)
+                  00001f6c    000002c8     exinisr.obj (.text)
+                  00002234    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  000024a4    00000268     exingpio.obj (.text)
+                  0000270c    00000240     exinsystem.obj (.text)
+                  0000294c    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  00002b1c    000001c0     exinkey.obj (.text)
+                  00002cdc    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  00002e92    00000002     --HOLE-- [fill = 0]
+                  00002e94    000001b4     ADS_RCV.obj (.text)
+                  00003048    00000184     exinuart.obj (.text)
+                  000031cc    00000148     exin_pit.obj (.text)
+                  00003314    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
+                  00003450    00000136                                   : fd_div_t2.asm.obj (.text)
+                  00003586    00000002     --HOLE-- [fill = 0]
+                  00003588    00000124                                   : _printfi.c.obj (.text:fcvt)
+                  000036ac    00000110                                   : s_scalbn.c.obj (.text:scalbn)
+                  000037bc    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  000038b8    000000dc     msp432p4xx_driverlib.lib : pcm.o (.text:__PCM_setPowerModeAdvanced)
+                  00003994    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  00003a45    00000003     --HOLE-- [fill = 0]
+                  00003a48    000000b0     msp432p4xx_driverlib.lib : pcm.o (.text:__PCM_setCoreVoltageLevelAdvanced)
+                  00003af8    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00003b94    00000096                                   : ull_div_t2.asm.obj (.text)
+                  00003c2a    00000002     --HOLE-- [fill = 0]
+                  00003c2c    00000094     msp432p4xx_driverlib.lib : uart.o (.text:UART_initModule)
+                  00003cc0    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  00003d46    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  00003dcc    0000007a                                   : memset_t2.asm.obj (.text)
+                  00003e46    0000006e                                   : _printfi.c.obj (.text:_mcpy)
+                  00003eb4    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00003f1c    00000064     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_enableInterrupt)
+                  00003f80    00000064     rtsv7M4_T_le_v4SPD16_eabi.lib : s_frexp.c.obj (.text:frexp)
+                  00003fe4    00000056                                   : _printfi.c.obj (.text:_pconv_f)
+                  0000403a    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
+                  0000408e    00000052                                   : _printfi.c.obj (.text:_ecpy)
+                  000040e0    0000004c                                   : atoi.c.obj (.text:atoi)
+                  0000412c    00000048     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
+                  00004174    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  000041bc    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00004200    00000040                                   : sprintf.c.obj (.text:sprintf)
+                  00004240    0000003e                                   : _printfi.c.obj (.text:_fcpy)
+                  0000427e    00000038                                   : fs_tod_t2.asm.obj (.text)
+                  000042b6    00000002     --HOLE-- [fill = 0]
+                  000042b8    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000042ec    00000032     main.obj (.text)
+                  0000431e    00000002     --HOLE-- [fill = 0]
+                  00004320    00000030     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_getEnabledInterruptStatus)
+                  00004350    00000030                              : gpio.o (.text:GPIO_setAsInputPinWithPullUpResistor)
+                  00004380    00000030                              : uart.o (.text:UART_getEnabledInterruptStatus)
+                  000043b0    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.asm.obj (.text)
+                  000043de    00000002     --HOLE-- [fill = 0]
+                  000043e0    0000002c     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_setAsInputPin)
+                  0000440c    0000002c                              : pcm.o (.text:PCM_getCoreVoltageLevel)
+                  00004438    0000002a                              : pcm.o (.text:PCM_getPowerMode)
+                  00004462    00000002     --HOLE-- [fill = 0]
+                  00004464    00000028                              : flash.o (.text:FlashCtl_setWaitState)
+                  0000448c    00000024                              : cs.o (.text:CS_setDCOCenteredFrequency)
+                  000044b0    00000024                              : gpio.o (.text:GPIO_setAsOutputPin)
+                  000044d4    00000024                              : interrupt.o (.text:Interrupt_setPriority)
+                  000044f8    00000024                              : uart.o (.text:UART_disableInterrupt)
+                  0000451c    00000024                              : uart.o (.text:UART_receiveData)
+                  00004540    00000024                              : uart.o (.text:UART_transmitData)
+                  00004564    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.asm.obj (.text)
+                  00004584    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  000045a0    0000001c                                   : memccpy.c.obj (.text:memccpy)
+                  000045bc    0000001a                                   : s_copysign.c.obj (.text:copysign)
+                  000045d6    00000002     --HOLE-- [fill = 0]
+                  000045d8    00000018     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_clearInterruptFlag)
+                  000045f0    00000018                              : gpio.o (.text:GPIO_getInputPinValue)
+                  00004608    00000018                              : gpio.o (.text:GPIO_setOutputLowOnPin)
+                  00004620    00000018                              : wdt_a.o (.text:WDT_A_holdTimer)
+                  00004638    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:_outs)
+                  00004650    00000016     msp432p4xx_driverlib.lib : uart.o (.text:UART_enableInterrupt)
+                  00004666    00000016     rtsv7M4_T_le_v4SPD16_eabi.lib : strchr.c.obj (.text:strchr)
+                  0000467c    00000014     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_enableInterrupt)
+                  00004690    00000014                              : gpio.o (.text:GPIO_setOutputHighOnPin)
+                  000046a4    00000014                              : gpio.o (.text:GPIO_toggleOutputOnPin)
+                  000046b8    00000014                              : sysctl.o (.text:SysCtl_enableSRAMBankRetention)
+                  000046cc    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : strlen.c.obj (.text:strlen)
+                  000046e0    00000012                                   : wcslen.c.obj (.text:wcslen)
+                  000046f2    00000002     --HOLE-- [fill = 0]
+                  000046f4    00000010     msp432p4xx_driverlib.lib : gpio.o (.text:GPIO_getInterruptStatus)
+                  00004704    00000010                              : interrupt.o (.text:Interrupt_enableMaster)
+                  00004714    0000000e                              : uart.o (.text:UART_clearInterruptFlag)
+                  00004722    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00004730    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  0000473e    0000000c     msp432p4xx_driverlib.lib : cpu.o (.text:CPU_cpsie)
+                  0000474a    00000002     --HOLE-- [fill = 0]
+                  0000474c    0000000c                              : pcm.o (.text:PCM_getPowerState)
+                  00004758    0000000c                              : uart.o (.text:UART_enableModule)
+                  00004764    0000000a     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:_outc)
+                  0000476e    00000008     msp432p4xx_driverlib.lib : pcm.o (.text:PCM_setCoreVoltageLevel)
+                  00004776    00000008                              : pcm.o (.text:PCM_setPowerMode)
+                  0000477e    00000002     --HOLE-- [fill = 0]
+                  00004780    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.text:__aeabi_errno_addr)
+                  00004788    00000006     msp432p4xx_driverlib.lib : uart.o (.text:UART_getInterruptStatus)
+                  0000478e    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00004792    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.const     0    00004638    0000060c     
-                  00004638    00000228     oled.obj (.const:F6x8)
-                  00004860    000001c0     oled.obj (.const:Hzk)
-                  00004a20    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
-                  00004b21    00000003     --HOLE-- [fill = 0]
-                  00004b24    00000050     msp432p4xx_driverlib.lib : interrupt.o (.const:g_pulRegs)
-                  00004b74    00000040                              : interrupt.o (.const)
-                  00004bb4    00000024     exinuart.obj (.const:UART0)
-                  00004bd8    00000024     exinuart.obj (.const:UART2)
-                  00004bfc    00000024     exinuart.obj (.const:UART3)
-                  00004c20    00000024     ADS_RCV.obj (.const:UART3_SET)
+.const     0    00004798    0000060c     
+                  00004798    00000228     oled.obj (.const:F6x8)
+                  000049c0    000001c0     oled.obj (.const:Hzk)
+                  00004b80    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  00004c81    00000003     --HOLE-- [fill = 0]
+                  00004c84    00000050     msp432p4xx_driverlib.lib : interrupt.o (.const:g_pulRegs)
+                  00004cd4    00000040                              : interrupt.o (.const)
+                  00004d14    00000024     exinuart.obj (.const:UART0)
+                  00004d38    00000024     exinuart.obj (.const:UART2)
+                  00004d5c    00000024     exinuart.obj (.const:UART3)
+                  00004d80    00000024     ADS_RCV.obj (.const:UART3_SET)
 
-.cinit     0    00004c48    00000070     
-                  00004c48    0000004c     (.cinit..data.load) [load image, compression = lzss]
-                  00004c94    0000000c     (__TI_handler_table)
-                  00004ca0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00004ca8    00000010     (__TI_cinit_table)
+.cinit     0    00004da8    00000070     
+                  00004da8    0000004b     (.cinit..data.load) [load image, compression = lzss]
+                  00004df3    00000001     --HOLE-- [fill = 0]
+                  00004df4    0000000c     (__TI_handler_table)
+                  00004e00    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004e08    00000010     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
 .binit     0    00000000    00000000     
 
-.data      0    20000000    00002acb     UNINITIALIZED
+.data      0    20000000    00002ab3     UNINITIALIZED
                   20000000    00002000     oled.obj (.data:screen_buf)
                   20002000    00000400     oled.obj (.data:bmp2)
                   20002400    00000400     oled.obj (.data:bmp)
                   20002800    00000200     Oscill_OLED.obj (.data:Oscill_data_buff)
                   20002a00    00000030     msp432p4xx_driverlib.lib : gpio.o (.data:GPIO_PORT_TO_BASE)
                   20002a30    00000028     exinencoder.obj (.data:timerAcaptureValues)
-                  20002a58    00000020     exinadjust.obj (.data)
-                  20002a78    0000001c     exinADC.obj (.data)
-                  20002a94    0000000a     ADS_RCV.obj (.data:ADS_RCV_DATA)
-                  20002a9e    00000002     --HOLE--
-                  20002aa0    00000008     ADS_RCV.obj (.data)
-                  20002aa8    00000008     exinencoder.obj (.data)
-                  20002ab0    00000008     exinsystem.obj (.data)
-                  20002ab8    00000008     oled.obj (.data:tmp$2)
-                  20002ac0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
-                  20002ac4    00000004     system_msp432p401r.obj (.data)
-                  20002ac8    00000003     exinuart.obj (.data)
+                  20002a58    0000001c     exinadjust.obj (.data)
+                  20002a74    0000000a     ADS_RCV.obj (.data:ADS_RCV_DATA)
+                  20002a7e    00000002     --HOLE--
+                  20002a80    00000008     ADS_RCV.obj (.data)
+                  20002a88    00000008     exinADC.obj (.data)
+                  20002a90    00000008     exinencoder.obj (.data)
+                  20002a98    00000008     exinsystem.obj (.data)
+                  20002aa0    00000008     oled.obj (.data:tmp$2)
+                  20002aa8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
+                  20002aac    00000004     system_msp432p401r.obj (.data)
+                  20002ab0    00000003     exinuart.obj (.data)
 
-.bss       0    20002acc    00000082     UNINITIALIZED
-                  20002acc    00000018     (.common:oscill1)
-                  20002ae4    00000010     (.common:A0results)
-                  20002af4    00000010     (.common:A1results)
-                  20002b04    00000010     (.common:A2results)
-                  20002b14    00000010     (.common:A3results)
-                  20002b24    00000008     (.common:encoder_A)
-                  20002b2c    00000008     (.common:encoder_B)
-                  20002b34    00000008     (.common:encoder_C)
-                  20002b3c    00000008     (.common:encoder_D)
-                  20002b44    00000004     exinsystem.obj (.bss)
-                  20002b48    00000004     (.common:ad_get)
-                  20002b4c    00000001     exinADC.obj (.bss)
-                  20002b4d    00000001     oled.obj (.bss)
+.bss       0    20002ab4    0000003d     UNINITIALIZED
+                  20002ab4    00000018     (.common:oscill1)
+                  20002acc    00000008     (.common:encoder_A)
+                  20002ad4    00000008     (.common:encoder_B)
+                  20002adc    00000008     (.common:encoder_C)
+                  20002ae4    00000008     (.common:encoder_D)
+                  20002aec    00000004     exinsystem.obj (.bss)
+                  20002af0    00000001     oled.obj (.bss)
 
 .stack     0    2000fe00    00000200     UNINITIALIZED
                   2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
@@ -224,19 +219,19 @@ MODULE SUMMARY
                                                               
     .\exinlibs\
        oled.obj                      2012    1000      20498  
+       exinADC.obj                   1336    0         16     
        exinencoder.obj               1008    0         160    
-       exinADC.obj                   972     0         194    
        Oscill_OLED.obj               0       0         1072   
-       exinisr.obj                   724     0         0      
+       exinisr.obj                   712     0         0      
        exingpio.obj                  616     0         0      
        exinsystem.obj                576     0         24     
        ADS_RCV.obj                   436     36        36     
        exinuart.obj                  388     108       6      
        exinkey.obj                   448     0         0      
        exin_pit.obj                  328     0         0      
-       exinadjust.obj                0       0         64     
+       exinadjust.obj                0       0         56     
     +--+-----------------------------+-------+---------+---------+
-       Total:                        7508    1144      22054  
+       Total:                        7860    1144      21868  
                                                               
     C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib
        pcm.o                         510     0         0      
@@ -288,21 +283,21 @@ MODULE SUMMARY
        Total:                        7781    257       8      
                                                               
        Stack:                        0       0         1024   
-       Linker Generated:             0       112       0      
+       Linker Generated:             0       111       0      
     +--+-----------------------------+-------+---------+---------+
-       Grand Total:                  17721   1885      23190  
+       Grand Total:                  18073   1884      23004  
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00004ca8 records: 2, size/record: 8, table size: 16
-	.data: load addr=00004c48, load size=0000004c bytes, run addr=20000000, run size=00002acb bytes, compression=lzss
-	.bss: load addr=00004ca0, load size=00000008 bytes, run addr=20002acc, run size=00000082 bytes, compression=zero_init
+__TI_cinit_table @ 00004e08 records: 2, size/record: 8, table size: 16
+	.data: load addr=00004da8, load size=0000004b bytes, run addr=20000000, run size=00002ab3 bytes, compression=lzss
+	.bss: load addr=00004e00, load size=00000008 bytes, run addr=20002ab4, run size=0000003d bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00004c94 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00004df4 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
 	index: 2, handler: __TI_zero_init
@@ -312,84 +307,82 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address   name                                      
 -------   ----                                      
-20002ae4  A0results                                 
-20002af4  A1results                                 
-20002b04  A2results                                 
-20002b14  A3results                                 
-000017f1  ADC14_IRQHandler                          
-000017f1  ADC14_IRQHandler                          
-20002a7c  ADC_CA                                    
-20002a80  ADC_CB                                    
-20002a84  ADC_CC                                    
-20002a88  ADC_CD                                    
-00001701  ADC_INIT                                  
-000019b3  ADC_TEST                                  
-0000179d  ADC_mean_filter                           
-20002a90  ADC_receive_count                         
-00002e0d  ADS_Get                                   
-20002a94  ADS_RCV_DATA                              
-20002aa1  ADS_RCV_FLAG                              
-00002e4f  ADS_RCV_GetData32                         
-00002d35  ADS_RCV_Init                              
-20002aa2  ADS_RCV_STATE                             
-000045dd  AES256_IRQHandler                         
-20002a76  A_flag                                    
-20002a77  B_flag                                    
-000045dd  BusFault_Handler                          
-00004633  C$$EXIT                                   
-000045dd  COMP_E0_IRQHandler                        
-000045dd  COMP_E1_IRQHandler                        
-000045df  CPU_cpsie                                 
-000045dd  CS_IRQHandler                             
-0000432d  CS_setDCOCenteredFrequency                
-000045dd  DMA_ERR_IRQHandler                        
-000045dd  DMA_INT0_IRQHandler                       
-000045dd  DMA_INT1_IRQHandler                       
-000045dd  DMA_INT2_IRQHandler                       
-000045dd  DMA_INT3_IRQHandler                       
-000045dd  DebugMon_Handler                          
-000045dd  Default_Handler                           
-00001665  ENCODER_TEST                              
-00003001  EUSCIA0_IRQHandler                        
-00003001  EUSCIA0_IRQHandler                        
-000045dd  EUSCIA1_IRQHandler                        
-0000302f  EUSCIA2_IRQHandler                        
-0000302f  EUSCIA2_IRQHandler                        
-00002d7d  EUSCIA3_IRQHandler                        
-00002d7d  EUSCIA3_IRQHandler                        
-000045dd  EUSCIB0_IRQHandler                        
-000045dd  EUSCIB1_IRQHandler                        
-000045dd  EUSCIB2_IRQHandler                        
-000045dd  EUSCIB3_IRQHandler                        
-00001535  Encoder_clr                               
-00004638  F6x8                                      
-000045dd  FLCTL_IRQHandler                          
-000045dd  FPU_IRQHandler                            
-00004305  FlashCtl_setWaitState                     
-00001761  GET_ADC_VALUE                             
-000014f9  GET_encoder_dir                           
-000014bd  GET_encoder_num                           
-00004479  GPIO_clearInterruptFlag                   
-0000451d  GPIO_enableInterrupt                      
-000041c1  GPIO_getEnabledInterruptStatus            
-00004491  GPIO_getInputPinValue                     
-00004595  GPIO_getInterruptStatus                   
-00004281  GPIO_setAsInputPin                        
-000041f1  GPIO_setAsInputPinWithPullUpResistor      
-00004351  GPIO_setAsOutputPin                       
-00003fcd  GPIO_setAsPeripheralModuleFunctionInputPin
-00004531  GPIO_setOutputHighOnPin                   
-000044a9  GPIO_setOutputLowOnPin                    
-00004545  GPIO_toggleOutputOnPin                    
-000045dd  HardFault_Handler                         
-00004860  Hzk                                       
-20002a74  IRQ3_5flag                                
-20002a75  IRQ4_6flag                                
-00003dbd  Interrupt_enableInterrupt                 
-000045a5  Interrupt_enableMaster                    
-00004375  Interrupt_setPriority                     
-000045dd  MemManage_Handler                         
-000045dd  NMI_Handler                               
+00001555  ADC14_CHA_sel                             
+00001669  ADC14_CLK_sel                             
+00001805  ADC14_IRQHandler                          
+00001805  ADC14_IRQHandler                          
+00001767  ADC14_PREC_sel                            
+0000131d  ADC14_convert_disable                     
+00001311  ADC14_convert_enable                      
+00001335  ADC14_convert_end                         
+00001329  ADC14_convert_start                       
+000017c1  ADC14_init                                
+000013df  ADC14_read_data                           
+00001341  ADC14_start                               
+00002f6d  ADS_Get                                   
+20002a74  ADS_RCV_DATA                              
+20002a81  ADS_RCV_FLAG                              
+00002faf  ADS_RCV_GetData32                         
+00002e95  ADS_RCV_Init                              
+20002a82  ADS_RCV_STATE                             
+0000473d  AES256_IRQHandler                         
+20002a72  A_flag                                    
+20002a73  B_flag                                    
+0000473d  BusFault_Handler                          
+00004793  C$$EXIT                                   
+0000473d  COMP_E0_IRQHandler                        
+0000473d  COMP_E1_IRQHandler                        
+20002a88  CONVERT_SUCCESS_FLAG                      
+0000473f  CPU_cpsie                                 
+0000473d  CS_IRQHandler                             
+0000448d  CS_setDCOCenteredFrequency                
+0000473d  DMA_ERR_IRQHandler                        
+0000473d  DMA_INT0_IRQHandler                       
+0000473d  DMA_INT1_IRQHandler                       
+0000473d  DMA_INT2_IRQHandler                       
+0000473d  DMA_INT3_IRQHandler                       
+0000473d  DebugMon_Handler                          
+0000473d  Default_Handler                           
+00001b9d  ENCODER_TEST                              
+00003161  EUSCIA0_IRQHandler                        
+00003161  EUSCIA0_IRQHandler                        
+0000473d  EUSCIA1_IRQHandler                        
+0000318f  EUSCIA2_IRQHandler                        
+0000318f  EUSCIA2_IRQHandler                        
+00002edd  EUSCIA3_IRQHandler                        
+00002edd  EUSCIA3_IRQHandler                        
+0000473d  EUSCIB0_IRQHandler                        
+0000473d  EUSCIB1_IRQHandler                        
+0000473d  EUSCIB2_IRQHandler                        
+0000473d  EUSCIB3_IRQHandler                        
+00001a6d  Encoder_clr                               
+00004798  F6x8                                      
+0000473d  FLCTL_IRQHandler                          
+0000473d  FPU_IRQHandler                            
+00004465  FlashCtl_setWaitState                     
+00001a31  GET_encoder_dir                           
+000019f5  GET_encoder_num                           
+000045d9  GPIO_clearInterruptFlag                   
+0000467d  GPIO_enableInterrupt                      
+00004321  GPIO_getEnabledInterruptStatus            
+000045f1  GPIO_getInputPinValue                     
+000046f5  GPIO_getInterruptStatus                   
+000043e1  GPIO_setAsInputPin                        
+00004351  GPIO_setAsInputPinWithPullUpResistor      
+000044b1  GPIO_setAsOutputPin                       
+0000412d  GPIO_setAsPeripheralModuleFunctionInputPin
+00004691  GPIO_setOutputHighOnPin                   
+00004609  GPIO_setOutputLowOnPin                    
+000046a5  GPIO_toggleOutputOnPin                    
+0000473d  HardFault_Handler                         
+000049c0  Hzk                                       
+20002a70  IRQ3_5flag                                
+20002a71  IRQ4_6flag                                
+00003f1d  Interrupt_enableInterrupt                 
+00004705  Interrupt_enableMaster                    
+000044d5  Interrupt_setPriority                     
+0000473d  MemManage_Handler                         
+0000473d  NMI_Handler                               
 00000dbf  OLED_Clear                                
 00000da3  OLED_Display_Off                          
 00000d87  OLED_Display_On                           
@@ -404,202 +397,198 @@ address   name
 00000fc5  OLED_Showfloat                            
 00000cbb  OLED_WR_Byte                              
 00000ba5  OLED_pos_clr                              
-000015d5  OLED_show                                 
-0000195d  OLED_showADC                              
+00001b0d  OLED_show                                 
 20002800  Oscill_data_buff                          
-000045dd  PCM_IRQHandler                            
-000042ad  PCM_getCoreVoltageLevel                   
-000042d9  PCM_getPowerMode                          
-000045ed  PCM_getPowerState                         
-0000460f  PCM_setCoreVoltageLevel                   
-00004617  PCM_setPowerMode                          
-0000306d  PIT_init                                  
-00001e01  PORT1_IRQHandler                          
-00001e01  PORT1_IRQHandler                          
-00001e49  PORT2_IRQHandler                          
-00001e49  PORT2_IRQHandler                          
-00001eaf  PORT3_IRQHandler                          
-00001eaf  PORT3_IRQHandler                          
-00001f07  PORT4_IRQHandler                          
-00001f07  PORT4_IRQHandler                          
-00001f87  PORT5_IRQHandler                          
-00001f87  PORT5_IRQHandler                          
-00001fed  PORT6_IRQHandler                          
-00001fed  PORT6_IRQHandler                          
-000045dd  PSS_IRQHandler                            
-000045dd  PendSV_Handler                            
-000045dd  RTC_C_IRQHandler                          
-20002aa0  R_FLAG                                    
-000045d1  Reset_Handler                             
-000045dd  SVC_Handler                               
-00004559  SysCtl_enableSRAMBankRetention            
-00002755  SysTick_Handler                           
-00002755  SysTick_Handler                           
-20002ac4  SystemCoreClock                           
-00001acd  SystemCoreClockUpdate                     
-00001d45  SystemInit                                
-000045dd  T32_INT1_IRQHandler                       
-000045dd  T32_INT2_IRQHandler                       
-000045dd  T32_INTC_IRQHandler                       
-00002059  TA0_0_IRQHandler                          
-00002059  TA0_0_IRQHandler                          
-00001579  TA0_N_IRQHandler                          
-00001579  TA0_N_IRQHandler                          
-0000206f  TA1_0_IRQHandler                          
-0000206f  TA1_0_IRQHandler                          
-000045dd  TA1_N_IRQHandler                          
-0000207b  TA2_0_IRQHandler                          
-0000207b  TA2_0_IRQHandler                          
-000045dd  TA2_N_IRQHandler                          
-00002087  TA3_0_IRQHandler                          
-00002087  TA3_0_IRQHandler                          
-000045dd  TA3_N_IRQHandler                          
-00004bb4  UART0                                     
-20002aca  UART0_RXDat                               
-00002ee9  UART0_init                                
-00004bd8  UART2                                     
-20002ac9  UART2_RXDat                               
-00002f31  UART2_init                                
-00004bfc  UART3                                     
-20002ac8  UART3_RXDat                               
-00004c20  UART3_SET                                 
-00002f79  UART3_init                                
-000045b5  UART_clearInterruptFlag                   
-00004399  UART_disableInterrupt                     
-000044f1  UART_enableInterrupt                      
-000045f9  UART_enableModule                         
-00004221  UART_getEnabledInterruptStatus            
-00004629  UART_getInterruptStatus                   
-00003acd  UART_initModule                           
-000043bd  UART_receiveData                          
-00002ff1  UART_send_Num                             
-00002fc1  UART_send_string                          
-000043e1  UART_transmitData                         
-000045dd  UsageFault_Handler                        
+0000473d  PCM_IRQHandler                            
+0000440d  PCM_getCoreVoltageLevel                   
+00004439  PCM_getPowerMode                          
+0000474d  PCM_getPowerState                         
+0000476f  PCM_setCoreVoltageLevel                   
+00004777  PCM_setPowerMode                          
+000031cd  PIT_init                                  
+00001f6d  PORT1_IRQHandler                          
+00001f6d  PORT1_IRQHandler                          
+00001fb5  PORT2_IRQHandler                          
+00001fb5  PORT2_IRQHandler                          
+0000201b  PORT3_IRQHandler                          
+0000201b  PORT3_IRQHandler                          
+0000206d  PORT4_IRQHandler                          
+0000206d  PORT4_IRQHandler                          
+000020e7  PORT5_IRQHandler                          
+000020e7  PORT5_IRQHandler                          
+0000214d  PORT6_IRQHandler                          
+0000214d  PORT6_IRQHandler                          
+0000473d  PSS_IRQHandler                            
+0000473d  PendSV_Handler                            
+0000473d  RTC_C_IRQHandler                          
+20002a80  R_FLAG                                    
+00004731  Reset_Handler                             
+0000473d  SVC_Handler                               
+000046b9  SysCtl_enableSRAMBankRetention            
+000028b5  SysTick_Handler                           
+000028b5  SysTick_Handler                           
+20002aac  SystemCoreClock                           
+00001c39  SystemCoreClockUpdate                     
+00001eb1  SystemInit                                
+0000473d  T32_INT1_IRQHandler                       
+0000473d  T32_INT2_IRQHandler                       
+0000473d  T32_INTC_IRQHandler                       
+000021b9  TA0_0_IRQHandler                          
+000021b9  TA0_0_IRQHandler                          
+00001ab1  TA0_N_IRQHandler                          
+00001ab1  TA0_N_IRQHandler                          
+000021cf  TA1_0_IRQHandler                          
+000021cf  TA1_0_IRQHandler                          
+0000473d  TA1_N_IRQHandler                          
+000021db  TA2_0_IRQHandler                          
+000021db  TA2_0_IRQHandler                          
+0000473d  TA2_N_IRQHandler                          
+000021e7  TA3_0_IRQHandler                          
+000021e7  TA3_0_IRQHandler                          
+0000473d  TA3_N_IRQHandler                          
+00004d14  UART0                                     
+20002ab2  UART0_RXDat                               
+00003049  UART0_init                                
+00004d38  UART2                                     
+20002ab1  UART2_RXDat                               
+00003091  UART2_init                                
+00004d5c  UART3                                     
+20002ab0  UART3_RXDat                               
+00004d80  UART3_SET                                 
+000030d9  UART3_init                                
+00004715  UART_clearInterruptFlag                   
+000044f9  UART_disableInterrupt                     
+00004651  UART_enableInterrupt                      
+00004759  UART_enableModule                         
+00004381  UART_getEnabledInterruptStatus            
+00004789  UART_getInterruptStatus                   
+00003c2d  UART_initModule                           
+0000451d  UART_receiveData                          
+00003151  UART_send_Num                             
+00003121  UART_send_string                          
+00004541  UART_transmitData                         
+0000473d  UsageFault_Handler                        
 4000480c  WDTCTL_SYM                                
-000045dd  WDT_A_IRQHandler                          
-000044c1  WDT_A_holdTimer                           
+0000473d  WDT_A_IRQHandler                          
+00004621  WDT_A_holdTimer                           
 20010000  __STACK_END                               
 00000200  __STACK_SIZE                              
-00004ca8  __TI_CINIT_Base                           
-00004cb8  __TI_CINIT_Limit                          
-00004c94  __TI_Handler_Table_Base                   
-00004ca0  __TI_Handler_Table_Limit                  
-0000405d  __TI_auto_init_nobinit_nopinit            
-00003d55  __TI_decompress_lzss                      
-000045c3  __TI_decompress_none                      
-00003edb  __TI_ltoa                                 
+00004e08  __TI_CINIT_Base                           
+00004e18  __TI_CINIT_Limit                          
+00004df4  __TI_Handler_Table_Base                   
+00004e00  __TI_Handler_Table_Limit                  
+000041bd  __TI_auto_init_nobinit_nopinit            
+00003eb5  __TI_decompress_lzss                      
+00004723  __TI_decompress_none                      
+0000403b  __TI_ltoa                                 
 ffffffff  __TI_pprof_out_hndl                       
 000000e5  __TI_printfi                              
 ffffffff  __TI_prof_data_size                       
 ffffffff  __TI_prof_data_start                      
 00000000  __TI_static_base__                        
-00004425  __TI_zero_init_nomemset                   
-00003b61  __aeabi_cdcmpeq                           
-00003b61  __aeabi_cdcmple                           
-00003be7  __aeabi_cdrcmple                          
-00004015  __aeabi_d2iz                              
-00002b87  __aeabi_dadd                              
-000032f1  __aeabi_ddiv                              
-0000365d  __aeabi_dmul                              
-00002b7d  __aeabi_dsub                              
-00004621  __aeabi_errno_addr                        
-0000411f  __aeabi_f2d                               
-00004251  __aeabi_i2d                               
+00004585  __TI_zero_init_nomemset                   
+00003cc1  __aeabi_cdcmpeq                           
+00003cc1  __aeabi_cdcmple                           
+00003d47  __aeabi_cdrcmple                          
+00004175  __aeabi_d2iz                              
+00002ce7  __aeabi_dadd                              
+00003451  __aeabi_ddiv                              
+000037bd  __aeabi_dmul                              
+00002cdd  __aeabi_dsub                              
+00004781  __aeabi_errno_addr                        
+0000427f  __aeabi_f2d                               
+000043b1  __aeabi_i2d                               
 00000b33  __aeabi_idiv0                             
 00000b33  __aeabi_ldiv0                             
-00003c6d  __aeabi_memclr                            
-00003c6d  __aeabi_memclr4                           
-00003c6d  __aeabi_memclr8                           
-00003999  __aeabi_memcpy                            
-00003999  __aeabi_memcpy4                           
-00003999  __aeabi_memcpy8                           
-00003c6f  __aeabi_memset                            
-00003c6f  __aeabi_memset4                           
-00003c6f  __aeabi_memset8                           
-00004405  __aeabi_ui2d                              
-00003a35  __aeabi_uldivmod                          
+00003dcd  __aeabi_memclr                            
+00003dcd  __aeabi_memclr4                           
+00003dcd  __aeabi_memclr8                           
+00003af9  __aeabi_memcpy                            
+00003af9  __aeabi_memcpy4                           
+00003af9  __aeabi_memcpy8                           
+00003dcf  __aeabi_memset                            
+00003dcf  __aeabi_memset4                           
+00003dcf  __aeabi_memset8                           
+00004565  __aeabi_ui2d                              
+00003b95  __aeabi_uldivmod                          
 ffffffff  __binit__                                 
 ffffffff  __c_args__                                
 UNDEFED   __mpu_init                                
 2000fe00  __stack                                   
 20000000  __start___llvm_prf_cnts                   
 20000000  __stop___llvm_prf_cnts                    
-00004159  _c_int00_noargs                           
-00004a20  _ctypes_                                  
+000042b9  _c_int00_noargs                           
+00004b80  _ctypes_                                  
 UNDEFED   _system_post_cinit                        
-0000462f  _system_pre_init                          
-00004633  abort                                     
-20002b48  ad_get                                    
-00003f81  atoi                                      
+0000478f  _system_pre_init                          
+00004793  abort                                     
+000040e1  atoi                                      
 ffffffff  binit                                     
 20002400  bmp                                       
 20002000  bmp2                                      
-0000445d  copysign                                  
-0000445d  copysignl                                 
-20002a68  count                                     
-20002a5c  count_max                                 
+20002a8c  convert_data                              
+000045bd  copysign                                  
+000045bd  copysignl                                 
+20002a64  count                                     
 20002a58  dirf                                      
-20002b24  encoder_A                                 
-20002b2c  encoder_B                                 
-20002b34  encoder_C                                 
-20002b3c  encoder_D                                 
-00001311  encoder_IncTypeDef_init                   
-0000136d  encoder_dirpin_init                       
-00001415  encoder_init                              
-000013c5  encoder_interrupt_init                    
-20002ac0  errno                                     
-000025ad  error                                     
-00003e21  frexp                                     
-00003e21  frexpl                                    
-000024fb  gpio_INT_EN                               
-000023e9  gpio_edg_sel                              
-000023a9  gpio_get                                  
-00002345  gpio_init                                 
-0000254f  gpio_interrupt_INIT                       
-000023b9  gpio_set                                  
-000023d9  gpio_toggle                               
-20002a8c  ii                                        
+20002acc  encoder_A                                 
+20002ad4  encoder_B                                 
+20002adc  encoder_C                                 
+20002ae4  encoder_D                                 
+00001849  encoder_IncTypeDef_init                   
+000018a5  encoder_dirpin_init                       
+0000194d  encoder_init                              
+000018fd  encoder_interrupt_init                    
+20002aa8  errno                                     
+0000270d  error                                     
+00003f81  frexp                                     
+00003f81  frexpl                                    
+0000265b  gpio_INT_EN                               
+00002549  gpio_edg_sel                              
+00002509  gpio_get                                  
+000024a5  gpio_init                                 
+000026af  gpio_interrupt_INIT                       
+00002519  gpio_set                                  
+00002539  gpio_toggle                               
 00000000  interruptVectors                          
-00002a1b  key_get                                   
-000029bd  key_init                                  
-00002a73  key_test                                  
-0000354d  ldexp                                     
-0000354d  ldexpl                                    
-0000418d  main                                      
-00004441  memccpy                                   
-00003999  memcpy                                    
-00003c75  memset                                    
+00002b7b  key_get                                   
+00002b1d  key_init                                  
+00002bd3  key_test                                  
+000036ad  ldexp                                     
+000036ad  ldexpl                                    
+000042ed  main                                      
+000045a1  memccpy                                   
+00003af9  memcpy                                    
+00003dd5  memset                                    
 00000eb7  oled_pow                                  
 00000bd9  oled_update                               
-20002acc  oscill1                                   
-20002a60  page_count                                
-20002a78  receive_success                           
-0000354d  scalbn                                    
-0000354d  scalbnl                                   
+20002ab4  oscill1                                   
+20002a5c  page_count                                
+000036ad  scalbn                                    
+000036ad  scalbnl                                   
 20000000  screen_buf                                
-000025d5  set_DCO_48MH                              
-00002675  set_clock_period                          
-000040a1  sprintf                                   
-20002a64  start_flag                                
-00004507  strchr                                    
-0000456d  strlen                                    
-20002ab0  sysc                                      
-00002735  system_init                               
-00002727  systic_clr                                
-0000277d  systic_delayms                            
-0000275f  systic_delayus                            
-000026b9  systic_end                                
-0000267f  systic_init                               
-000026c7  systic_read                               
-000026a3  systic_start                              
-20002ab4  systim                                    
-20002a6c  testA                                     
-20002a70  testB                                     
-20002aac  time_counter                              
-20002aa8  timerAcapturePointer                      
+00002735  set_DCO_48MH                              
+000027d5  set_clock_period                          
+00004201  sprintf                                   
+20002a60  start_flag                                
+00004667  strchr                                    
+000046cd  strlen                                    
+20002a98  sysc                                      
+00002895  system_init                               
+00002887  systic_clr                                
+000028dd  systic_delayms                            
+000028bf  systic_delayus                            
+00002819  systic_end                                
+000027df  systic_init                               
+00002827  systic_read                               
+00002803  systic_start                              
+20002a9c  systim                                    
+20002a68  testA                                     
+20002a6c  testB                                     
+20002a94  time_counter                              
+20002a90  timerAcapturePointer                      
 20002a30  timerAcaptureValues                       
-00004581  wcslen                                    
+000046e1  wcslen                                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -628,213 +617,218 @@ address   name
 00001057  OLED_ShowCHinese                          
 0000110d  OLED_DrawBMP                              
 000011bd  OLED_Init                                 
-00001311  encoder_IncTypeDef_init                   
-0000136d  encoder_dirpin_init                       
-000013c5  encoder_interrupt_init                    
-00001415  encoder_init                              
-000014bd  GET_encoder_num                           
-000014f9  GET_encoder_dir                           
-00001535  Encoder_clr                               
-00001579  TA0_N_IRQHandler                          
-00001579  TA0_N_IRQHandler                          
-000015d5  OLED_show                                 
-00001665  ENCODER_TEST                              
-00001701  ADC_INIT                                  
-00001761  GET_ADC_VALUE                             
-0000179d  ADC_mean_filter                           
-000017f1  ADC14_IRQHandler                          
-000017f1  ADC14_IRQHandler                          
-0000195d  OLED_showADC                              
-000019b3  ADC_TEST                                  
-00001acd  SystemCoreClockUpdate                     
-00001d45  SystemInit                                
-00001e01  PORT1_IRQHandler                          
-00001e01  PORT1_IRQHandler                          
-00001e49  PORT2_IRQHandler                          
-00001e49  PORT2_IRQHandler                          
-00001eaf  PORT3_IRQHandler                          
-00001eaf  PORT3_IRQHandler                          
-00001f07  PORT4_IRQHandler                          
-00001f07  PORT4_IRQHandler                          
-00001f87  PORT5_IRQHandler                          
-00001f87  PORT5_IRQHandler                          
-00001fed  PORT6_IRQHandler                          
-00001fed  PORT6_IRQHandler                          
-00002059  TA0_0_IRQHandler                          
-00002059  TA0_0_IRQHandler                          
-0000206f  TA1_0_IRQHandler                          
-0000206f  TA1_0_IRQHandler                          
-0000207b  TA2_0_IRQHandler                          
-0000207b  TA2_0_IRQHandler                          
-00002087  TA3_0_IRQHandler                          
-00002087  TA3_0_IRQHandler                          
-00002345  gpio_init                                 
-000023a9  gpio_get                                  
-000023b9  gpio_set                                  
-000023d9  gpio_toggle                               
-000023e9  gpio_edg_sel                              
-000024fb  gpio_INT_EN                               
-0000254f  gpio_interrupt_INIT                       
-000025ad  error                                     
-000025d5  set_DCO_48MH                              
-00002675  set_clock_period                          
-0000267f  systic_init                               
-000026a3  systic_start                              
-000026b9  systic_end                                
-000026c7  systic_read                               
-00002727  systic_clr                                
-00002735  system_init                               
-00002755  SysTick_Handler                           
-00002755  SysTick_Handler                           
-0000275f  systic_delayus                            
-0000277d  systic_delayms                            
-000029bd  key_init                                  
-00002a1b  key_get                                   
-00002a73  key_test                                  
-00002b7d  __aeabi_dsub                              
-00002b87  __aeabi_dadd                              
-00002d35  ADS_RCV_Init                              
-00002d7d  EUSCIA3_IRQHandler                        
-00002d7d  EUSCIA3_IRQHandler                        
-00002e0d  ADS_Get                                   
-00002e4f  ADS_RCV_GetData32                         
-00002ee9  UART0_init                                
-00002f31  UART2_init                                
-00002f79  UART3_init                                
-00002fc1  UART_send_string                          
-00002ff1  UART_send_Num                             
-00003001  EUSCIA0_IRQHandler                        
-00003001  EUSCIA0_IRQHandler                        
-0000302f  EUSCIA2_IRQHandler                        
-0000302f  EUSCIA2_IRQHandler                        
-0000306d  PIT_init                                  
-000032f1  __aeabi_ddiv                              
-0000354d  ldexp                                     
-0000354d  ldexpl                                    
-0000354d  scalbn                                    
-0000354d  scalbnl                                   
-0000365d  __aeabi_dmul                              
-00003999  __aeabi_memcpy                            
-00003999  __aeabi_memcpy4                           
-00003999  __aeabi_memcpy8                           
-00003999  memcpy                                    
-00003a35  __aeabi_uldivmod                          
-00003acd  UART_initModule                           
-00003b61  __aeabi_cdcmpeq                           
-00003b61  __aeabi_cdcmple                           
-00003be7  __aeabi_cdrcmple                          
-00003c6d  __aeabi_memclr                            
-00003c6d  __aeabi_memclr4                           
-00003c6d  __aeabi_memclr8                           
-00003c6f  __aeabi_memset                            
-00003c6f  __aeabi_memset4                           
-00003c6f  __aeabi_memset8                           
-00003c75  memset                                    
-00003d55  __TI_decompress_lzss                      
-00003dbd  Interrupt_enableInterrupt                 
-00003e21  frexp                                     
-00003e21  frexpl                                    
-00003edb  __TI_ltoa                                 
-00003f81  atoi                                      
-00003fcd  GPIO_setAsPeripheralModuleFunctionInputPin
-00004015  __aeabi_d2iz                              
-0000405d  __TI_auto_init_nobinit_nopinit            
-000040a1  sprintf                                   
-0000411f  __aeabi_f2d                               
-00004159  _c_int00_noargs                           
-0000418d  main                                      
-000041c1  GPIO_getEnabledInterruptStatus            
-000041f1  GPIO_setAsInputPinWithPullUpResistor      
-00004221  UART_getEnabledInterruptStatus            
-00004251  __aeabi_i2d                               
-00004281  GPIO_setAsInputPin                        
-000042ad  PCM_getCoreVoltageLevel                   
-000042d9  PCM_getPowerMode                          
-00004305  FlashCtl_setWaitState                     
-0000432d  CS_setDCOCenteredFrequency                
-00004351  GPIO_setAsOutputPin                       
-00004375  Interrupt_setPriority                     
-00004399  UART_disableInterrupt                     
-000043bd  UART_receiveData                          
-000043e1  UART_transmitData                         
-00004405  __aeabi_ui2d                              
-00004425  __TI_zero_init_nomemset                   
-00004441  memccpy                                   
-0000445d  copysign                                  
-0000445d  copysignl                                 
-00004479  GPIO_clearInterruptFlag                   
-00004491  GPIO_getInputPinValue                     
-000044a9  GPIO_setOutputLowOnPin                    
-000044c1  WDT_A_holdTimer                           
-000044f1  UART_enableInterrupt                      
-00004507  strchr                                    
-0000451d  GPIO_enableInterrupt                      
-00004531  GPIO_setOutputHighOnPin                   
-00004545  GPIO_toggleOutputOnPin                    
-00004559  SysCtl_enableSRAMBankRetention            
-0000456d  strlen                                    
-00004581  wcslen                                    
-00004595  GPIO_getInterruptStatus                   
-000045a5  Interrupt_enableMaster                    
-000045b5  UART_clearInterruptFlag                   
-000045c3  __TI_decompress_none                      
-000045d1  Reset_Handler                             
-000045dd  AES256_IRQHandler                         
-000045dd  BusFault_Handler                          
-000045dd  COMP_E0_IRQHandler                        
-000045dd  COMP_E1_IRQHandler                        
-000045dd  CS_IRQHandler                             
-000045dd  DMA_ERR_IRQHandler                        
-000045dd  DMA_INT0_IRQHandler                       
-000045dd  DMA_INT1_IRQHandler                       
-000045dd  DMA_INT2_IRQHandler                       
-000045dd  DMA_INT3_IRQHandler                       
-000045dd  DebugMon_Handler                          
-000045dd  Default_Handler                           
-000045dd  EUSCIA1_IRQHandler                        
-000045dd  EUSCIB0_IRQHandler                        
-000045dd  EUSCIB1_IRQHandler                        
-000045dd  EUSCIB2_IRQHandler                        
-000045dd  EUSCIB3_IRQHandler                        
-000045dd  FLCTL_IRQHandler                          
-000045dd  FPU_IRQHandler                            
-000045dd  HardFault_Handler                         
-000045dd  MemManage_Handler                         
-000045dd  NMI_Handler                               
-000045dd  PCM_IRQHandler                            
-000045dd  PSS_IRQHandler                            
-000045dd  PendSV_Handler                            
-000045dd  RTC_C_IRQHandler                          
-000045dd  SVC_Handler                               
-000045dd  T32_INT1_IRQHandler                       
-000045dd  T32_INT2_IRQHandler                       
-000045dd  T32_INTC_IRQHandler                       
-000045dd  TA1_N_IRQHandler                          
-000045dd  TA2_N_IRQHandler                          
-000045dd  TA3_N_IRQHandler                          
-000045dd  UsageFault_Handler                        
-000045dd  WDT_A_IRQHandler                          
-000045df  CPU_cpsie                                 
-000045ed  PCM_getPowerState                         
-000045f9  UART_enableModule                         
-0000460f  PCM_setCoreVoltageLevel                   
-00004617  PCM_setPowerMode                          
-00004621  __aeabi_errno_addr                        
-00004629  UART_getInterruptStatus                   
-0000462f  _system_pre_init                          
-00004633  C$$EXIT                                   
-00004633  abort                                     
-00004638  F6x8                                      
-00004860  Hzk                                       
-00004a20  _ctypes_                                  
-00004bb4  UART0                                     
-00004bd8  UART2                                     
-00004bfc  UART3                                     
-00004c20  UART3_SET                                 
-00004c94  __TI_Handler_Table_Base                   
-00004ca0  __TI_Handler_Table_Limit                  
-00004ca8  __TI_CINIT_Base                           
-00004cb8  __TI_CINIT_Limit                          
+00001311  ADC14_convert_enable                      
+0000131d  ADC14_convert_disable                     
+00001329  ADC14_convert_start                       
+00001335  ADC14_convert_end                         
+00001341  ADC14_start                               
+000013df  ADC14_read_data                           
+00001555  ADC14_CHA_sel                             
+00001669  ADC14_CLK_sel                             
+00001767  ADC14_PREC_sel                            
+000017c1  ADC14_init                                
+00001805  ADC14_IRQHandler                          
+00001805  ADC14_IRQHandler                          
+00001849  encoder_IncTypeDef_init                   
+000018a5  encoder_dirpin_init                       
+000018fd  encoder_interrupt_init                    
+0000194d  encoder_init                              
+000019f5  GET_encoder_num                           
+00001a31  GET_encoder_dir                           
+00001a6d  Encoder_clr                               
+00001ab1  TA0_N_IRQHandler                          
+00001ab1  TA0_N_IRQHandler                          
+00001b0d  OLED_show                                 
+00001b9d  ENCODER_TEST                              
+00001c39  SystemCoreClockUpdate                     
+00001eb1  SystemInit                                
+00001f6d  PORT1_IRQHandler                          
+00001f6d  PORT1_IRQHandler                          
+00001fb5  PORT2_IRQHandler                          
+00001fb5  PORT2_IRQHandler                          
+0000201b  PORT3_IRQHandler                          
+0000201b  PORT3_IRQHandler                          
+0000206d  PORT4_IRQHandler                          
+0000206d  PORT4_IRQHandler                          
+000020e7  PORT5_IRQHandler                          
+000020e7  PORT5_IRQHandler                          
+0000214d  PORT6_IRQHandler                          
+0000214d  PORT6_IRQHandler                          
+000021b9  TA0_0_IRQHandler                          
+000021b9  TA0_0_IRQHandler                          
+000021cf  TA1_0_IRQHandler                          
+000021cf  TA1_0_IRQHandler                          
+000021db  TA2_0_IRQHandler                          
+000021db  TA2_0_IRQHandler                          
+000021e7  TA3_0_IRQHandler                          
+000021e7  TA3_0_IRQHandler                          
+000024a5  gpio_init                                 
+00002509  gpio_get                                  
+00002519  gpio_set                                  
+00002539  gpio_toggle                               
+00002549  gpio_edg_sel                              
+0000265b  gpio_INT_EN                               
+000026af  gpio_interrupt_INIT                       
+0000270d  error                                     
+00002735  set_DCO_48MH                              
+000027d5  set_clock_period                          
+000027df  systic_init                               
+00002803  systic_start                              
+00002819  systic_end                                
+00002827  systic_read                               
+00002887  systic_clr                                
+00002895  system_init                               
+000028b5  SysTick_Handler                           
+000028b5  SysTick_Handler                           
+000028bf  systic_delayus                            
+000028dd  systic_delayms                            
+00002b1d  key_init                                  
+00002b7b  key_get                                   
+00002bd3  key_test                                  
+00002cdd  __aeabi_dsub                              
+00002ce7  __aeabi_dadd                              
+00002e95  ADS_RCV_Init                              
+00002edd  EUSCIA3_IRQHandler                        
+00002edd  EUSCIA3_IRQHandler                        
+00002f6d  ADS_Get                                   
+00002faf  ADS_RCV_GetData32                         
+00003049  UART0_init                                
+00003091  UART2_init                                
+000030d9  UART3_init                                
+00003121  UART_send_string                          
+00003151  UART_send_Num                             
+00003161  EUSCIA0_IRQHandler                        
+00003161  EUSCIA0_IRQHandler                        
+0000318f  EUSCIA2_IRQHandler                        
+0000318f  EUSCIA2_IRQHandler                        
+000031cd  PIT_init                                  
+00003451  __aeabi_ddiv                              
+000036ad  ldexp                                     
+000036ad  ldexpl                                    
+000036ad  scalbn                                    
+000036ad  scalbnl                                   
+000037bd  __aeabi_dmul                              
+00003af9  __aeabi_memcpy                            
+00003af9  __aeabi_memcpy4                           
+00003af9  __aeabi_memcpy8                           
+00003af9  memcpy                                    
+00003b95  __aeabi_uldivmod                          
+00003c2d  UART_initModule                           
+00003cc1  __aeabi_cdcmpeq                           
+00003cc1  __aeabi_cdcmple                           
+00003d47  __aeabi_cdrcmple                          
+00003dcd  __aeabi_memclr                            
+00003dcd  __aeabi_memclr4                           
+00003dcd  __aeabi_memclr8                           
+00003dcf  __aeabi_memset                            
+00003dcf  __aeabi_memset4                           
+00003dcf  __aeabi_memset8                           
+00003dd5  memset                                    
+00003eb5  __TI_decompress_lzss                      
+00003f1d  Interrupt_enableInterrupt                 
+00003f81  frexp                                     
+00003f81  frexpl                                    
+0000403b  __TI_ltoa                                 
+000040e1  atoi                                      
+0000412d  GPIO_setAsPeripheralModuleFunctionInputPin
+00004175  __aeabi_d2iz                              
+000041bd  __TI_auto_init_nobinit_nopinit            
+00004201  sprintf                                   
+0000427f  __aeabi_f2d                               
+000042b9  _c_int00_noargs                           
+000042ed  main                                      
+00004321  GPIO_getEnabledInterruptStatus            
+00004351  GPIO_setAsInputPinWithPullUpResistor      
+00004381  UART_getEnabledInterruptStatus            
+000043b1  __aeabi_i2d                               
+000043e1  GPIO_setAsInputPin                        
+0000440d  PCM_getCoreVoltageLevel                   
+00004439  PCM_getPowerMode                          
+00004465  FlashCtl_setWaitState                     
+0000448d  CS_setDCOCenteredFrequency                
+000044b1  GPIO_setAsOutputPin                       
+000044d5  Interrupt_setPriority                     
+000044f9  UART_disableInterrupt                     
+0000451d  UART_receiveData                          
+00004541  UART_transmitData                         
+00004565  __aeabi_ui2d                              
+00004585  __TI_zero_init_nomemset                   
+000045a1  memccpy                                   
+000045bd  copysign                                  
+000045bd  copysignl                                 
+000045d9  GPIO_clearInterruptFlag                   
+000045f1  GPIO_getInputPinValue                     
+00004609  GPIO_setOutputLowOnPin                    
+00004621  WDT_A_holdTimer                           
+00004651  UART_enableInterrupt                      
+00004667  strchr                                    
+0000467d  GPIO_enableInterrupt                      
+00004691  GPIO_setOutputHighOnPin                   
+000046a5  GPIO_toggleOutputOnPin                    
+000046b9  SysCtl_enableSRAMBankRetention            
+000046cd  strlen                                    
+000046e1  wcslen                                    
+000046f5  GPIO_getInterruptStatus                   
+00004705  Interrupt_enableMaster                    
+00004715  UART_clearInterruptFlag                   
+00004723  __TI_decompress_none                      
+00004731  Reset_Handler                             
+0000473d  AES256_IRQHandler                         
+0000473d  BusFault_Handler                          
+0000473d  COMP_E0_IRQHandler                        
+0000473d  COMP_E1_IRQHandler                        
+0000473d  CS_IRQHandler                             
+0000473d  DMA_ERR_IRQHandler                        
+0000473d  DMA_INT0_IRQHandler                       
+0000473d  DMA_INT1_IRQHandler                       
+0000473d  DMA_INT2_IRQHandler                       
+0000473d  DMA_INT3_IRQHandler                       
+0000473d  DebugMon_Handler                          
+0000473d  Default_Handler                           
+0000473d  EUSCIA1_IRQHandler                        
+0000473d  EUSCIB0_IRQHandler                        
+0000473d  EUSCIB1_IRQHandler                        
+0000473d  EUSCIB2_IRQHandler                        
+0000473d  EUSCIB3_IRQHandler                        
+0000473d  FLCTL_IRQHandler                          
+0000473d  FPU_IRQHandler                            
+0000473d  HardFault_Handler                         
+0000473d  MemManage_Handler                         
+0000473d  NMI_Handler                               
+0000473d  PCM_IRQHandler                            
+0000473d  PSS_IRQHandler                            
+0000473d  PendSV_Handler                            
+0000473d  RTC_C_IRQHandler                          
+0000473d  SVC_Handler                               
+0000473d  T32_INT1_IRQHandler                       
+0000473d  T32_INT2_IRQHandler                       
+0000473d  T32_INTC_IRQHandler                       
+0000473d  TA1_N_IRQHandler                          
+0000473d  TA2_N_IRQHandler                          
+0000473d  TA3_N_IRQHandler                          
+0000473d  UsageFault_Handler                        
+0000473d  WDT_A_IRQHandler                          
+0000473f  CPU_cpsie                                 
+0000474d  PCM_getPowerState                         
+00004759  UART_enableModule                         
+0000476f  PCM_setCoreVoltageLevel                   
+00004777  PCM_setPowerMode                          
+00004781  __aeabi_errno_addr                        
+00004789  UART_getInterruptStatus                   
+0000478f  _system_pre_init                          
+00004793  C$$EXIT                                   
+00004793  abort                                     
+00004798  F6x8                                      
+000049c0  Hzk                                       
+00004b80  _ctypes_                                  
+00004d14  UART0                                     
+00004d38  UART2                                     
+00004d5c  UART3                                     
+00004d80  UART3_SET                                 
+00004df4  __TI_Handler_Table_Base                   
+00004e00  __TI_Handler_Table_Limit                  
+00004e08  __TI_CINIT_Base                           
+00004e18  __TI_CINIT_Limit                          
 20000000  __start___llvm_prf_cnts                   
 20000000  __stop___llvm_prf_cnts                    
 20000000  screen_buf                                
@@ -843,46 +837,35 @@ address   name
 20002800  Oscill_data_buff                          
 20002a30  timerAcaptureValues                       
 20002a58  dirf                                      
-20002a5c  count_max                                 
-20002a60  page_count                                
-20002a64  start_flag                                
-20002a68  count                                     
-20002a6c  testA                                     
-20002a70  testB                                     
-20002a74  IRQ3_5flag                                
-20002a75  IRQ4_6flag                                
-20002a76  A_flag                                    
-20002a77  B_flag                                    
-20002a78  receive_success                           
-20002a7c  ADC_CA                                    
-20002a80  ADC_CB                                    
-20002a84  ADC_CC                                    
-20002a88  ADC_CD                                    
-20002a8c  ii                                        
-20002a90  ADC_receive_count                         
-20002a94  ADS_RCV_DATA                              
-20002aa0  R_FLAG                                    
-20002aa1  ADS_RCV_FLAG                              
-20002aa2  ADS_RCV_STATE                             
-20002aa8  timerAcapturePointer                      
-20002aac  time_counter                              
-20002ab0  sysc                                      
-20002ab4  systim                                    
-20002ac0  errno                                     
-20002ac4  SystemCoreClock                           
-20002ac8  UART3_RXDat                               
-20002ac9  UART2_RXDat                               
-20002aca  UART0_RXDat                               
-20002acc  oscill1                                   
-20002ae4  A0results                                 
-20002af4  A1results                                 
-20002b04  A2results                                 
-20002b14  A3results                                 
-20002b24  encoder_A                                 
-20002b2c  encoder_B                                 
-20002b34  encoder_C                                 
-20002b3c  encoder_D                                 
-20002b48  ad_get                                    
+20002a5c  page_count                                
+20002a60  start_flag                                
+20002a64  count                                     
+20002a68  testA                                     
+20002a6c  testB                                     
+20002a70  IRQ3_5flag                                
+20002a71  IRQ4_6flag                                
+20002a72  A_flag                                    
+20002a73  B_flag                                    
+20002a74  ADS_RCV_DATA                              
+20002a80  R_FLAG                                    
+20002a81  ADS_RCV_FLAG                              
+20002a82  ADS_RCV_STATE                             
+20002a88  CONVERT_SUCCESS_FLAG                      
+20002a8c  convert_data                              
+20002a90  timerAcapturePointer                      
+20002a94  time_counter                              
+20002a98  sysc                                      
+20002a9c  systim                                    
+20002aa8  errno                                     
+20002aac  SystemCoreClock                           
+20002ab0  UART3_RXDat                               
+20002ab1  UART2_RXDat                               
+20002ab2  UART0_RXDat                               
+20002ab4  oscill1                                   
+20002acc  encoder_A                                 
+20002ad4  encoder_B                                 
+20002adc  encoder_C                                 
+20002ae4  encoder_D                                 
 2000fe00  __stack                                   
 20010000  __STACK_END                               
 4000480c  WDTCTL_SYM                                
@@ -895,4 +878,4 @@ ffffffff  binit
 UNDEFED   __mpu_init                                
 UNDEFED   _system_post_cinit                        
 
-[288 symbols]
+[282 symbols]

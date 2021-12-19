@@ -29,6 +29,114 @@ void error(void)
         for(i = 20000; i > 0; i--);           // Blink LED forever
     }
 }
+/*************************************************
+ * 函  数  名:CS_unlocked
+ * 功       能:CS寄存器解锁
+ * 参       数:无
+ * 注意事项:无
+ *************************************************/
+void CS_unlocked()
+{
+    CS->KEY = CS_KEY_VAL ;//解锁CS寄存器
+}
+/*************************************************
+ * 函  数  名:CS_locked
+ * 功       能:CS_寄存器上锁
+ * 参       数:无
+ * 注意事项:无
+ *************************************************/
+void CS_locked()
+{
+    CS->KEY = 0;          // CS寄存器上锁
+}
+/*************************************************
+ * 函  数  名:DCO_set
+ * 功       能:设置DCO频率
+ * 参       数:DCO_FRE:DCO_FRE为DCO可选频率在exinsystem.h中列出
+ * 注意事项:无
+ *************************************************/
+void DCO_set(DOC_FRE_enum DCO_FRE)
+{
+    CS->CTL0 = 0;
+    switch(DCO_FRE)
+    {
+         case(DCO_1_5M): CS->CTL0 = CS_CTL0_DCORSEL_0;   break;//1.5Mhz
+         case(DCO_3_0M): CS->CTL0 = CS_CTL0_DCORSEL_1;   break;//3Mhz
+         case(DCO_6_0M): CS->CTL0 = CS_CTL0_DCORSEL_2;   break;//6Mhz
+         case(DCO_12_0M): CS->CTL0 = CS_CTL0_DCORSEL_3;   break;//12Mhz
+         case(DCO_24_0M): CS->CTL0 = CS_CTL0_DCORSEL_4;   break;//24Mhz
+         case(DCO_48_0M): CS->CTL0 = CS_CTL0_DCORSEL_5;   break;//48Mhz
+         default:CS->CTL0 = CS_CTL0_DCORSEL_1;   break;//3Mhz
+    }
+}
+/*************************************************
+ * 函  数  名:MCLK_set
+ * 功       能:设置MCLK
+ * 参       数:
+ *          CLK_source:时钟源列举，在exinsystem.h中列出
+ *          CLK_DIV:为可选分频,在exinsystem.h中列出
+ * 注意事项:无
+ *************************************************/
+void MCLK_set(CLK_source_enum CLK_source,CLK_DIV_enum CLK_DIV)
+{
+    CS->CTL1 = CS->CTL1 & ~(CS_CTL1_SELM_MASK | CS_CTL1_DIVM_MASK);//首先清零MCLK时钟源设置位和MCLK分频设置位
+    switch(CLK_source)//进行MCLK时钟源的设置
+    {
+           case(LFXTCLK): CS->CTL1 |= CS_CTL1_SELM__LFXTCLK;   break;
+           case(VLOCLK):  CS->CTL1 |= CS_CTL1_SELM__VLOCLK;    break;
+           case(REFOCLK): CS->CTL1 |= CS_CTL1_SELM__REFOCLK;   break;
+           case(DCOCLK):  CS->CTL1 |= CS_CTL1_SELM__DCOCLK;    break;
+           case(MODOSC):  CS->CTL1 |= CS_CTL1_SELM__MODOSC;    break;
+           case(HFXTCLK): CS->CTL1 |= CS_CTL1_SELM__HFXTCLK;   break;
+           default:       CS->CTL1 |= CS_CTL1_SELM__DCOCLK;    break;
+    }
+    switch(CLK_DIV)//进行MCLK时钟源的设置
+   {
+          case(CLK_DIV1):   CS->CTL1 |= CS_CTL1_DIVM__1;   break;
+          case(CLK_DIV2):   CS->CTL1 |= CS_CTL1_DIVM__2;    break;
+          case(CLK_DIV4):   CS->CTL1 |= CS_CTL1_DIVM__4;   break;
+          case(CLK_DIV8):   CS->CTL1 |= CS_CTL1_DIVM__8;    break;
+          case(CLK_DIV16):  CS->CTL1 |= CS_CTL1_DIVM__16;    break;
+          case(CLK_DIV32):  CS->CTL1 |= CS_CTL1_DIVM__32;   break;
+          case(CLK_DIV64):  CS->CTL1 |= CS_CTL1_DIVM__64;   break;
+          case(CLK_DIV128): CS->CTL1 |= CS_CTL1_DIVM__128;   break;
+          default:          CS->CTL1 |= CS_CTL1_DIVM__1;    break;
+   }
+}
+/*************************************************
+ * 函  数  名:SMCLK_set
+ * 功       能:设置SMCLK
+ * 参       数:
+ *          CLK_source:时钟源列举，在exinsystem.h中列出
+ *          CLK_DIV:为可选分频,在exinsystem.h中列出
+ * 注意事项:无
+ *************************************************/
+void SMCLK_set(CLK_source_enum CLK_source,CLK_DIV_enum CLK_DIV)
+{
+    CS->CTL1 = CS->CTL1 & ~(CS_CTL1_SELS_MASK | CS_CTL1_DIVS_MASK);//首先清零SMCLK时钟源设置位和SMCLK分频设置位
+    switch(CLK_source)//进行MCLK时钟源的设置
+    {
+           case(LFXTCLK): CS->CTL1 |= CS_CTL1_SELS__LFXTCLK;   break;
+           case(VLOCLK):  CS->CTL1 |= CS_CTL1_SELS__VLOCLK;    break;
+           case(REFOCLK): CS->CTL1 |= CS_CTL1_SELS__REFOCLK;   break;
+           case(DCOCLK):  CS->CTL1 |= CS_CTL1_SELS__DCOCLK;    break;
+           case(MODOSC):  CS->CTL1 |= CS_CTL1_SELS__MODOSC;    break;
+           case(HFXTCLK): CS->CTL1 |= CS_CTL1_SELS__HFXTCLK;   break;
+           default:       CS->CTL1 |= CS_CTL1_SELM__DCOCLK;    break;
+    }
+    switch(CLK_DIV)//进行MCLK时钟源的设置
+   {
+          case(CLK_DIV1):   CS->CTL1 |= CS_CTL1_DIVS__1;   break;
+          case(CLK_DIV2):   CS->CTL1 |= CS_CTL1_DIVS__2;    break;
+          case(CLK_DIV4):   CS->CTL1 |= CS_CTL1_DIVS__4;   break;
+          case(CLK_DIV8):   CS->CTL1 |= CS_CTL1_DIVS__8;    break;
+          case(CLK_DIV16):  CS->CTL1 |= CS_CTL1_DIVS__16;    break;
+          case(CLK_DIV32):  CS->CTL1 |= CS_CTL1_DIVS__32;   break;
+          case(CLK_DIV64):  CS->CTL1 |= CS_CTL1_DIVS__64;   break;
+          case(CLK_DIV128): CS->CTL1 |= CS_CTL1_DIVS__128;   break;
+          default:          CS->CTL1 |= CS_CTL1_DIVS__1;    break;
+   }
+}
 /***********************************/
 /* set_DCO_48MH
  *
@@ -55,15 +163,11 @@ void set_DCO_48MH()
                FLCTL_BANK0_RDCTL_WAIT_2;
     FLCTL->BANK1_RDCTL  = FLCTL->BANK0_RDCTL & (~FLCTL_BANK1_RDCTL_WAIT_MASK) |
            FLCTL_BANK1_RDCTL_WAIT_2;  //配置flash
-    // 设置DCO时钟到48Mhz
-     CS->KEY = CS_KEY_VAL ;                  // 解锁CS寄存器
-     CS->CTL0 = 0;                           // 重置CTL0寄存器
-     CS->CTL0 = CS_CTL0_DCORSEL_5;           // 设置DCO时钟为48M
-    //将MCLK选为DCO
-     CS->CTL1 = CS->CTL1 & ~(CS_CTL1_SELM_MASK | CS_CTL1_DIVM_MASK) |
-             CS_CTL1_SELM_3|CS_CTL1_DIVS__2;
-
-     CS->KEY = 0;                            // CS寄存器上锁
+     CS_unlocked();
+     DCO_set(DCO_48_0M);//设置DCO时钟到48Mhz
+     MCLK_set(DCOCLK,CLK_DIV1);//设置MCL时钟源为DCOCLK 分频为1即f(MCLK) = f(DCO)
+     SMCLK_set(DCOCLK,CLK_DIV16);//设置SMCLK时钟源为DCOCLK 分频16即f(SMCLK) = f(DCO)/16
+     CS_locked();
 }
 
 /***********************************/

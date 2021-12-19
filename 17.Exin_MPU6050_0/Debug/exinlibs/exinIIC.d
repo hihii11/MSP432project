@@ -80,6 +80,8 @@ exinlibs/exinIIC.obj: ../exinlibs/ADS_RCV.h
 exinlibs/exinIIC.obj: ../exinlibs/exinHC_SR04.h
 exinlibs/exinIIC.obj: ../exinlibs/exinIIC.h
 exinlibs/exinIIC.obj: ../exinlibs/exinMPU6050.h
+exinlibs/exinIIC.obj: ../exinlibs/exineeprom.h
+exinlibs/exinIIC.obj: ../exinlibs/exinADC0832.h
 
 ../exinlibs/exinIIC.c: 
 ../exinlibs/headfile.h: 
@@ -161,3 +163,5 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinHC_SR04.h: 
 ../exinlibs/exinIIC.h: 
 ../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 

@@ -25,36 +25,53 @@ extern "C"
 //若修改了主时钟或者MCLK分配时钟，此处宏定义应修改
 
 /*******************************************************波特率参数表*****************************************/
-#define MCLK_FRE            3000000//串口使用MCLK时钟具体MCLK分频可以查看exinsystem.c
+#define SMCLK_FRE            3000000//串口使用MCLK时钟具体MCLK分频可以查看exinsystem.c
 //任意波特率配置
 //填写baunds 得到配置
 #define BAUNDS_BF           2400    //此处填写波特率  波特率必须小于MCLK_FRE/2
-#define BRDIV_BAUNDS_BF     (MCLK_FRE/BAUNDS_BF)>>4
-#define UCxBRF_BAUNDS_BF    (int)(((float)MCLK_FRE/BAUNDS_BF/16-MCLK_FRE/BAUNDS_BF/16)*16+0.5)
-#define UCxBRS_BAUNDS_BF    (int)(((((float)MCLK_FRE/BAUNDS_BF/16-MCLK_FRE/BAUNDS_BF/16)*16+0.5)-UCxBRF_BAUNDS_BF)*16+0.5)
+#define BRDIV_BAUNDS_BF     (SMCLK_FRE/BAUNDS_BF)>>4
+#define UCxBRF_BAUNDS_BF    (int)(((float)SMCLK_FRE/BAUNDS_BF/16-SMCLK_FRE/BAUNDS_BF/16)*16+0.5)
+#define UCxBRS_BAUNDS_BF    (int)(((((float)SMCLK_FRE/BAUNDS_BF/16-SMCLK_FRE/BAUNDS_BF/16)*16+0.5)-UCxBRF_BAUNDS_BF)*16+0.5)
 //115200波特率配置
-#define BRDIV_115200        (MCLK_FRE/115200)>>4
-#define UCxBRF_115200       (int)(((float)MCLK_FRE/115200/16-MCLK_FRE/115200/16)*16+0.5)
-#define UCxBRS_115200       (int)(((((float)MCLK_FRE/115200/16-MCLK_FRE/115200/16)*16+0.5)-UCxBRF_115200)*16+0.5)
+#define BRDIV_115200        (SMCLK_FRE/115200)>>4
+#define UCxBRF_115200       (int)(((float)SMCLK_FRE/115200/16-SMCLK_FRE/115200/16)*16+0.5)
+#define UCxBRS_115200       (int)(((((float)SMCLK_FRE/115200/16-SMCLK_FRE/115200/16)*16+0.5)-UCxBRF_115200)*16+0.5)
 //9600
-#define BRDIV_9600          (MCLK_FRE/9600)>>4
-#define UCxBRF_9600         (int)(((float)MCLK_FRE/9600/16-MCLK_FRE/9600/16)*16+0.5)
-#define UCxBRS_9600         (int)(((((float)MCLK_FRE/9600/16-MCLK_FRE/9600/16)*16+0.5)-UCxBRF_9600)*16+0.5)
+#define BRDIV_9600          (SMCLK_FRE/9600)>>4
+#define UCxBRF_9600         (int)(((float)SMCLK_FRE/9600/16-SMCLK_FRE/9600/16)*16+0.5)
+#define UCxBRS_9600         (int)(((((float)SMCLK_FRE/9600/16-SMCLK_FRE/9600/16)*16+0.5)-UCxBRF_9600)*16+0.5)
 
 //4800
-#define BRDIV_4800          (MCLK_FRE/4800)>>4
-#define UCxBRF_4800         (int)(((float)MCLK_FRE/4800/16-MCLK_FRE/4800/16)*16+0.5)
-#define UCxBRS_4800         (int)(((((float)MCLK_FRE/4800/16-MCLK_FRE/4800/16)*16+0.5)-UCxBRF_4800)*16+0.5)
+#define BRDIV_4800          (SMCLK_FRE/4800)>>4
+#define UCxBRF_4800         (int)(((float)SMCLK_FRE/4800/16-SMCLK_FRE/4800/16)*16+0.5)
+#define UCxBRS_4800         (int)(((((float)SMCLK_FRE/4800/16-SMCLK_FRE/4800/16)*16+0.5)-UCxBRF_4800)*16+0.5)
 
 /*******************************************************波特率参数表*****************************************/
+typedef enum{
+    UART0,
+    UART1,
+    UART2,
+    UART3
+}UART_CHA_enum;//串口可选通道枚举
 
+typedef enum{
+    UART_SMCLK,
+    UART_ACLK,
+    UART_DEFAULTCLK
+}UART_CLK_enum;//串口时钟可选通道枚举
 
-extern void UART_send_string(uint32_t moduleInstance,char*txt);
-extern void UART_send_Num(uint32_t moduleInstance,unsigned int num);
-extern void UART0_init();
-extern void UART2_init();
-extern void UART0_TEST();
-extern void UART3_init();
+extern void UART_send_string(UART_CHA_enum UART_CHA,char*txt);
+extern void UART_send_short(UART_CHA_enum UART_CHA,uint16 num);
+extern void UART_send_int(UART_CHA_enum UART_CHA,uint32 num);
+extern void UART_IRQ_set(UART_CHA_enum UART_CHA);
+extern void UART_IRQRX_set(UART_CHA_enum UART_CHA);
+extern void UART_USIC_init(UART_CHA_enum UART_CHA);
+extern void UART_PIN_sel(UART_CHA_enum UART_CHA);
+extern void UART_CLK_sel(UART_CHA_enum UART_CHA,UART_CLK_enum UART_CLK);
+extern void UART_Baunds_set(UART_CHA_enum UART_CHA,int Baunds );
+extern void UART_init(UART_CHA_enum UART_CHA,int Baunds );
+extern void UART_send_Byte(UART_CHA_enum UART_CHA,uint8 Data);
+extern uint8 UART_recv_Byte(UART_CHA_enum UART_CHA);
 #ifdef __cplusplus
 }
 #endif

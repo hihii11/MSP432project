@@ -55,6 +55,9 @@ exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/std
 exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h
 exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h
 exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h
+exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h
+exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h
+exinlibs/serial.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h
 exinlibs/serial.obj: ../exinlibs/exinisr.h
 exinlibs/serial.obj: ../exinlibs/exingpio.h
 exinlibs/serial.obj: ../exinlibs/dat.h
@@ -76,6 +79,9 @@ exinlibs/serial.obj: ../exinlibs/ADS1292.h
 exinlibs/serial.obj: ../exinlibs/ADS_RCV.h
 exinlibs/serial.obj: ../exinlibs/exinHC_SR04.h
 exinlibs/serial.obj: ../exinlibs/exinIIC.h
+exinlibs/serial.obj: ../exinlibs/exinMPU6050.h
+exinlibs/serial.obj: ../exinlibs/exineeprom.h
+exinlibs/serial.obj: ../exinlibs/exinADC0832.h
 exinlibs/serial.obj: ../exinlibs/serial.h
 
 ../exinlibs/serial.c: 
@@ -133,6 +139,9 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdlib.h:
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h: 
 ../exinlibs/exinisr.h: 
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
@@ -154,4 +163,7 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h:
 ../exinlibs/ADS_RCV.h: 
 ../exinlibs/exinHC_SR04.h: 
 ../exinlibs/exinIIC.h: 
+../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 
 ../exinlibs/serial.h: 

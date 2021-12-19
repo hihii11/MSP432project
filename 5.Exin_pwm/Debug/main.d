@@ -55,6 +55,9 @@ main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdlib.h
 main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h
 main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h
 main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h
+main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h
+main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h
+main.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h
 main.obj: ../exinlibs/exinisr.h
 main.obj: ../exinlibs/exingpio.h
 main.obj: ../exinlibs/dat.h
@@ -75,6 +78,10 @@ main.obj: ../exinlibs/headfile.h
 main.obj: ../exinlibs/ADS1292.h
 main.obj: ../exinlibs/ADS_RCV.h
 main.obj: ../exinlibs/exinHC_SR04.h
+main.obj: ../exinlibs/exinIIC.h
+main.obj: ../exinlibs/exinMPU6050.h
+main.obj: ../exinlibs/exineeprom.h
+main.obj: ../exinlibs/exinADC0832.h
 
 ../main.c: 
 ../exinlibs/headfile.h: 
@@ -131,6 +138,9 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdlib.h:
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h: 
 ../exinlibs/exinisr.h: 
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
@@ -151,3 +161,7 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h:
 ../exinlibs/ADS1292.h: 
 ../exinlibs/ADS_RCV.h: 
 ../exinlibs/exinHC_SR04.h: 
+../exinlibs/exinIIC.h: 
+../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 

@@ -24,7 +24,7 @@ uint8 LMT_DataSelect(float LMT_GETMV)
 void LMT_Init()
 {
 #if MSP432_ENABLE
-    ADC_INIT();
+    ADC14_init(ADC_CH0,ADC_MCLK ,ADC_DIV2,ADC14_BIT14);
 
 #else
 	adc_init(LMT_M, LMT_CH, ADC_12BIT);
@@ -36,7 +36,7 @@ float LMT_ADC_GetMV()
 {
 	float LMT_temp = 0;
 #if MSP432_ENABLE
-	LMT_temp = ADC_mean_filter(LMT_CH, 10);
+	LMT_temp = ADC14_read_data(ADC_CH0);
 	return ((3300 * LMT_temp)/16384);
 #else
 	LMT_temp = adc_mean_filter(LMT_M, LMT_CH, 10);

@@ -127,7 +127,6 @@ void PORT3_IRQHandler(void)
       }
     else if(status & GPIO_PIN5)
       {
-        delay_ms(5);
         A_flag=1;
         B_flag=0;
         IRQ3_5flag=1;
@@ -175,7 +174,6 @@ void PORT4_IRQHandler(void)
       }
     else if(status & GPIO_PIN6)
       {
-        delay_ms(5);
         A_flag=0;
         B_flag=1;
         IRQ4_6flag=1;

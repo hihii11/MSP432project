@@ -49,6 +49,7 @@ extern void IIC_NACK();
 extern unsigned char Check_ACK();
 extern void IIC_Send_Byte(uint8 Data);
 extern unsigned char IIC_Read_Byte(uint8 ack);
+extern void IIC_reset();
 
 #ifdef __cplusplus
 }

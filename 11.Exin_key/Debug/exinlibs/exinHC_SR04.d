@@ -55,6 +55,9 @@ exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/includ
 exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h
 exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h
 exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h
+exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h
+exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h
+exinlibs/exinHC_SR04.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/exinisr.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/exingpio.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/dat.h
@@ -75,6 +78,10 @@ exinlibs/exinHC_SR04.obj: ../exinlibs/headfile.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/ADS1292.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/ADS_RCV.h
 exinlibs/exinHC_SR04.obj: ../exinlibs/exinHC_SR04.h
+exinlibs/exinHC_SR04.obj: ../exinlibs/exinIIC.h
+exinlibs/exinHC_SR04.obj: ../exinlibs/exinMPU6050.h
+exinlibs/exinHC_SR04.obj: ../exinlibs/exineeprom.h
+exinlibs/exinHC_SR04.obj: ../exinlibs/exinADC0832.h
 
 ../exinlibs/exinHC_SR04.c: 
 ../exinlibs/headfile.h: 
@@ -131,6 +138,9 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdlib.h:
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h: 
 ../exinlibs/exinisr.h: 
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
@@ -151,3 +161,7 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h:
 ../exinlibs/ADS1292.h: 
 ../exinlibs/ADS_RCV.h: 
 ../exinlibs/exinHC_SR04.h: 
+../exinlibs/exinIIC.h: 
+../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 

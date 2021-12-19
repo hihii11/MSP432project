@@ -1,13 +1,3 @@
-/*-----------------------------------------------------------------------------------------------------
-【平    台】CCS
-【适 用 单 片 机】msp432P401R
-【底 层 库】TIVA WARE /msp432p4xx
-【开 发】e芯工作室
-/*@@ 库仅供参考 后果自负
- *
- * 版本 v1.0
- * 时间 2019年1月23日22:29:47
--------------------------------------------------------------------------------------------------------*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Openmv serial port transmission with seekfree's codes/exin's codes designed for RT1064/MSP432 //
 // Lastest : 2020.9.25                                                                           //
@@ -49,7 +39,7 @@ void OV_RCV_Init(uint32 baud, UARTPIN_enum tx_pin, UARTPIN_enum rx_pin)
 #else
 void OV_RCV_Init()
 {
-        UART2_init(115200);
+        UART_init(UART2,115200);
         UART_disableInterrupt(EUSCI_A2_BASE, EUSCI_A_UART_RECEIVE_INTERRUPT);
         delay_ms(100);
 
@@ -62,7 +52,7 @@ void OV_RCV_Uart_Callback(LPUART_Type *base, lpuart_handle_t *handle, status_t s
 {
     if(kStatus_LPUART_RxIdle == status)
     {
-        OV_RCV_DATA[OV_RCV_STATE] = OV_RCV_DATA_BUFFER;//鐏忓棙鏆熼幑顔煎絿閸戯拷
+        OV_RCV_DATA[OV_RCV_STATE] = OV_RCV_DATA_BUFFER;//閻忓繐妫欓弳鐔煎箲椤旂厧绲块柛鎴嫹
 		OV_RCV_STATE ++;
 		
 		if(OV_RCV_STATE == 1 && OV_RCV_DATA[0] != OV_RCV_UART_PRE)
@@ -78,14 +68,14 @@ void OV_RCV_Uart_Callback(LPUART_Type *base, lpuart_handle_t *handle, status_t s
     }
 
     
-    handle->rxDataSize = OV_RCV_DATA_INCLUDA.dataSize;  //鏉╂ê甯紓鎾冲暱閸栨椽鏆辨惔锟�
-    handle->rxData = OV_RCV_DATA_INCLUDA.data;          //鏉╂ê甯紓鎾冲暱閸栧搫婀撮崸锟�
+    handle->rxDataSize = OV_RCV_DATA_INCLUDA.dataSize;  //閺夆晜锚鐢偆绱撻幘鍐叉毐闁告牗妞介弳杈ㄦ償閿燂拷
+    handle->rxData = OV_RCV_DATA_INCLUDA.data;          //閺夆晜锚鐢偆绱撻幘鍐叉毐闁告牕鎼﹢鎾锤閿燂拷
 }
 #else
 /*
 void EUSCIA2_IRQHandler(void)
 {
-    //閹恒儲鏁规稉顓熸焽,uart閹恒儲鏁归崚鏉跨摟閼猴拷,閹恒儲鏁规稉顓熸焽閺嶅洤绻旀担宥勭窗缂冿拷1
+    //闁规亽鍎查弫瑙勭▔椤撶喐鐒�,uart闁规亽鍎查弫褰掑礆閺夎法鎽熼柤鐚存嫹,闁规亽鍎查弫瑙勭▔椤撶喐鐒介柡宥呮搐缁绘梹鎷呭鍕獥缂傚喛鎷�1
     if(EUSCI_A_UART_RECEIVE_INTERRUPT_FLAG)
     {
         UART_clearInterruptFlag(EUSCI_A2_BASE, EUSCI_A_UART_RECEIVE_INTERRUPT_FLAG);
@@ -110,9 +100,9 @@ uint8 HexToChar(uint8 bChar)
 {
     if((bChar >= 0x30)&&(bChar <= 0x39))
       bChar -= 0x30;
-    else if((bChar>=0x41)&&(bChar<=0x46))//濠㈠爢鍐ㄦ櫢閻庢稒顨嗛惁锟�
+    else if((bChar>=0x41)&&(bChar<=0x46))//婵犮垹鐖㈤崘銊︽闁诲孩绋掗〃鍡涙儊閿燂拷
       bChar -= 0x37;
-    else if((bChar>=0x61)&&(bChar<=0x66))//閻忓繐绻愰崯鎾讹拷娑欘殕閻︼拷
+    else if((bChar>=0x61)&&(bChar<=0x66))//闁诲繐绻愮换鎰板疮閹捐鎷峰☉娆樻畷闁伙讣鎷�
       bChar -= 0x57;
     else 
       bChar = 0xff;
@@ -179,7 +169,7 @@ uint8 OV_RCV_GetValue(uint8 num)
         return OV_RCV_DATA_READ[num];
 }
 
-#if OV_RCV_TEST                 //婵炴潙顑堥惁顖滅磽閺嵮冩櫢
+#if OV_RCV_TEST                 //濠电偞娼欓鍫ユ儊椤栨粎纾介柡宓啯娅�
 void OV_RCV_TEST_Handle()
 {
   

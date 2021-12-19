@@ -15,14 +15,14 @@ extern "C"
 {
 #endif
 
-#define  int8   signed char
-#define uint8   unsigned char
-#define  int16  signed short
-#define  uint16 unsigned short
-#define int32   signed int
-#define  uint32 unsigned int
-#define int64   signed long long
-#define uint64  unsigned long long
+typedef  signed char               int8   ;
+typedef  unsigned char             uint8  ;
+typedef  signed short              int16  ;
+typedef  unsigned short            uint16 ;
+typedef  signed int                int32  ;
+typedef  unsigned int              uint32 ;
+typedef  signed long long          int64  ;
+typedef  unsigned long long        uint64 ;
 
 
 

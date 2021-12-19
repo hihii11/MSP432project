@@ -80,6 +80,8 @@ exinlibs/exinisr.obj: ../exinlibs/ADS_RCV.h
 exinlibs/exinisr.obj: ../exinlibs/exinHC_SR04.h
 exinlibs/exinisr.obj: ../exinlibs/exinIIC.h
 exinlibs/exinisr.obj: ../exinlibs/exinMPU6050.h
+exinlibs/exinisr.obj: ../exinlibs/exineeprom.h
+exinlibs/exinisr.obj: ../exinlibs/exinADC0832.h
 exinlibs/exinisr.obj: ../exinlibs/exinisr.h
 
 ../exinlibs/exinisr.c: 
@@ -162,4 +164,6 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinHC_SR04.h: 
 ../exinlibs/exinIIC.h: 
 ../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 
 ../exinlibs/exinisr.h: 

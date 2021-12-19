@@ -6,7 +6,7 @@
 /*@@ 库仅供参考 后果自负
  *
  * 版本 v1.0
- * 时间 2020年10月23日22:29:47
+ * 时间 2021年12月19日10:36:25
 -------------------------------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------------------------
@@ -21,10 +21,23 @@ void main()
 {
     system_init(0);
     set_DCO_48MH();
-    UART0_init();//初始化串口1，对应launchpad usb接口 波特率115200
-    gpio_init(GPIO_PORT_P1,GPIO_PIN1,GPO,1);
+    key_init(KEY1|KEY2);
+    UART_init(UART0,115200);//初始化串口0，对应launchpad usb接口 波特率115200
     delay_ms(1000);
-    UART_send_string(EUSCI_A0_BASE,"HELLO_EXIN\n");
-    //UART_send_Num(EUSCI_A0_BASE,80);
-    while(1);
+    UART_send_string(UART0,"HELLO_EXIN\n");
+    while(1)
+    {
+        if(!key_get(KEY1))
+        {
+            delay_ms(10);
+            if(!key_get(KEY1)){UART_send_short(UART0,0x3ff3);}//发送一个16位
+            while(!key_get(KEY1));
+        }
+        else if(!key_get(KEY2))
+       {
+           delay_ms(10);
+           if(!key_get(KEY2)){UART_send_int(UART0,0x12433ff3);}//发送一个32位
+           while(!key_get(KEY2));
+       }
+    }
 }

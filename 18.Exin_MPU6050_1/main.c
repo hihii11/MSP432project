@@ -25,12 +25,12 @@
 #include "exinlibs\headfile.h"
 
 /*角速度误差值,陀螺仪静止不动测出的角速度值*/
-#define Gyrox_erro 242//x轴角速度误差
-#define Gyroy_erro 66//y轴误差
-#define Gyroz_erro 21//z轴误差
+#define Gyrox_erro          -36   //x轴角速度误差
+#define Gyroy_erro          -27   //y轴误差
+#define Gyroz_erro          -37   //z轴误差
 
 short MPU_ID,temp,gx,gy,gz,ax,ay,az;
-float roll,yaw,pitch;
+float roll,yaw,pitch,yaw_mid;
 int8 Page=0;//当前页
 char txt[80]={};
 
@@ -52,7 +52,7 @@ void MPU_Low_fillter_Get_Angle()//低通滤波器解算数据
 void MPU6050_uart_send()//MPU6050解算的姿态发送程序
 {
     sprintf(txt,"PITCH:%.2f ,ROLL:%.2f ,YAW:%.2f \n",pitch,roll,yaw);
-    UART_send_string(EUSCI_A0_BASE,txt);
+    UART_send_string(UART0,txt);
 }
 
 
@@ -65,7 +65,7 @@ void main()
     OLED_Clear();//清屏
     MPU_init();//MPU6050寄存器初始化
     key_init(KEY1|KEY2);//初始化按键S1、S2用于翻页
-    UART0_init();//初始化串口
+    UART_init(UART0,115200);//初始化串口
     PIT_init(PIT_CHA,5);//每5ms采样一次陀螺仪数据
     Interrupt_setPriority(INT_TA0_0, 0x60);//可以调整后一项来调整定时器中断优先级
     PIT_init(PIT_CHB,500);//每500ms发送一次数据

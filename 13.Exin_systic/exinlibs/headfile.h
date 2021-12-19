@@ -53,6 +53,8 @@ extern "C"
 #include "exinHC_SR04.h"
 #include "exinIIC.h"
 #include "exinMPU6050.h"
+#include "exineeprom.h"
+#include "exinADC0832.h"
 #ifdef __cplusplus
 }
 #endif

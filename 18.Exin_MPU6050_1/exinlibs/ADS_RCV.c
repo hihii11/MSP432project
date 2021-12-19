@@ -88,7 +88,7 @@ void ADS_RCV_Init()
     Interrupt_enableInterrupt(INT_EUSCIA3);
 
 }
-
+/*
 void EUSCIA3_IRQHandler()
 {
     uint8_t status = UART_getEnabledInterruptStatus(EUSCI_A3_BASE);
@@ -116,7 +116,7 @@ void EUSCIA3_IRQHandler()
         }
 
     }
-}
+}*/
 
 #endif
 

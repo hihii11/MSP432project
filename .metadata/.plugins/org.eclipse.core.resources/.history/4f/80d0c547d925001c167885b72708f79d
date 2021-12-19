@@ -1,7 +1,0 @@
-#ifndef  _exinOscill_h
-#define  _exinOscill_h
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif

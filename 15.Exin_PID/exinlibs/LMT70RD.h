@@ -33,7 +33,7 @@
 #define LMT_CH		ADC1_CH7_B18
 
 #else
-#define LMT_CH      ADC_CHA
+#define LMT_CH      ADC_CH0
 
 #endif
 

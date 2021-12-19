@@ -84,7 +84,7 @@ void ADS_RCV_Init()
     UART_initModule(EUSCI_A3_BASE, &UART3_SET);
     UART_enableModule(EUSCI_A3_BASE);
     UART_enableInterrupt(EUSCI_A3_BASE, EUSCI_A_UART_RECEIVE_INTERRUPT);
-    UART_enableInterrupt(EUSCI_A3_BASE, EUSCI_A_UART_TRANSMIT_INTERRUPT  );
+    //UART_enableInterrupt(EUSCI_A3_BASE, EUSCI_A_UART_TRANSMIT_INTERRUPT  );
     Interrupt_enableInterrupt(INT_EUSCIA3);
 
 }

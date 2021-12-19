@@ -148,6 +148,7 @@ uint8 MPU_read_Byte(uint8 reg)
 void MPU_init()
 {
     IIC_init();//初始化IIC总线
+    IIC_reset();//复位IIC
     MPU6050_write_Byte(MPU_reg[POWER1],0x80);//复位MPU6050,向电源管理寄存器写入0x80以复位
     delay_ms(100);//等待MPU6050复位
     MPU6050_write_Byte(MPU_reg[POWER1],0x00);//启动MPU6050

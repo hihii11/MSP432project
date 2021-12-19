@@ -13,7 +13,7 @@
 
 
 uint8 dirf=0;//编码器方向标志位
-int count_max = 6;//对应要调的最多变量数
+#define count_max  6//对应要调的变量数
 
 
 int page_count = 0;
@@ -67,15 +67,15 @@ char B_flag=0;//B相触发标志位
 ----------------------------------------------------------------*/
 void bianmaqi_tiaocan()
 {
-   while(start_flag)
+     while(start_flag)
      {
        OLED_SHOW();
        if(A_flag&&!B_flag&&IRQ3_5flag&&IRQ4_6flag)
        {  dirf=2;A_flag=0;IRQ3_5flag=0;IRQ4_6flag=0;}
-       if(!A_flag&&B_flag&&IRQ3_5flag&&IRQ4_6flag)
+       else if(!A_flag&&B_flag&&IRQ3_5flag&&IRQ4_6flag)
        {  dirf=3;B_flag=0;IRQ3_5flag=0;IRQ4_6flag=0;}
        if(dirf==2)
-        {
+       {
           dirf=0;
           if(count == 0)
           {testA++;}
@@ -91,9 +91,9 @@ void bianmaqi_tiaocan()
           {/*添加调参变量*/}
           else if(count == 6)
           {/*添加调参变量*/}
-        }
-        if(dirf==3)
-        {
+       }
+       if(dirf==3)
+       {
           dirf=0;
           if(count == 0)
           {testA--;}
@@ -139,8 +139,8 @@ void Rotate_INIT()
     gpio_init(GPIO_PORT_P3, GPIO_PIN7,GPO,1);
    // gpio_init(GPIO_PORT_P3, GPIO_PIN5,GPO,1);
 
-    gpio_interrupt_INIT(GPIO_PORT_P4, GPIO_PIN6,FALLING);//A相
-    gpio_interrupt_INIT(GPIO_PORT_P3, GPIO_PIN5,FALLING);//B相
+    gpio_interrupt_INIT(GPIO_PORT_P4, GPIO_PIN6,RISING);//A相
+    gpio_interrupt_INIT(GPIO_PORT_P3, GPIO_PIN5,RISING);//B相
     key_init(KEY1|KEY2|KEY3|KEY4);
 }
 
