@@ -26,9 +26,18 @@ typedef enum{
     GPI,//下降沿
     GPO//上升沿
 }GPIO_DIR_MODE;//PWM(电机)双通道输出枚举A,B为双通道口,C为单通道
+extern void gpio_set_Asout(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_set_Asin(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_set_High(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_set_Low(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_enable_Ren(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_disable_Ren(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_enable_IRQ();
+extern void gpio_disable_IRQ(uint_fast8_t selectedPort,uint_fast16_t selectedPins);
+extern void gpio_clr_GPIOIRQFLG(uint_fast8_t selectedPort);
+
 
 extern void gpio_toggle(uint_fast8_t selectedPort, uint_fast16_t selectedPins);
-extern void gpio_INT_EN(uint_fast8_t selectedPort);
 extern void gpio_init(uint_fast8_t selectedPort,uint_fast16_t selectedPins,GPIO_DIR_MODE MDOE,unsigned int out_value);
 extern void gpio_interrupt_INIT(uint_fast8_t selectedPort,uint_fast16_t selectedPins,GPIO_INT_MODE mode);
 extern void gpio_edg_sel(uint_fast8_t selectedPort,uint_fast16_t selectedPins,GPIO_INT_MODE mode);

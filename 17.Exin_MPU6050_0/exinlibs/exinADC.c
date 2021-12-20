@@ -399,7 +399,7 @@ void ADC14_repeatmod_init(ADC14_CHA_eunm  ADC14_CHA,
     //_____________________
     ADC14_CHAEND_set(ADC14_CHA);//设置结束通道
     __enable_interrupt();//打开全局中断
-    NVIC->ISER[0] = 1 << ((ADC14_IRQn) & 31);//设置ADC14中断优先级
+    NVIC->ISER[0] = 1 << ((ADC14_IRQn) & 31);//使能ADC14中断
     ADC14_CLK_sel(ADC14_CLK,ADC14_DIV);//进行ADC时钟初始化
     //将ADC14配置为顺序转换
     ADC14->CTL0 &=~ADC14_CTL0_SHT0_2;//定义采样周期数

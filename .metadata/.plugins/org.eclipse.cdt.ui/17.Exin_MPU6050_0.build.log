@@ -3,18 +3,18 @@
 
 "D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
  
+Building file: "../exinlibs/ADS_RCV.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/ADS_RCV.d_raw" --obj_directory="exinlibs"  "../exinlibs/ADS_RCV.c"
+"../exinlibs/ADS_RCV.c", line 126: warning #179-D: variable "count_NF" was declared but never referenced
+Finished building: "../exinlibs/ADS_RCV.c"
+ 
 Building file: "../system_msp432p401r.c"
 Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="system_msp432p401r.d_raw"  "../system_msp432p401r.c"
 "../system_msp432p401r.c", line 156: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
 "../system_msp432p401r.c", line 189: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
 Finished building: "../system_msp432p401r.c"
- 
-Building file: "../exinlibs/ADS_RCV.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/ADS_RCV.d_raw" --obj_directory="exinlibs"  "../exinlibs/ADS_RCV.c"
-"../exinlibs/ADS_RCV.c", line 126: warning #179-D: variable "count_NF" was declared but never referenced
-Finished building: "../exinlibs/ADS_RCV.c"
  
 Building file: "../exinlibs/ADS1292.c"
 Invoking: ARM Compiler
@@ -241,6 +241,7 @@ Invoking: ARM Compiler
 "..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/OV_RCV.c", line 52: warning #225-D: function "UART2_init" declared implicitly
 "../exinlibs/OV_RCV.c", line 112: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
 "../exinlibs/OV_RCV.c", line 114: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
 "../exinlibs/OV_RCV.c", line 116: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
@@ -367,7 +368,8 @@ Invoking: ARM Compiler
 "..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"../exinlibs/exinADC.c", line 140: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../exinlibs/exinADC.c", line 137: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../exinlibs/exinADC.c", line 431: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
@@ -403,6 +405,77 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/exinADC.c"
+ 
+Building file: "../exinlibs/exinADC0832.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinADC0832.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinADC0832.c"
+"../exinlibs/exinADC0832.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/exinADC0832.c", line 230: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 232: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 221: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 246: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 248: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 237: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 265: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 267: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 262: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 283: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 285: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinADC0832.c", line 280: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinADC0832.c"
  
 Building file: "../exinlibs/exinHC_SR04.c"
 Invoking: ARM Compiler
@@ -533,6 +606,78 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/exinIIC.c"
  
+Building file: "../exinlibs/exinMPU6050.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinMPU6050.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinMPU6050.c"
+"../exinlibs/exinMPU6050.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/exinMPU6050.c", line 159: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinMPU6050.c", line 193: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinMPU6050.c", line 240: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinMPU6050.c", line 263: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinMPU6050.c", line 331: warning #551-D: variable "angle" is used before its value is set
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 264 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 317 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 318 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 319 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 321 (col. 14): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 322 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 323 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinMPU6050.c", line 331 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinMPU6050.c"
+ 
 Building file: "../exinlibs/exin_pit.c"
 Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exin_pit.d_raw" --obj_directory="exinlibs"  "../exinlibs/exin_pit.c"
@@ -653,10 +798,10 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/exinadjust.c"
  
-Building file: "../exinlibs/exinMPU6050.c"
+Building file: "../exinlibs/exineeprom.c"
 Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinMPU6050.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinMPU6050.c"
-"../exinlibs/exinMPU6050.c", line 6: warning #9-D: nested comment is not allowed
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exineeprom.d_raw" --obj_directory="exinlibs"  "../exinlibs/exineeprom.c"
+"../exinlibs/exineeprom.c", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
@@ -676,11 +821,15 @@ Invoking: ARM Compiler
 "..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
 "..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"../exinlibs/exinMPU6050.c", line 159: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinMPU6050.c", line 193: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinMPU6050.c", line 240: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinMPU6050.c", line 263: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinMPU6050.c", line 331: warning #551-D: variable "angle" is used before its value is set
+"../exinlibs/exineeprom.c", line 115: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 147: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 137: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 171: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 172: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 166: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 205: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 406: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exineeprom.c", line 488: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
@@ -715,133 +864,12 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 264 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 317 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 318 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 319 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 321 (col. 14): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 322 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 323 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinMPU6050.c", line 331 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exinMPU6050.c"
- 
-Building file: "../exinlibs/exingpio.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exingpio.d_raw" --obj_directory="exinlibs"  "../exinlibs/exingpio.c"
-"../exinlibs/exingpio.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exingpio.c"
- 
-Building file: "../exinlibs/exinisr.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinisr.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinisr.c"
-"../exinlibs/exinisr.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exinisr.c"
+"../exinlibs/exineeprom.c", line 365 (col. 7): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exineeprom.c", line 368 (col. 28): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exineeprom.c", line 616 (col. 8): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exineeprom.c", line 624 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exineeprom.c", line 628 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exineeprom.c"
  
 Building file: "../exinlibs/exinencoder.c"
 Invoking: ARM Compiler
@@ -923,6 +951,124 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/exinencoder.c"
+ 
+Building file: "../exinlibs/exinisr.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinisr.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinisr.c"
+"../exinlibs/exinisr.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinisr.c"
+ 
+Building file: "../exinlibs/exingpio.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exingpio.d_raw" --obj_directory="exinlibs"  "../exinlibs/exingpio.c"
+"../exinlibs/exingpio.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exingpio.c"
  
 Building file: "../exinlibs/exinkey.c"
 Invoking: ARM Compiler
@@ -1108,129 +1254,6 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/exinpwm.c"
  
-Building file: "../exinlibs/exinsystem.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinsystem.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinsystem.c"
-"../exinlibs/exinsystem.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"../exinlibs/exinsystem.c", line 29: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"../exinlibs/exinsystem.c", line 47: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
-"../exinlibs/exinsystem.c", line 49: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
-"../exinlibs/exinsystem.c", line 194: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exinsystem.c", line 138 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exinsystem.c"
- 
-Building file: "../exinlibs/exinuart.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinuart.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinuart.c"
-"../exinlibs/exinuart.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exinuart.c"
- 
 Building file: "../exinlibs/exinsteer.c"
 Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinsteer.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinsteer.c"
@@ -1366,6 +1389,140 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/serial.c"
  
+Building file: "../exinlibs/exinsystem.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinsystem.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinsystem.c"
+"../exinlibs/exinsystem.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/exinsystem.c", line 29: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../exinlibs/exinsystem.c", line 155: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinsystem.c", line 157: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinsystem.c", line 298: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinsystem.c", line 242 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinsystem.c"
+ 
+Building file: "../exinlibs/exinuart.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinuart.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinuart.c"
+"../exinlibs/exinuart.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/exinuart.c", line 192: remark #1528-D: (ULP 3.1) Detected flag polling using EUSCI_A_IFG_TXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinuart.c", line 196: remark #1528-D: (ULP 3.1) Detected flag polling using EUSCI_A_IFG_TXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinuart.c", line 200: remark #1528-D: (ULP 3.1) Detected flag polling using EUSCI_A_IFG_TXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinuart.c", line 204: remark #1528-D: (ULP 3.1) Detected flag polling using EUSCI_A_IFG_TXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../exinlibs/exinuart.c", line 221: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinuart.c", line 222: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinuart.c", line 223: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinuart.c", line 224: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"../exinlibs/exinuart.c", line 254: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinuart.c", line 136 (col. 21): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinuart.c", line 137 (col. 21): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinuart.c"
+ 
 Building file: "../exinlibs/oled.c"
 Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/oled.d_raw" --obj_directory="exinlibs"  "../exinlibs/oled.c"
@@ -1450,150 +1607,6 @@ Invoking: ARM Compiler
 "D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 "../exinlibs/oled.c", line 248 (col. 12): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
 Finished building: "../exinlibs/oled.c"
- 
-Building file: "../exinlibs/exinADC0832.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinADC0832.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinADC0832.c"
-"../exinlibs/exinADC0832.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"../exinlibs/exinADC0832.c", line 230: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 232: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 221: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 246: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 248: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 237: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 265: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 267: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 262: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 283: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 285: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exinADC0832.c", line 280: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exinADC0832.c"
- 
-Building file: "../exinlibs/exineeprom.c"
-Invoking: ARM Compiler
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/17.Exin_MPU6050_0" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exineeprom.d_raw" --obj_directory="exinlibs"  "../exinlibs/exineeprom.c"
-"../exinlibs/exineeprom.c", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exin_pit.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
-"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
-"../exinlibs/exineeprom.c", line 115: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 147: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 137: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 171: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 172: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 166: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 205: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 406: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"../exinlibs/exineeprom.c", line 488: remark #2624-D: (ULP 5.4) Detected an assignment to a type with size less than int. To avoid unnecessary sign extension, use int-sized types for local varaibles and convert to smaller types for static storage.
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exineeprom.c", line 365 (col. 7): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exineeprom.c", line 368 (col. 28): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exineeprom.c", line 616 (col. 8): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exineeprom.c", line 624 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-"../exinlibs/exineeprom.c", line 628 (col. 17): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
-Finished building: "../exinlibs/exineeprom.c"
  
 Building target: "17.Exin_MPU6050_0.out"
 Invoking: ARM Linker
