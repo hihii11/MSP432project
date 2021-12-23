@@ -63,7 +63,8 @@ exinlibs/OV_RCV.obj: ../exinlibs/exinisr.h
 exinlibs/OV_RCV.obj: ../exinlibs/exingpio.h
 exinlibs/OV_RCV.obj: ../exinlibs/dat.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinpwm.h
-exinlibs/OV_RCV.obj: ../exinlibs/exin_pit.h
+exinlibs/OV_RCV.obj: ../exinlibs/exinTimerA.h
+exinlibs/OV_RCV.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinADC.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinmotor.h
 exinlibs/OV_RCV.obj: ../exinlibs/oled.h
@@ -147,7 +148,8 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
 ../exinlibs/exinpwm.h: 
-../exinlibs/exin_pit.h: 
+../exinlibs/exinTimerA.h: 
+../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
 ../exinlibs/oled.h: 

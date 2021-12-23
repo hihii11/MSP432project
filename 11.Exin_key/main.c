@@ -23,7 +23,7 @@ void main()
     system_init(0);
     set_DCO_48MH();
     OLED_Init();
-    gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,1);
+    gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,0);
     gpio_interrupt_INIT(GPIO_PORT_P1,GPIO_PIN1,FALLING);//ÏÂ½µÑØ´¥·¢
     key_init(KEY1|KEY2|KEY3|KEY4);
     key_test();

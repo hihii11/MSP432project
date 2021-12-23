@@ -80,7 +80,7 @@ void oscil_print(int speed , char MODE)
 
         DATA[3] = 0xFC;
         DATA[4] = 0x03;
-        UART_send_string(EUSCI_A0_BASE, DATA);
+        UART_send_string(UART0, DATA);
     }
     if(MODE==1)//Exin_串口助手
     {
@@ -98,7 +98,7 @@ void oscil_print(int speed , char MODE)
         DATA[8] = 0x00;//通道6
         DATA[9] = 0x00;//通道7
         DATA[10] = 0x00;//通道8
-        UART_send_string(EUSCI_A0_BASE, DATA);
+        UART_send_string(UART0, DATA);
     }
 
 }
@@ -108,7 +108,7 @@ void main()
     system_init(1);//初始化滴答计时器
     set_DCO_48MH();//注意这边的函数与其他例程不同，其他例程SMCLK为3MHZ，为了得到更高占空比可调范围，以及更高的电机基频率，本例程分频SMCLK为24MHZ
     delay_ms(200);//等待外设上电
-    UART0_init(); //初始化串口0，用于上位机波形分析与调试
+    UART_init(UART0,115200); //初始化串口0，用于上位机波形分析与调试
     OLED_Init();   //OLED初始化
     OLED_Clear();
     //电机相关初始化
@@ -122,7 +122,7 @@ void main()
 
     //中断初始化
     //定时器中断用于严格控制PID时间
-    PIT_init(PIT_CHD,2);//初始化D通道,扫描时间为2ms，查看isr A3中断！
+    TimerA_CCR0INT_init(TIMERA_A3 , 2);//初始化D通道,扫描时间为2ms，查看isr A3中断！
     Interrupt_setPriority(INT_TA3_0, 0x60);//可以调整后一项来调整定时器中断优先级
 
 

@@ -16,8 +16,9 @@ C_SRCS += \
 ../exinlibs/exinHC_SR04.c \
 ../exinlibs/exinIIC.c \
 ../exinlibs/exinMPU6050.c \
+../exinlibs/exinTimerA.c \
+../exinlibs/exinTimerAINT.c \
 ../exinlibs/exin_library_map_guide.c \
-../exinlibs/exin_pit.c \
 ../exinlibs/exinadjust.c \
 ../exinlibs/exincitysensor.c \
 ../exinlibs/exineeprom.c \
@@ -45,8 +46,9 @@ C_DEPS += \
 ./exinlibs/exinHC_SR04.d \
 ./exinlibs/exinIIC.d \
 ./exinlibs/exinMPU6050.d \
+./exinlibs/exinTimerA.d \
+./exinlibs/exinTimerAINT.d \
 ./exinlibs/exin_library_map_guide.d \
-./exinlibs/exin_pit.d \
 ./exinlibs/exinadjust.d \
 ./exinlibs/exincitysensor.d \
 ./exinlibs/exineeprom.d \
@@ -74,8 +76,9 @@ OBJS += \
 ./exinlibs/exinHC_SR04.obj \
 ./exinlibs/exinIIC.obj \
 ./exinlibs/exinMPU6050.obj \
+./exinlibs/exinTimerA.obj \
+./exinlibs/exinTimerAINT.obj \
 ./exinlibs/exin_library_map_guide.obj \
-./exinlibs/exin_pit.obj \
 ./exinlibs/exinadjust.obj \
 ./exinlibs/exincitysensor.obj \
 ./exinlibs/exineeprom.obj \
@@ -103,8 +106,9 @@ OBJS__QUOTED += \
 "exinlibs\exinHC_SR04.obj" \
 "exinlibs\exinIIC.obj" \
 "exinlibs\exinMPU6050.obj" \
+"exinlibs\exinTimerA.obj" \
+"exinlibs\exinTimerAINT.obj" \
 "exinlibs\exin_library_map_guide.obj" \
-"exinlibs\exin_pit.obj" \
 "exinlibs\exinadjust.obj" \
 "exinlibs\exincitysensor.obj" \
 "exinlibs\exineeprom.obj" \
@@ -132,8 +136,9 @@ C_DEPS__QUOTED += \
 "exinlibs\exinHC_SR04.d" \
 "exinlibs\exinIIC.d" \
 "exinlibs\exinMPU6050.d" \
+"exinlibs\exinTimerA.d" \
+"exinlibs\exinTimerAINT.d" \
 "exinlibs\exin_library_map_guide.d" \
-"exinlibs\exin_pit.d" \
 "exinlibs\exinadjust.d" \
 "exinlibs\exincitysensor.d" \
 "exinlibs\exineeprom.d" \
@@ -161,8 +166,9 @@ C_SRCS__QUOTED += \
 "../exinlibs/exinHC_SR04.c" \
 "../exinlibs/exinIIC.c" \
 "../exinlibs/exinMPU6050.c" \
+"../exinlibs/exinTimerA.c" \
+"../exinlibs/exinTimerAINT.c" \
 "../exinlibs/exin_library_map_guide.c" \
-"../exinlibs/exin_pit.c" \
 "../exinlibs/exinadjust.c" \
 "../exinlibs/exincitysensor.c" \
 "../exinlibs/exineeprom.c" \

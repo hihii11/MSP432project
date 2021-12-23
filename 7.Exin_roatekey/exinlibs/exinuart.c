@@ -23,10 +23,10 @@ void UART_IRQ_set(UART_CHA_enum UART_CHA)
 {
     switch(UART_CHA)
     {
-           case(UART0):EUSCI_A0->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA0_IRQn) & 31); break;
-           case(UART1):EUSCI_A1->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA1_IRQn) & 31); break;
-           case(UART2):EUSCI_A2->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA2_IRQn) & 31); break;
-           case(UART3):EUSCI_A3->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA3_IRQn) & 31); break;
+           case(UART0):EUSCI_A0->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA0_IRQn) & 31); break;
+           case(UART1):EUSCI_A1->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA1_IRQn) & 31); break;
+           case(UART2):EUSCI_A2->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA2_IRQn) & 31); break;
+           case(UART3):EUSCI_A3->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA3_IRQn) & 31); break;
            default:;
     }
 }

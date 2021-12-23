@@ -66,9 +66,9 @@ void main()
     MPU_init();//MPU6050寄存器初始化
     key_init(KEY1|KEY2);//初始化按键S1、S2用于翻页
     UART_init(UART0,115200);//初始化串口
-    PIT_init(PIT_CHA,5);//每5ms采样一次陀螺仪数据
+    TimerA_CCR0INT_init(TIMERA_A0 , 5);//每5ms采样一次陀螺仪数据
     Interrupt_setPriority(INT_TA0_0, 0x60);//可以调整后一项来调整定时器中断优先级
-    PIT_init(PIT_CHB,500);//每500ms发送一次数据
+    TimerA_CCR0INT_init(TIMERA_A1 , 500);//每500ms发送一次数据
     Interrupt_setPriority(INT_TA1_0, 0x20);//可以调整后一项来调整定时器中断优先级
 
     while(1)

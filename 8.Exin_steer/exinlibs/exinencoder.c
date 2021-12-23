@@ -204,29 +204,6 @@ void Encoder_clr(Encoder_Channel_enum CHI)
               }
 }
 
-// Timer A0 interrupt service routine
-void TA0_N_IRQHandler(void)
-{
-    volatile uint32_t i;
-
-    if (timerAcapturePointer >= NUMBER_TIMER_CAPTURES)
-    {
-
-
-        timerAcapturePointer=0;
-            P1->OUT ^= 0x01;                         // Toggle P1.0 (LED)
-
-    }
-    else
-    {
-        //encoder++;
-        //dir=gpio_get(GPIO_PORT_P3,GPIO_PIN0);
-        timerAcaptureValues[timerAcapturePointer++] = TIMER_A0->CCR[2];
-    }
-
-    // Clear the interrupt flag
-    TIMER_A0->CCTL[2] &= ~(TIMER_A_CCTLN_CCIFG);
-}
 
 /****************
  * ²âÊÔº¯Êý
@@ -268,8 +245,7 @@ void ENCODER_TEST()
 
    encoder_init(ENCODER_CHB,INT);
    //Interrupt_setPriority(INT_PORT6,0xE0);
-   PIT_init(PIT_CHD,100);
-   PIT_init(PIT_CHA,110);
+   TimerA_CCR0INT_init(TIMERA_A3 , 100);
    while(1)
    {
        OLED_show();

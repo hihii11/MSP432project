@@ -17,8 +17,15 @@ GPIO¿˝≥Ã
 void main()
 {
     system_init(0);
-    gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,1);//µ„¡¡1.0 LED
-    while(1);
+    set_DCO_48MH();
+    gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,0);//µ„¡¡1.0 LED
+    while(1)
+    {
+        delay_ms(500);
+        gpio_set(GPIO_PORT_P1,GPIO_PIN0,1);
+        delay_ms(500);
+        gpio_set(GPIO_PORT_P1,GPIO_PIN0,0);
+    }
 }
 
 

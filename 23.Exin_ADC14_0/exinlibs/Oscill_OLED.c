@@ -139,7 +139,7 @@ void Oscill_test1()
                   Oscill_dataget(-10);
               if(countt==30)
                   countt=0;*/
-              Oscill_show(&oscill1,0,0);
+              Oscill_show(&oscill1,1,0);
 }
 int data_test=0;
 int cott2=0;

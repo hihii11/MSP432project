@@ -62,7 +62,8 @@ exinlibs/exinencoder.obj: ../exinlibs/exinisr.h
 exinlibs/exinencoder.obj: ../exinlibs/exingpio.h
 exinlibs/exinencoder.obj: ../exinlibs/dat.h
 exinlibs/exinencoder.obj: ../exinlibs/exinpwm.h
-exinlibs/exinencoder.obj: ../exinlibs/exin_pit.h
+exinlibs/exinencoder.obj: ../exinlibs/exinTimerA.h
+exinlibs/exinencoder.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/exinencoder.obj: ../exinlibs/exinADC.h
 exinlibs/exinencoder.obj: ../exinlibs/exinmotor.h
 exinlibs/exinencoder.obj: ../exinlibs/oled.h
@@ -145,7 +146,8 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
 ../exinlibs/exinpwm.h: 
-../exinlibs/exin_pit.h: 
+../exinlibs/exinTimerA.h: 
+../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
 ../exinlibs/oled.h: 

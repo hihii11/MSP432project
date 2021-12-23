@@ -32,14 +32,14 @@ void Oscill_send(unsigned char data)
     buf[2] = data;
     buf[3] = 0xfc;
     buf[4] = 0x03;
-    UART_send_string(EUSCI_A0_BASE,buf);
+    UART_send_string(UART0,buf);
 }
 
 
 void main()
 {
     system_init(0);
-    UART0_init();
+    UART_init(UART0,115200);
    //ADCÒý½Å³õÊ¼»¯
     ADC0832_init(CH2);
     while(1)

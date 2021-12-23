@@ -23,10 +23,10 @@ void UART_IRQ_set(UART_CHA_enum UART_CHA)
 {
     switch(UART_CHA)
     {
-           case(UART0):EUSCI_A0->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA0_IRQn) & 31); break;
-           case(UART1):EUSCI_A1->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA1_IRQn) & 31); break;
-           case(UART2):EUSCI_A2->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA2_IRQn) & 31); break;
-           case(UART3):EUSCI_A3->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] = 1 << ((EUSCIA3_IRQn) & 31); break;
+           case(UART0):EUSCI_A0->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA0_IRQn) & 31); break;
+           case(UART1):EUSCI_A1->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA1_IRQn) & 31); break;
+           case(UART2):EUSCI_A2->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA2_IRQn) & 31); break;
+           case(UART3):EUSCI_A3->CTLW0 |= EUSCI_A_CTLW0_SWRST;NVIC->ISER[0] |= 1 << ((EUSCIA3_IRQn) & 31); break;
            default:;
     }
 }
@@ -280,8 +280,9 @@ void EUSCIA0_IRQHandler(void)
 {
     if (EUSCI_A0->IFG & EUSCI_A_UART_RECEIVE_INTERRUPT_FLAG)
     {
-          UART0_RXDat = UART_recv_Byte(UART0);//从UART0接收数据
-          UART_send_Byte(UART0,UART0_RXDat);//将接收到的数据重新发回上位机
+        /***********************以下添加用户的处理函数*********************/
+
+        /***********************用户处理函数添加结束行*********************/
     }
 }
 /*************************************************
