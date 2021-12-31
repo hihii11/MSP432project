@@ -166,7 +166,7 @@ void set_DCO_48MH()
      CS_unlocked();
      DCO_set(DCO_48_0M);//设置DCO时钟到48Mhz
      MCLK_set(DCOCLK,CLK_DIV1);//设置MCL时钟源为DCOCLK 分频为1即f(MCLK) = f(DCO)
-     SMCLK_set(DCOCLK,CLK_DIV2);//设置SMCLK时钟源为DCOCLK 分频16即f(SMCLK) = f(DCO)/16
+     SMCLK_set(DCOCLK,CLK_DIV2);//设置SMCLK时钟源为DCOCLK 分频2即f(SMCLK) = 24Mhz
      CS_locked();
 }
 

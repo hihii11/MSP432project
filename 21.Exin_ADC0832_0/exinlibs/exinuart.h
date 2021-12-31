@@ -18,14 +18,8 @@ extern "C"
 /******************
  * 常用波特率配置
  *****************/
-//DCO为48Mhz
-//在   CS->CTL1 = CS->CTL1 & ~(CS_CTL1_SELM_MASK | CS_CTL1_DIVM_MASK) |
-//CS_CTL1_SELM_3|CS_CTL1_DIVS__16;这一项中  由于MCLK分频为CS_CTL1_DIVS__16，即16分频，所以MCLK为3000000hz
+/****************************************************波特率参数表*****************************************/
 
-//若修改了主时钟或者MCLK分配时钟，此处宏定义应修改
-
-/*******************************************************波特率参数表*****************************************/
-#define SMCLK_FRE            3000000//串口使用MCLK时钟具体MCLK分频可以查看exinsystem.c
 //任意波特率配置
 //填写baunds 得到配置
 #define BAUNDS_BF           2400    //此处填写波特率  波特率必须小于MCLK_FRE/2
@@ -69,6 +63,7 @@ extern void UART_USIC_init(UART_CHA_enum UART_CHA);
 extern void UART_PIN_sel(UART_CHA_enum UART_CHA);
 extern void UART_CLK_sel(UART_CHA_enum UART_CHA,UART_CLK_enum UART_CLK);
 extern void UART_Baunds_set(UART_CHA_enum UART_CHA,int Baunds );
+extern uint8 UART_BRS_val(int Baunds);
 extern void UART_init(UART_CHA_enum UART_CHA,int Baunds );
 extern void UART_send_Byte(UART_CHA_enum UART_CHA,uint8 Data);
 extern uint8 UART_recv_Byte(UART_CHA_enum UART_CHA);

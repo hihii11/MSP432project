@@ -36,9 +36,14 @@ typedef enum{
 }TIMERA_CLK_enum;//定时器可选时钟枚举
 
 typedef enum{
+    TIMERA_DIV0,
     TIMERA_DIV1,
     TIMERA_DIV2,
+    TIMERA_DIV3,
     TIMERA_DIV4,
+    TIMERA_DIV5,
+    TIMERA_DIV6,
+    TIMERA_DIV7,
     TIMERA_DIV8,
     TIMERA_DEFAULTDIV
 }TIMERA_DIV_enum;//定时器分频系数枚举
@@ -56,7 +61,7 @@ typedef enum{
     TIMERA_TA0,
     TIMERA_TAN
 }TIMERA_NVIC_enum;//定时器A子级中断枚举
-extern void TimerA_CLK_set(TIMERA_enum TIMER,TIMERA_CLK_enum TIMERA_CLK,TIMERA_DIV_enum TIMERA_DIV);
+void TimerA_CLK_set(TIMERA_enum TIMER,TIMERA_CLK_enum TIMERA_CLK,TIMERA_DIV_enum TIMERA_IDDIV,TIMERA_DIV_enum TIMERA_IDEXDIV);
 extern void TimerA_enable_CCRnIRQ(TIMERA_enum TIMER,TIMERA_CCR_enum TIMERA_CCR);
 extern void TimerA_NVIC_IRQ_set(TIMERA_enum TIMER,TIMERA_NVIC_enum TIMERA_NVIC);
 extern void TimerA_MOD_sel(TIMERA_enum TIMER,TIMERA_MOD_enum TIMERA_MODE);

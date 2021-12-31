@@ -50,18 +50,31 @@ void TimerA_MOD_sel(TIMERA_enum TIMER,TIMERA_MOD_enum TIMERA_MODE)
  *          TIMERA_DIV:可选的时钟分频系数，在exinTimerA.h文件中枚举
  * 注意事项:无
  *************************************************/
-void TimerA_CLK_set(TIMERA_enum TIMER,TIMERA_CLK_enum TIMERA_CLK,TIMERA_DIV_enum TIMERA_DIV)
+void TimerA_CLK_set(TIMERA_enum TIMER,TIMERA_CLK_enum TIMERA_CLK,TIMERA_DIV_enum TIMERA_IDDIV,TIMERA_DIV_enum TIMERA_IDEXDIV)
 {
     uint16 CLK=0x0000;
-    uint16 DIV = 0x0000;
-    switch(TIMERA_DIV)
+    uint16 ID_DIV = 0x0000;
+    uint16 IDEX_DIV = 0x0000;
+    switch(TIMERA_IDDIV)
    {
-       case(TIMERA_DIV1):DIV = TIMER_A_CTL_ID_0;break;
-       case(TIMERA_DIV2):DIV = TIMER_A_CTL_ID_1;break;
-       case(TIMERA_DIV4):DIV = TIMER_A_CTL_ID_2;break;
-       case(TIMERA_DIV8):DIV = TIMER_A_CTL_ID_3;break;
-       default:DIV = TIMER_A_CTL_ID_0;
+       case(TIMERA_DIV1):ID_DIV = TIMER_A_CTL_ID_0;break;//1
+       case(TIMERA_DIV2):ID_DIV = TIMER_A_CTL_ID_1;break;//2
+       case(TIMERA_DIV4):ID_DIV = TIMER_A_CTL_ID_2;break;//4
+       case(TIMERA_DIV8):ID_DIV = TIMER_A_CTL_ID_3;break;//8
+       default:ID_DIV = TIMER_A_CTL_ID_0;
    }
+    switch(TIMERA_IDEXDIV)
+  {
+      case(TIMERA_DIV1):IDEX_DIV = TIMER_A_EX0_TAIDEX_0;break;//1
+      case(TIMERA_DIV2):IDEX_DIV = TIMER_A_EX0_TAIDEX_1;break;//2
+      case(TIMERA_DIV3):IDEX_DIV = TIMER_A_EX0_TAIDEX_2;break;//3
+      case(TIMERA_DIV4):IDEX_DIV = TIMER_A_EX0_TAIDEX_3;break;//4
+      case(TIMERA_DIV5):IDEX_DIV = TIMER_A_EX0_TAIDEX_4;break;//5
+      case(TIMERA_DIV6):IDEX_DIV = TIMER_A_EX0_TAIDEX_5;break;//6
+      case(TIMERA_DIV7):IDEX_DIV = TIMER_A_EX0_TAIDEX_6;break;//7
+      case(TIMERA_DIV8):IDEX_DIV = TIMER_A_EX0_TAIDEX_7;break;//8
+      default:IDEX_DIV = TIMER_A_EX0_TAIDEX_0;
+  }
     switch(TIMERA_CLK)
     {
         case(TIMERA_TACLK):CLK = TIMER_A_CTL_SSEL__TACLK;break;
@@ -72,10 +85,18 @@ void TimerA_CLK_set(TIMERA_enum TIMER,TIMERA_CLK_enum TIMERA_CLK,TIMERA_DIV_enum
     }
     switch(TIMER)
     {
-        case(TIMERA_A0):TIMER_A0->CTL |= CLK|DIV;break;
-        case(TIMERA_A1):TIMER_A1->CTL |= CLK|DIV;break;
-        case(TIMERA_A2):TIMER_A2->CTL |= CLK|DIV;break;
-        case(TIMERA_A3):TIMER_A3->CTL |= CLK|DIV;break;
+        case(TIMERA_A0):TIMER_A0->CTL |= CLK|ID_DIV;
+                        TIMER_A0->EX0 |= IDEX_DIV;
+                        break;
+        case(TIMERA_A1):TIMER_A1->CTL |= CLK|ID_DIV;
+                        TIMER_A1->EX0 |= IDEX_DIV;
+                        break;
+        case(TIMERA_A2):TIMER_A2->CTL |= CLK|ID_DIV;
+                        TIMER_A2->EX0 |= IDEX_DIV;
+                        break;
+        case(TIMERA_A3):TIMER_A3->CTL |= CLK|ID_DIV;
+                        TIMER_A3->EX0 |= IDEX_DIV;
+                        break;
         default:;
     }
 }

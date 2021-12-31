@@ -12,6 +12,51 @@
 volatile uint8_t UART3_RXDat= 0;
 volatile uint8_t UART2_RXDat= 0;
 volatile uint8_t UART0_RXDat= 0;
+volatile uint32  BRCLK      = 0;
+//小数点存储表
+const float FP_N[40] ={
+                       0.0000,  0.5002,
+                       0.0529,  0.5715,
+                       0.0715,  0.6003,
+                       0.0835,  0.6254,
+                       0.1001,  0.6432,
+                       0.1252,  0.6667,
+                       0.1430,  0.7001,
+                       0.1670,  0.7147,
+                       0.2147,  0.7503,
+                       0.2224,  0.7861,
+                       0.2503,  0.8004,
+                       0.3000,  0.8333,
+                       0.3335,  0.8464,
+                       0.3575,  0.8572,
+                       0.3753,  0.8751,
+                       0.4003,  0.9004,
+                       0.4286,  0.9170,
+                       0.4378,  0.9288
+};
+
+
+//BRS参数存储表
+const uint8 BRS[40] ={
+                       0x00,  0xAA,
+                       0x01,  0x6B,
+                       0x02,  0xAD,
+                       0x04,  0xB5,
+                       0x08,  0xB6,
+                       0x10,  0xD6,
+                       0x20,  0xB7,
+                       0x11,  0xBB,
+                       0x21,  0xDD,
+                       0x22,  0xED,
+                       0x44,  0xEE,
+                       0x25,  0xBF,
+                       0x49,  0xDF,
+                       0x4A,  0xEF,
+                       0x52,  0xF7,
+                       0x92,  0xFB,
+                       0x53,  0xFD,
+                       0x55,  0xFE
+};
 
 /*************************************************
  * 函  数  名:UART_IRQ_set
@@ -121,6 +166,27 @@ void UART_CLK_sel(UART_CHA_enum UART_CHA,UART_CLK_enum UART_CLK)
     }
 }
 /*************************************************
+ * 函  数  名:UART_BRS_val
+ * 功       能:确定BRS参数值
+ * 参       数:Baunds波特率
+ * 注意事项:
+ *************************************************/
+uint8 UART_BRS_val(int Baunds)
+{
+    float NF = (float)BRCLK/Baunds - BRCLK/Baunds;
+    uint8 i;
+    for(i = 0;i<39;i++)//确定小数值范围
+    {
+        if(NF >= FP_N[i] && NF <= FP_N[i+1])
+        {
+            break;
+        }
+    }//确定浮点数位置
+    if(abs(NF - FP_N[i]) >= abs(NF - FP_N[i+1]))
+        i++;
+    return BRS[i];
+}
+/*************************************************
  * 函  数  名:UART_Baunds_set
  * 功       能:UART波特率设置
  * 参       数:UART_CHA:UART可选通道，在exinuart.h中列出
@@ -128,36 +194,72 @@ void UART_CLK_sel(UART_CHA_enum UART_CHA,UART_CLK_enum UART_CLK)
  * 注意事项:当时钟为3Mhz时，波特率最大不能超过115200
             BRDIV  = (int)(f(clk)/Baunds/16) ;比较粗略的分频系数
  *          UCxBRF = (int) (((f(clk)/Baunds/16) - BRDIV)*16+0.5)
- *          UCxBRS = (int)(((((f(clk)/Baunds/16) - BRDIV)*16+0.5) - UCxBRF)*16 + 0.5)
+ *          UCxBRS = 差表
  *************************************************/
 void UART_Baunds_set(UART_CHA_enum UART_CHA,int Baunds )
 {
-    uint16 BRDIV  = (SMCLK_FRE/Baunds)>>4;
-    uint16 UCxBRF = (int)(((float)SMCLK_FRE/Baunds/16-SMCLK_FRE/Baunds/16)*16+0.5);
-    uint16 UCxBRS = (int)(((((float)SMCLK_FRE/Baunds/16-SMCLK_FRE/Baunds/16)*16+0.5)-UCxBRF)*16+0.5);
-    switch(UART_CHA)
+    if(BRCLK == SMCLK_FRE)
     {
-            case(UART0):
-                        UCA0BR0 =  BRDIV & 0xff;
-                        UCA0BR1  = BRDIV & 0xff00;
-                        EUSCI_A0->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
-                        break;
-            case(UART1):
-                        UCA1BR0 = BRDIV & 0xff;
-                        UCA1BR1  = BRDIV & 0xff00;
-                        EUSCI_A1->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
-                        break;
-            case(UART2):
-                        UCA2BR0 = BRDIV & 0xff;
-                        UCA2BR1  = BRDIV & 0xff00;
-                        EUSCI_A2->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
-                                break;
-            case(UART3):
-                        UCA3BR0 = BRDIV & 0xff;
-                        UCA3BR1  = BRDIV & 0xff00;
-                        EUSCI_A3->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
-                        break;
-            default:;
+    //确定BRDIV
+    uint16 BRDIV  = (BRCLK/Baunds)>>4;
+    //确定BRF
+    uint16 UCxBRF = (int)(((float)BRCLK/Baunds/16-BRCLK/Baunds/16)*16+0.5);
+    //确定BRS
+    uint16 UCxBRS = UART_BRS_val(Baunds);
+        switch(UART_CHA)
+        {
+                case(UART0):
+                            UCA0BR0 =  BRDIV & 0xff;
+                            UCA0BR1  = BRDIV & 0xff00;
+                            EUSCI_A0->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
+                            break;
+                case(UART1):
+                            UCA1BR0 = BRDIV & 0xff;
+                            UCA1BR1  = BRDIV & 0xff00;
+                            EUSCI_A1->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
+                            break;
+                case(UART2):
+                            UCA2BR0 = BRDIV & 0xff;
+                            UCA2BR1  = BRDIV & 0xff00;
+                            EUSCI_A2->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
+                                    break;
+                case(UART3):
+                            UCA3BR0 = BRDIV & 0xff;
+                            UCA3BR1  = BRDIV & 0xff00;
+                            EUSCI_A3->MCTLW = UCxBRS<<8 | UCxBRF<<4 | EUSCI_A_MCTLW_OS16;
+                            break;
+                default:;
+        }
+    }
+    else if(BRCLK == ACLK_FRE){
+          //确定BRDIV
+           uint16 BRDIV  = (BRCLK/Baunds);
+           //确定BRS
+           uint16 UCxBRS = UART_BRS_val(Baunds);
+           switch(UART_CHA)
+           {
+                   case(UART0):
+                               UCA0BR0 =  BRDIV & 0xff;
+                               UCA0BR1  = BRDIV & 0xff00;
+                               EUSCI_A0->MCTLW = UCxBRS<<8 ;
+                               break;
+                   case(UART1):
+                               UCA1BR0 = BRDIV & 0xff;
+                               UCA1BR1  = BRDIV & 0xff00;
+                               EUSCI_A1->MCTLW = UCxBRS<<8 ;
+                               break;
+                   case(UART2):
+                               UCA2BR0 = BRDIV & 0xff;
+                               UCA2BR1  = BRDIV & 0xff00;
+                               EUSCI_A2->MCTLW = UCxBRS<<8 ;
+                                       break;
+                   case(UART3):
+                               UCA3BR0 = BRDIV & 0xff;
+                               UCA3BR1  = BRDIV & 0xff00;
+                               EUSCI_A3->MCTLW = UCxBRS<<8 ;
+                               break;
+                   default:;
+           }
     }
 }
 /*************************************************
@@ -172,7 +274,16 @@ void UART_init(UART_CHA_enum UART_CHA,int Baunds )
     UART_PIN_sel(UART_CHA);//初始化对应端口
     __enable_interrupt();//使能总中断
     UART_IRQ_set(UART_CHA);//设置中断优先级
-    UART_CLK_sel(UART_CHA,UART_SMCLK);//选择UART时钟为SMCLK
+    if((SMCLK_FRE/Baunds)>>4 > 0xff)
+    {
+        UART_CLK_sel(UART_CHA,UART_ACLK);//选择UART时钟为ACLK
+        BRCLK = ACLK_FRE;
+    }
+    else
+    {
+        UART_CLK_sel(UART_CHA,UART_SMCLK);//选择UART时钟为SMCLK
+        BRCLK = SMCLK_FRE;
+    }
     UART_Baunds_set(UART_CHA,Baunds);//绑定波特率
     UART_USIC_init(UART_CHA);//初始化eUSCI
     UART_IRQRX_set(UART_CHA);//接收中断使能
@@ -281,7 +392,7 @@ void EUSCIA0_IRQHandler(void)
     if (EUSCI_A0->IFG & EUSCI_A_UART_RECEIVE_INTERRUPT_FLAG)
     {
         /***********************以下添加用户的处理函数*********************/
-
+        
         /***********************用户处理函数添加结束行*********************/
     }
 }

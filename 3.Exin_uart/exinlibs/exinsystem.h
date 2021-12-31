@@ -50,6 +50,11 @@ typedef enum{
     CLK_DIV64,//64分频
     CLK_DIV128,//128分频
 }CLK_DIV_enum;//时钟信号可选分频列举
+/*******************时钟频率参数宏定义**********************/
+#define MCLK_FRE             48000000
+#define SMCLK_FRE            24000000
+#define ACLK_FRE             32768
+/**********************************************************/
 
 #define CPU_F                               ((double)48000000)//CPU主频
 #define F_Div                              CPU_F/1000/1000//分频系数

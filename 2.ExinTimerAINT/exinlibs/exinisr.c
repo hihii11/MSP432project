@@ -338,10 +338,10 @@ void TA3_N_IRQHandler(void)
 
     //TIMER_A0->CTL &=(~TIMER_A_CTL_MC__CONTINUOUS); TIMER_A3->CTL &=(~TIMER_A_CTL_MC__STOP);
     if((TIMER_A3->CCTL[TIMERA_CCR0]&TIMER_A_CCTLN_CCIFG)&&//判断中断标志位是否有效
-          (TIMER_A3->CCTL[TIMERA_CCR0]&TIMER_A_CCTLN_CCIE))//判断CCR1中断是否使能
+          (TIMER_A3->CCTL[TIMERA_CCR0]&TIMER_A_CCTLN_CCIE))//判断CCR0中断是否使能
        {
            /***************将TA3_N用作定时器中断时这几行务必保留****************/
-           TIMER_A3->CCTL[TIMERA_CCR0] &= ~TIMER_A_CCTLN_CCIFG;//清除CCR1中断标志位
+           TIMER_A3->CCTL[TIMERA_CCR0] &= ~TIMER_A_CCTLN_CCIFG;//清除CCR0中断标志位
            TimerA_CCRVAL_set(TIMERA_A3,TIMERA_CCR0,TIMER_A3->CCR[TIMERA_CCR0] + CCRn_period_val[TIMERA_A3][TIMERA_CCR0]);//更新CCR寄存器
            /***************将TA3_N用作定时器中断时这几行务必保留****************/
 

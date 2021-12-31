@@ -56,11 +56,15 @@ exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/st
 exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h
 exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h
 exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h
+exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h
+exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h
+exinlibs/LMT70RD.obj: D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinisr.h
 exinlibs/LMT70RD.obj: ../exinlibs/exingpio.h
 exinlibs/LMT70RD.obj: ../exinlibs/dat.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinpwm.h
-exinlibs/LMT70RD.obj: ../exinlibs/exin_pit.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinTimerA.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinADC.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinmotor.h
 exinlibs/LMT70RD.obj: ../exinlibs/oled.h
@@ -75,6 +79,10 @@ exinlibs/LMT70RD.obj: ../exinlibs/LMT70RD.h
 exinlibs/LMT70RD.obj: ../exinlibs/ADS1292.h
 exinlibs/LMT70RD.obj: ../exinlibs/ADS_RCV.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinHC_SR04.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinIIC.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinMPU6050.h
+exinlibs/LMT70RD.obj: ../exinlibs/exineeprom.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinADC0832.h
 
 ../exinlibs/LMT70RD.c: 
 ../exinlibs/LMT70RD.h: 
@@ -132,11 +140,15 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdlib.h:
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/string.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdio.h: 
 D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/math.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h: 
+D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h: 
 ../exinlibs/exinisr.h: 
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
 ../exinlibs/exinpwm.h: 
-../exinlibs/exin_pit.h: 
+../exinlibs/exinTimerA.h: 
+../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
 ../exinlibs/oled.h: 
@@ -151,3 +163,7 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/stdarg.h:
 ../exinlibs/ADS1292.h: 
 ../exinlibs/ADS_RCV.h: 
 ../exinlibs/exinHC_SR04.h: 
+../exinlibs/exinIIC.h: 
+../exinlibs/exinMPU6050.h: 
+../exinlibs/exineeprom.h: 
+../exinlibs/exinADC0832.h: 

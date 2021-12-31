@@ -41,7 +41,7 @@ int period_cvert(TIMERA_enum TIMERAn,int period)
  *************************************************/
 void TimerA_CCR0INT_init(TIMERA_enum TIMERAn , int period)
 {
-    TimerA_CLK_set(TIMERAn,TIMERA_ACLK,TIMERA_DIV1);//选择ACLK作为时钟，并且分频为1  32768hz
+    TimerA_CLK_set(TIMERAn,TIMERA_ACLK,TIMERA_DIV1,TIMERA_DIV1);//选择ACLK作为时钟，并且分频为ID=1 IDEX=1  32768hz
     TimerA_MOD_sel(TIMERAn,UP);//选择TimerA工作模式为UP 即计数到CCR0结束计数
     period = period_cvert(TIMERAn,period);//计算写入CCR0的数值
     //以下为中断配置
@@ -69,7 +69,7 @@ void TimerA_CCR0INT_init(TIMERA_enum TIMERAn , int period)
 uint16 CCRn_period_val[4][7] = {0};//用于存储周期参数设置
 void TimerA_CCRnINT_init(TIMERA_enum TIMERAn , TIMERA_CCR_enum TIMERA_CCR,int period)
 {
-    TimerA_CLK_set(TIMERAn,TIMERA_ACLK,TIMERA_DIV1);//选择ACLK作为时钟，并且分频为1  32768hz
+    TimerA_CLK_set(TIMERAn,TIMERA_ACLK,TIMERA_DIV1,TIMERA_DIV1);//选择ACLK作为时钟，并且分频为ID=1 IDEX=1  32768hz
     TimerA_MOD_sel(TIMERAn,CONTINUOUS);//选择TimerA工作模式为CONTINUOUS 即计数到0xFFFFh 再清零
     period = period_cvert(TIMERAn,period);
     CCRn_period_val[TIMERAn][TIMERA_CCR]=period;
@@ -78,7 +78,7 @@ void TimerA_CCRnINT_init(TIMERA_enum TIMERAn , TIMERA_CCR_enum TIMERA_CCR,int pe
    TimerA_NVIC_IRQ_set(TIMERAn,TIMERA_TAN);
    //2)允许来自CCRn的中断请求
    TimerA_enable_CCRnIRQ(TIMERAn,TIMERA_CCR);
-   //3)向CCR0写入比较值
+   //3)向CCRn写入初值值
    TimerA_CCRVAL_set(TIMERAn,TIMERA_CCR,period);
    //4)开启总中断
    __enable_interrupt();

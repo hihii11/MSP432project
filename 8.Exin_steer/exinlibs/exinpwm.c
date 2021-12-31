@@ -38,7 +38,7 @@ void pwm_clock_init()
 /**********************************/
 void pwm_init(PWMCH_enum CHI,int period,int duty)
 {
-    period=200/(float)(period)*15000;
+    period=SMCLK_FRE/(float)(period);
     switch(CHI)
     {
     case( pwm_CHA):

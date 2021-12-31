@@ -38,7 +38,7 @@ void pwm_clock_init()
 /**********************************/
 void pwm_init(PWMCH_enum CHI,int period,int duty)
 {
-    period=200/(float)(period)*15000*8;
+    period=SMCLK_FRE/(float)(period);
     switch(CHI)
     {
     case( pwm_CHA):
@@ -94,31 +94,31 @@ void pwm_init(PWMCH_enum CHI,int period,int duty)
               TIMER_A0->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
               break;
     case( pwm_CHE):
-              TA2CCR0 = period-1; // PWM周期T=512us
-              P5->DIR |= BIT6;
-              P5->SEL0 |= BIT6;
-              pwm_clock_init();
-              TIMER_A2->CCR[0] = period-1;
-              TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
+                  TA2CCR0 = period-1; // PWM周期T=512us
+                  P5->DIR |= BIT6;
+                  P5->SEL0 |= BIT6;
+                  pwm_clock_init();
+                  TIMER_A2->CCR[0] = period-1;
+                  TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
 
-              TIMER_A2->CCR[1] =  duty-1;
-              TIMER_A2->CCTL[1] = TIMER_A_CCTLN_OUTMOD_7;
+                  TIMER_A2->CCR[1] =  duty-1;
+                  TIMER_A2->CCTL[1] = TIMER_A_CCTLN_OUTMOD_7;
 
-              TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-              break;
+                  TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
+                  break;
     case( pwm_CHF):
-                TA2CCR0 = period-1; // PWM周期T=512us
-                P5->DIR |= BIT7;
-                P5->SEL0 |= BIT7;
-                pwm_clock_init();
-                TIMER_A2->CCR[0] = period-1;
-                TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
+                    TA2CCR0 = period-1; // PWM周期T=512us
+                    P5->DIR |= BIT7;
+                    P5->SEL0 |= BIT7;
+                    pwm_clock_init();
+                    TIMER_A2->CCR[0] = period-1;
+                    TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
 
-                TIMER_A2->CCR[2] =  duty-1;
-                TIMER_A2->CCTL[2] = TIMER_A_CCTLN_OUTMOD_7;
+                    TIMER_A2->CCR[2] =  duty-1;
+                    TIMER_A2->CCTL[2] = TIMER_A_CCTLN_OUTMOD_7;
 
-                TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-                break;
+                    TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
+                    break;
 
     }
 

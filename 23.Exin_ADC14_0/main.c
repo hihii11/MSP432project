@@ -122,7 +122,7 @@ void main()
            }
             clr_cnt = 0;
         }
-        delay_ms(4);
+        delay_ms(3);
     }
 }
 
