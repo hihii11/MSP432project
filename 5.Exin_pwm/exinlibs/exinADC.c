@@ -253,7 +253,6 @@ void ADC14_PREC_sel(ADC14_PREC_eunm ADC_PREC)//选择分辨率
  *
  *          当调用此函数时，则默认单通道单次转换，此时实际采样频率要小于计算所得频率
  *************************************************/
-
 void ADC14_init(ADC14_CHA_eunm  ADC14_CHA,
               ADC14_CLK_eunm  ADC14_CLK,
               ADC14_DIV_eunm  ADC14_DIV,
@@ -266,7 +265,7 @@ void ADC14_init(ADC14_CHA_eunm  ADC14_CHA,
     //_____________________
     ADC14_CHA_sel(ADC14_CHA);                //初始化ADC14通道
     __enable_interrupt();                    //打开总中断
-    NVIC->ISER[0] = 1 << ((ADC14_IRQn) & 31);//设置ADC14中断优先级
+    NVIC->ISER[0] = 1 << ((ADC14_IRQn) & 31);//初始化NVIC中断
     ADC14_CLK_sel(ADC14_CLK ,ADC14_DIV);     //设置ADC14时钟
     ADC14_PREC_sel(ADC_PREC);                //选择分辨率
     ADC14->IER0 |= ADC14_IER0_IE0;           //使能ADC中断

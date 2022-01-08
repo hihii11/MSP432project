@@ -20,32 +20,6 @@ ADC14_once_recv()为单通道单次转换数据接收
 char ADC_txt[20]={};
 
 int ADC_CH0_dat,ADC_CH1_dat,ADC_CH2_dat,ADC_CH3_dat,ADC_CH4_dat;
-int index_rec = 0;
-uint8 Heart_val[129] = {0};
-extern uint8_t screen_buf[128][64];
-
-
-void Heart_val_updata(uint8 data)
-{
-    int i;
-    for(i = 0 ; i <= 127 ; i++ )//左移移入ADC值
-    {
-        Heart_val[i] = Heart_val[i+1];
-    }
-    Heart_val[128] = data;
-}
-void screen_buf_updat(uint8 * buf)
-{
-    int i;
-    for(i = 0; i < 128 ; i++)
-    {
-        screen_buf[i][buf[i]] = 0;
-    }
-    for(i = 1; i < 129 ; i++)
-    {
-          screen_buf[i-1][buf[i]] = 1;
-    }
-}
 
 
 void ADC14_once_init()
@@ -57,7 +31,7 @@ void ADC14_once_init()
     ADC14_init(ADC_CH3,ADC_MCLK ,ADC_DIV2,ADC14_BIT8);//初始化ADC_CH3(A3)通道 端口为P5.2
     ADC14_init(ADC_CH4,ADC_MCLK ,ADC_DIV2,ADC14_BIT8);//初始化ADC_CH4(A4)通道 端口为P5.1
     //选用MCLK并进行2分频作为ADC14的时钟
-    //此时若不计算程序延时，则每个通道的采样频率为MCLK(3Mhz)/分频(2)/(采样(4)+量化(9)+1) ≈1.07Mhz
+    //此时若不计算程序延时，则每个通道的采样频率为SMCLK(3Mhz)/分频(2)/(采样(4)+量化(9)+1) ≈1.07Mhz
     //但因为是单次转换，需要软件设置开始转换，所以需要算上软件时间以及用于显示的OLED软件时间，所以实际采样频率低于1.07MHz
 }
 
@@ -90,9 +64,8 @@ void ADC14_once_show()
        OLED_Showfloat(90, 3,  get_voltage(ADC_CH2_dat , 3.3 , 256));
        OLED_Showfloat(90, 4,  get_voltage(ADC_CH3_dat , 3.3 , 256));
        OLED_Showfloat(90, 5,  get_voltage(ADC_CH4_dat , 3.3 , 256));
-
 }
-uint8 clr_cnt = 0;
+
 void main()
 {
     system_init(0);
@@ -100,29 +73,14 @@ void main()
     OLED_Init();
     OLED_Clear();
     //进行各通道的初始化，详见该函数
-    ADC14_init(ADC_CH0,ADC_MCLK ,ADC_DIV1,ADC14_BIT8);//初始化ADC_CH0(A0)通道 端口为P5.5
+    ADC14_once_init();//初始化ADC_CH0(A0)通道 端口为P5.5
 
-   // OLED_ShowString(0,0,"CHA");OLED_ShowString(50,0,"val");OLED_ShowString(90,0,"u(v)");//打印表头
+    OLED_ShowString(0,0,"CHA");OLED_ShowString(50,0,"val");OLED_ShowString(90,0,"u(v)");//打印表头
 
     while(1)
     {
-        ADC_CH0_dat = ADC14_read_data(ADC_CH0);
-        ADC_CH0_dat = ((float)(ADC_CH0_dat-120)/100.0)*63;
-        Heart_val_updata(ADC_CH0_dat);
-        int i;
-        clr_cnt++;
-
-        if(clr_cnt == 20)
-        {
-            OLED_Clear();
-            for(i = 0;i<128;i++)
-           {
-               int data = 64-Heart_val[i]-25;
-               OLED_PutPixel(i,data);
-           }
-            clr_cnt = 0;
-        }
-        delay_ms(3);
+        ADC14_once_recv();
+        ADC14_once_show();
     }
 }
 

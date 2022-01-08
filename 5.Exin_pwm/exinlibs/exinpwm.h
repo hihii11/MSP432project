@@ -25,9 +25,10 @@ typedef enum{
     //pwm_CHG//GÍ¨µÀ
 }PWMCH_enum;
 extern void pwm_duty(PWMCH_enum CHI,int duty);
-extern void pwm_clock_init();
-extern void pwm_init(PWMCH_enum CHI,int period,int duty);
+extern void pwm_init(PWMCH_enum CHI,int FRE,int duty);
 extern void PWM_TEST();
+extern void pwm_pin_init(PWMCH_enum CHI);
+extern void pwm_period_set(PWMCH_enum CHI,uint16 FRE);
 #ifdef __cplusplus
 }
 #endif

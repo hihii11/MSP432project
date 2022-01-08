@@ -11,118 +11,85 @@
 #include "headfile.h"
 #include "exinpwm.h"
 
-void pwm_clock_init()
+
+/*************************************************
+ * 函  数  名:pwm_pin_init
+ * 功       能:PWM引脚初始化
+ * 参       数:CHI:PWM可选通道
+ * 注意事项:
+PWM_CHA:P2.6
+PWM_CHB:P2.7
+PWM_CHC:P2.5
+PWM_CHD:P2.4
+PWM_CHE:P5.6
+PWM_CHB:P5.7
+ *************************************************/
+void pwm_pin_init(PWMCH_enum CHI)
 {
-    do
-    {
-
-          CS->CLRIFG |= CS_CLRIFG_CLR_DCOR_OPNIFG | CS_CLRIFG_CLR_HFXTIFG | CS_CLRIFG_CLR_LFXTIFG;
-          SYSCTL->NMI_CTLSTAT &= ~ SYSCTL_NMI_CTLSTAT_CS_SRC;
-    } while (SYSCTL->NMI_CTLSTAT & SYSCTL_NMI_CTLSTAT_CS_FLG);
-
-          CS->KEY = 0;
-}
-
-/***********************************/
-/*pwm可输出口p2.6 p2.7 p2.5 p2.4 p5.6 p5.7
-  pwm_init()//通道在exinpwm.h文件中列出
- *
- *参数：CHI  PWM可选通道/在exinpwm.h中列出
- *period   周期 单位为hz
- *duty   初始化占空比
- *占空比最大值计算方式如下
- *
- *duty(max):3_000_000/period
- *如period为1000hz   则duty允许调整范围为0~3000
- *
-/**********************************/
-void pwm_init(PWMCH_enum CHI,int period,int duty)
-{
-    period=SMCLK_FRE/(float)(period);
     switch(CHI)
     {
-    case( pwm_CHA):
-         TA0CCR0 = period-1; // PWM周期T=512us
-         P2->DIR |= BIT6;
-         P2->SEL0 |= BIT6 ;
-         pwm_clock_init();
-         TIMER_A0->CCR[0] = period-1;
-         TIMER_A0->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-         TIMER_A0->CCR[3] =  duty-1;
-         TIMER_A0->CCTL[3] = TIMER_A_CCTLN_OUTMOD_7;
-
-         TIMER_A0->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-         break;
-    case( pwm_CHB):
-          TA0CCR0 = period-1; // PWM周期T=512us
-          P2->DIR |= BIT7;
-          P2->SEL0 |= BIT7 ;
-          pwm_clock_init();
-          TIMER_A0->CCR[0] = period-1;
-          TIMER_A0->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-          TIMER_A0->CCR[4] =  duty-1;
-          TIMER_A0->CCTL[4] = TIMER_A_CCTLN_OUTMOD_7;
-
-          TIMER_A0->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-          break;
-    case( pwm_CHC):
-            TA0CCR0 = period-1; // PWM周期T=512us
-            P2->DIR |= BIT5;
-            P2->SEL0 |= BIT5 ;
-            pwm_clock_init();
-            TIMER_A0->CCR[0] = period-1;
-            TIMER_A0->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-            TIMER_A0->CCR[2] =  duty-1;
-            TIMER_A0->CCTL[2] = TIMER_A_CCTLN_OUTMOD_7;
-
-            TIMER_A0->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-            break;
-    case( pwm_CHD):
-              TA0CCR0 = period-1; // PWM周期T=512us
-              P2->DIR |= BIT4;
-              P2->SEL0 |= BIT4;
-              pwm_clock_init();
-              TIMER_A0->CCR[0] = period-1;
-              TIMER_A0->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-              TIMER_A0->CCR[1] =  duty-1;
-              TIMER_A0->CCTL[1] = TIMER_A_CCTLN_OUTMOD_7;
-
-              TIMER_A0->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-              break;
-    case( pwm_CHE):
-                  TA2CCR0 = period-1; // PWM周期T=512us
-                  P5->DIR |= BIT6;
-                  P5->SEL0 |= BIT6;
-                  pwm_clock_init();
-                  TIMER_A2->CCR[0] = period-1;
-                  TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-                  TIMER_A2->CCR[1] =  duty-1;
-                  TIMER_A2->CCTL[1] = TIMER_A_CCTLN_OUTMOD_7;
-
-                  TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-                  break;
-    case( pwm_CHF):
-                    TA2CCR0 = period-1; // PWM周期T=512us
-                    P5->DIR |= BIT7;
-                    P5->SEL0 |= BIT7;
-                    pwm_clock_init();
-                    TIMER_A2->CCR[0] = period-1;
-                    TIMER_A2->CCTL[0] = TIMER_A_CCTLN_OUTMOD_7;
-
-                    TIMER_A2->CCR[2] =  duty-1;
-                    TIMER_A2->CCTL[2] = TIMER_A_CCTLN_OUTMOD_7;
-
-                    TIMER_A2->CTL = TIMER_A_CTL_TASSEL_2 | TIMER_A_CTL_MC_1 | TIMER_A_CTL_CLR;//时钟1 比较输出
-                    break;
-
+        case( pwm_CHA):P2->DIR |= BIT6;P2->SEL0 |= BIT6 ;break;
+        case( pwm_CHB):P2->DIR |= BIT7;P2->SEL0 |= BIT7 ;break;
+        case( pwm_CHC):P2->DIR |= BIT5;P2->SEL0 |= BIT5 ;break;
+        case( pwm_CHD):P2->DIR |= BIT4;P2->SEL0 |= BIT4 ;break;
+        case( pwm_CHE):P2->DIR |= BIT5;P2->SEL0 |= BIT6 ;break;
+        case( pwm_CHF):P2->DIR |= BIT5;P2->SEL0 |= BIT7 ;break;
     }
-
-
+}
+/*************************************************
+ * 函  数  名:pwm_pin_init
+ * 功       能:PWM引脚初始化
+ * 参       数:CHI:PWM可选通道
+ *          FRE:频率 HZ
+ * 注意事项:
+ *************************************************/
+void pwm_period_set(PWMCH_enum CHI,uint16 FRE)
+{
+    switch(CHI)
+    {
+           case( pwm_CHA):;
+           case( pwm_CHB):;
+           case( pwm_CHC):;
+           case( pwm_CHD):FRE=SMCLK_FRE/(float)(FRE);TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR0,FRE);break;
+           case( pwm_CHE):;
+           case( pwm_CHF):FRE=SMCLK_FRE/4/(float)(FRE);TimerA_CCRVAL_set(TIMERA_A2,TIMERA_CCR0,FRE);break;
+           default:;
+    }
+}
+/*************************************************
+ * 函  数  名:pwm_init
+ * 功       能:PWM初始化
+ * 参       数:CHI:PWM可选通道
+ *          FRE:频率 HZ
+ *          duty:占空比调整
+ * 注意事项:
+ * duty范围为: 0~(SMCLK_FRE/FRE)-1
+ *************************************************/
+void pwm_init(PWMCH_enum CHI,int FRE,int duty)
+{
+    pwm_pin_init(CHI);
+    pwm_period_set(CHI,FRE);
+    switch(CHI)
+    {
+           case( pwm_CHA):;
+           case( pwm_CHB):;
+           case( pwm_CHC):;
+           case( pwm_CHD):TimerA_CLK_set(TIMERA_A0,TIMERA_SMCLK,TIMERA_DIV1,TIMERA_DIV1);TimerA_MOD_sel(TIMERA_A0,UP);break;
+           case( pwm_CHE):;
+           case( pwm_CHF):TimerA_CLK_set(TIMERA_A2,TIMERA_SMCLK,TIMERA_DIV4,TIMERA_DIV1);TimerA_MOD_sel(TIMERA_A2,UP);break;
+           default:;
+    }
+    switch(CHI)
+    {
+           case( pwm_CHA):CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR3,Reset_set);break;
+           case( pwm_CHB):CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR4,Reset_set);break;
+           case( pwm_CHC):CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR2,Reset_set);break;
+           case( pwm_CHD):CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A0,TIMERA_CCR1,Reset_set);break;
+           case( pwm_CHE):CCRn_MOD_sel(TIMERA_A2,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A2,TIMERA_CCR1,Reset_set);break;
+           case( pwm_CHF):CCRn_MOD_sel(TIMERA_A2,TIMERA_CCR0,Reset_set);CCRn_MOD_sel(TIMERA_A2,TIMERA_CCR2,Reset_set);break;
+           default:;
+    }
+    pwm_duty(CHI,duty);
 }
 /***********************************/
 /*
@@ -132,14 +99,18 @@ void pwm_init(PWMCH_enum CHI,int period,int duty)
 /**********************************/
 void pwm_duty(PWMCH_enum CHI,int duty)
 {
+    if(duty == 0)
+    {
+        duty=1;
+    }
     switch(CHI)
        {
-       case( pwm_CHA):TIMER_A0->CCR[3] =  duty-1;break;
-       case( pwm_CHB):TIMER_A0->CCR[4] =  duty-1;break;
-       case( pwm_CHC):TIMER_A0->CCR[2] =  duty-1;break;
-       case( pwm_CHD):TIMER_A0->CCR[1] =  duty-1;break;
-       case( pwm_CHE):TIMER_A2->CCR[1] =  duty-1;break;
-       case( pwm_CHF):TIMER_A2->CCR[2] =  duty-1;break;
+       case( pwm_CHA):TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR3, duty-1);break;
+       case( pwm_CHB):TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR4, duty-1);break;
+       case( pwm_CHC):TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR2, duty-1);break;
+       case( pwm_CHD):TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR1, duty-1);break;
+       case( pwm_CHE):TimerA_CCRVAL_set(TIMERA_A2,TIMERA_CCR1, duty-1);break;
+       case( pwm_CHF):TimerA_CCRVAL_set(TIMERA_A2,TIMERA_CCR2, duty-1);break;
        }
 }
 

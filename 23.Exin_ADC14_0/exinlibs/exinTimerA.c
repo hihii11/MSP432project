@@ -180,4 +180,34 @@ void TimerA_CCRVAL_set(TIMERA_enum TIMER,TIMERA_CCR_enum TIMERA_CCR,uint16 val)
        default:;
    }
 }
-
+/*************************************************
+ * 函  数  名:CCRn_MOD_sel
+ * 功       能:将CCR配置为输出模式
+ * 参       数:TIMER:可选择的TimerA模块，在exinTimerA.h文件中枚举
+ *          TIMERA_CCR可选的CCR寄存器枚举
+ *          MOD:输出模式
+ * 注意事项:无
+ *************************************************/
+void CCRn_MOD_sel(TIMERA_enum TIMER,TIMERA_CCR_enum TIMERA_CCR,TIMERA_CCRMOD_enum MOD)
+{
+    uint16 status;
+    switch(MOD)
+    {
+       case(Set):         status = TIMER_A_CCTLN_OUTMOD_1;break;
+       case(Toggle_reset):status = TIMER_A_CCTLN_OUTMOD_2;break;
+       case(Set_reset):   status = TIMER_A_CCTLN_OUTMOD_3;break;
+       case(Toggle):      status = TIMER_A_CCTLN_OUTMOD_4;break;
+       case(Reset):       status = TIMER_A_CCTLN_OUTMOD_5;break;
+       case(Toggle_set):  status = TIMER_A_CCTLN_OUTMOD_6;break;
+       case(Reset_set):   status = TIMER_A_CCTLN_OUTMOD_7;break;
+       default:status = TIMER_A_CCTLN_OUTMOD_0;;
+    }
+    switch(TIMER)
+   {
+       case(TIMERA_A0):TIMER_A0->CCTL[TIMERA_CCR] = status;break;
+       case(TIMERA_A1):TIMER_A1->CCTL[TIMERA_CCR] = status;break;
+       case(TIMERA_A2):TIMER_A2->CCTL[TIMERA_CCR] = status;break;
+       case(TIMERA_A3):TIMER_A3->CCTL[TIMERA_CCR] = status;break;
+       default:;
+   }
+}
