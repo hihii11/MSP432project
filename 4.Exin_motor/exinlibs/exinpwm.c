@@ -32,8 +32,8 @@ void pwm_pin_init(PWMCH_enum CHI)
         case( pwm_CHB):P2->DIR |= BIT7;P2->SEL0 |= BIT7 ;break;
         case( pwm_CHC):P2->DIR |= BIT5;P2->SEL0 |= BIT5 ;break;
         case( pwm_CHD):P2->DIR |= BIT4;P2->SEL0 |= BIT4 ;break;
-        case( pwm_CHE):P2->DIR |= BIT5;P2->SEL0 |= BIT6 ;break;
-        case( pwm_CHF):P2->DIR |= BIT5;P2->SEL0 |= BIT7 ;break;
+        case( pwm_CHE):P5->DIR |= BIT6;P5->SEL0 |= BIT6 ;break;
+        case( pwm_CHF):P5->DIR |= BIT7;P5->SEL0 |= BIT7 ;break;
     }
 }
 /*************************************************
@@ -52,7 +52,7 @@ void pwm_period_set(PWMCH_enum CHI,uint16 FRE)
            case( pwm_CHC):;
            case( pwm_CHD):FRE=SMCLK_FRE/(float)(FRE);TimerA_CCRVAL_set(TIMERA_A0,TIMERA_CCR0,FRE);break;
            case( pwm_CHE):;
-           case( pwm_CHF):FRE=SMCLK_FRE/4/(float)(FRE);TimerA_CCRVAL_set(TIMERA_A2,TIMERA_CCR0,FRE);break;
+           case( pwm_CHF):FRE=SMCLK_FRE/8/(float)(FRE);TimerA_CCRVAL_set(TIMERA_A2,TIMERA_CCR0,FRE);break;
            default:;
     }
 }
@@ -76,7 +76,7 @@ void pwm_init(PWMCH_enum CHI,int FRE,int duty)
            case( pwm_CHC):;
            case( pwm_CHD):TimerA_CLK_set(TIMERA_A0,TIMERA_SMCLK,TIMERA_DIV1,TIMERA_DIV1);TimerA_MOD_sel(TIMERA_A0,UP);break;
            case( pwm_CHE):;
-           case( pwm_CHF):TimerA_CLK_set(TIMERA_A2,TIMERA_SMCLK,TIMERA_DIV4,TIMERA_DIV1);TimerA_MOD_sel(TIMERA_A2,UP);break;
+           case( pwm_CHF):TimerA_CLK_set(TIMERA_A2,TIMERA_SMCLK,TIMERA_DIV8,TIMERA_DIV1);TimerA_MOD_sel(TIMERA_A2,UP);break;
            default:;
     }
     switch(CHI)

@@ -21,7 +21,7 @@
 
 #define datalen  5  //两位首包 一位数据 两位尾包
 
-char buf[5]={0};
+char buf[datalen]={0};
 unsigned char sindata[10]={128,218,255,218,128,37,5,37};
 
 void Oscill_send(unsigned char data)

@@ -17,9 +17,9 @@
  *
  * pwmp频率
  *
- *最大占空比计算 (200/perod)*15000
+ *最大占空比计算 SMCLK_FRE/FRE  (FRE为频率)
  *
- *这里默认period周期为1000hz，所以最大占空比为duty=3000
+ *这里默认频率为1000hz，所以最大占空比值为duty=24000000/1000=24000
  *
  ****************************/
 void Motor_PWM_INIT(SMOTOR_enum CHI)

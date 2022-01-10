@@ -44,57 +44,62 @@ void main()
 
     pwm_init(pwm_CHA,1000,0);//红
     pwm_init(pwm_CHB,1000,0);//绿
-    pwm_init(pwm_CHC,1000,0);//蓝
+    pwm_init(pwm_CHC,1000,0);//蓝  由于SMCLK_FRE = 24000_000 所以占空比可调范围为 0~24000
 
     while(1)
     {
         if(status==0)
         {
-            dutyA = 1500;
-            dutyB += 10;
-            if(dutyB>=1500)
+            dutyA = 12000;
+            dutyB += 80;
+            if(dutyB>=12000)
             {
                 status=1;
             }
         }
         if(status==1)
         {
-            dutyA = 1500;
-            dutyB -= 10;
-            dutyC += 10;
-            if(dutyC>=1500)
+            dutyA = 12000;
+            dutyB -= 80;
+            dutyC += 80;
+            if(dutyC>=12000)
             {
                 status=2;
+                dutyB=0;
             }
         }
         if(status==2)
        {
-           dutyA -= 10;
-           dutyB += 10;
-           dutyC = 1500;
-           if(dutyB>=1500||dutyC<=0)
+           dutyA -= 80;
+           dutyB += 80;
+           dutyC = 12000;
+           if(dutyB>=12000||dutyA<=0)
            {
                status=3;
+               dutyA=0;
            }
        }
         if(status==3)
         {
-           dutyA += 10;
-           dutyB = 1500;
-           dutyC -= 10;
-           if(dutyA>=1500||dutyC<=0)
+           dutyA += 80;
+           dutyB = 12000;
+           dutyC -= 80;
+           if(dutyA>=12000||dutyC<=0)
            {
                status=4;
+               dutyC=0;
            }
        }
         if(status==4)
         {
-           dutyA = 1500;
-           dutyB -= 10;
-           dutyC -= 10;
-           if(dutyA>=1500||dutyC<=0)
+           dutyA = 12000;
+           dutyB -= 80;
+           dutyC -= 80;
+           if(dutyA>=12000||dutyC<=0)
            {
                status=0;
+               dutyB=0;
+               dutyC=0;
            }
        }
         pwm_duty(pwm_CHA,dutyA);

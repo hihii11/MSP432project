@@ -114,7 +114,7 @@ void MCLK_set(CLK_source_enum CLK_source,CLK_DIV_enum CLK_DIV)
 void SMCLK_set(CLK_source_enum CLK_source,CLK_DIV_enum CLK_DIV)
 {
     CS->CTL1 = CS->CTL1 & ~(CS_CTL1_SELS_MASK | CS_CTL1_DIVS_MASK);//首先清零SMCLK时钟源设置位和SMCLK分频设置位
-    switch(CLK_source)//进行MCLK时钟源的设置
+    switch(CLK_source)//进行SMCLK时钟源的设置
     {
            case(LFXTCLK): CS->CTL1 |= CS_CTL1_SELS__LFXTCLK;   break;
            case(VLOCLK):  CS->CTL1 |= CS_CTL1_SELS__VLOCLK;    break;
@@ -122,9 +122,9 @@ void SMCLK_set(CLK_source_enum CLK_source,CLK_DIV_enum CLK_DIV)
            case(DCOCLK):  CS->CTL1 |= CS_CTL1_SELS__DCOCLK;    break;
            case(MODOSC):  CS->CTL1 |= CS_CTL1_SELS__MODOSC;    break;
            case(HFXTCLK): CS->CTL1 |= CS_CTL1_SELS__HFXTCLK;   break;
-           default:       CS->CTL1 |= CS_CTL1_SELM__DCOCLK;    break;
+           default:       CS->CTL1 |= CS_CTL1_SELS__DCOCLK;    break;
     }
-    switch(CLK_DIV)//进行MCLK时钟源的设置
+    switch(CLK_DIV)//进行SMCLK时钟源的设置
    {
           case(CLK_DIV1):   CS->CTL1 |= CS_CTL1_DIVS__1;   break;
           case(CLK_DIV2):   CS->CTL1 |= CS_CTL1_DIVS__2;    break;
@@ -166,7 +166,7 @@ void set_DCO_48MH()
      CS_unlocked();
      DCO_set(DCO_48_0M);//设置DCO时钟到48Mhz
      MCLK_set(DCOCLK,CLK_DIV1);//设置MCL时钟源为DCOCLK 分频为1即f(MCLK) = f(DCO)
-     SMCLK_set(DCOCLK,CLK_DIV2);//设置SMCLK时钟源为DCOCLK 分频2即f(SMCLK) = 24Mhz
+     SMCLK_set(DCOCLK,CLK_DIV2);//设置SMCLK时钟源为DCOCLK 分频2即f(SMCLK) = f(DCO)/2 = 24Mhz
      CS_locked();
 }
 

@@ -15,8 +15,8 @@ extern "C"
 {
 #endif
 
-#define steer_midA 4650//舵机x,y平面中值
-#define steer_midB 4650//舵机y,z平面中值
+#define steer_midA 100//舵机x,y平面中值
+#define steer_midB 100//舵机y,z平面中值
 typedef enum{
     steer_CHA=0,//A通道
     steer_CHB,//B通道
@@ -26,7 +26,7 @@ typedef enum{
 extern void steer_pwm_init(STEERCH_enum CHI,int period,int duty);
 extern void STEER_TEST();
 extern void steer_pwm_duty(STEERCH_enum CHI,int duty);
-
+extern int steer_limit(STEERCH_enum CHI,int duty);
 #ifdef __cplusplus
 }
 #endif

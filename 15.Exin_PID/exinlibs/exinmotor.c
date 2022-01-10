@@ -17,19 +17,19 @@
  *
  * pwmp频率
  *
- *最大占空比计算 (200/perod)*15000
+ *最大占空比计算 SMCLK_FRE/FRE  (FRE为频率)
  *
- *这里默认period周期为1000hz，所以最大占空比为duty=3000
+ *这里默认频率为1000hz，所以最大占空比值为duty=24000000/1000=24000
  *
  ****************************/
 void Motor_PWM_INIT(SMOTOR_enum CHI)
 {
     switch(CHI)
     {
-    case(MOTOR_CHA):pwm_init(pwm_CHA,3500,0);break;//pwm A通道
-    case(MOTOR_CHB):pwm_init(pwm_CHB,3500,0);break;//pwm B通道（1000）1khz
-    case(MOTOR_CHC):pwm_init(pwm_CHC,3500,0);break;//pwm C通道
-    case(MOTOR_CHD):pwm_init(pwm_CHD,3500,0);break;//pwm D通道
+    case(MOTOR_CHA):pwm_init(pwm_CHA,1000,0);break;//pwm A通道
+    case(MOTOR_CHB):pwm_init(pwm_CHB,1000,0);break;//pwm B通道（1000）1khz
+    case(MOTOR_CHC):pwm_init(pwm_CHC,1000,0);break;//pwm C通道
+    case(MOTOR_CHD):pwm_init(pwm_CHD,1000,0);break;//pwm D通道
     }
 }
 
@@ -140,7 +140,7 @@ PID_Inc
 实现速度PID扫描输出
 PID（自定义类型） ActualValue当前值
 返回PID输出
-调用示例PID_Inc（PID_left，Speedleft）Kp[e(k)-e(k-1)]+Kie(k)+Kd[e(k)-2e(k-1)+e(k-2)]
+调用示例PID_Inc（PID_left，Speedleft）
 ----------------------------------------------------------------*/
 int PID_Inc( PID_IncTypeDef *PID, int ActualValue )
 {
