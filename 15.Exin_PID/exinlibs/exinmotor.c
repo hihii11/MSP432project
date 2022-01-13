@@ -26,10 +26,10 @@ void Motor_PWM_INIT(SMOTOR_enum CHI)
 {
     switch(CHI)
     {
-    case(MOTOR_CHA):pwm_init(pwm_CHA,1000,0);break;//pwm A通道
-    case(MOTOR_CHB):pwm_init(pwm_CHB,1000,0);break;//pwm B通道（1000）1khz
-    case(MOTOR_CHC):pwm_init(pwm_CHC,1000,0);break;//pwm C通道
-    case(MOTOR_CHD):pwm_init(pwm_CHD,1000,0);break;//pwm D通道
+    case(MOTOR_CHA):pwm_init(pwm_CHA,3000,0);break;//pwm A通道
+    case(MOTOR_CHB):pwm_init(pwm_CHB,3000,0);break;//pwm B通道（1000）1khz
+    case(MOTOR_CHC):pwm_init(pwm_CHC,3000,0);break;//pwm C通道
+    case(MOTOR_CHD):pwm_init(pwm_CHD,3000,0);break;//pwm D通道
     }
 }
 
