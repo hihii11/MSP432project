@@ -113,7 +113,7 @@ void main()
     OLED_Clear();
     //电机相关初始化
     //电机初始化A通道
-    Motor_PWM_INIT(MOTOR_CHA);//注意，这边的初始化函数也与之前例程不同，电机基频率为3500hz，同时周期计算方式也有改变，查看本函数与pwm_init函数
+    Motor_PWM_INIT(MOTOR_CHA,1000);//注意，这边的初始化函数也与之前例程不同，电机基频率为3500hz，同时周期计算方式也有改变，查看本函数与pwm_init函数
     //编码器初始化,A通道，外部中断采集方式
     encoder_init(ENCODER_CHA,INT);
 

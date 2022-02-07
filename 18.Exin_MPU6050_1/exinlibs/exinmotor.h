@@ -35,9 +35,9 @@ typedef enum{
     MOTOR_CHD,//DÍ¨µÀ
 }SMOTOR_enum;
 
-extern void Motor_PWM_INIT(SMOTOR_enum CHI);
+extern void Motor_PWM_INIT(SMOTOR_enum CHI,int fre);
 extern void Motor_DIR_PIN_INIT(SMOTOR_enum CHI);
-extern void Motor_init(SMOTOR_enum CHI);
+extern void Motor_init(SMOTOR_enum CHI,int fre);
 extern void Motor_pwm_duty(SMOTOR_enum CHI,char Dir,int duty);
 extern void PID_SET(PID_IncTypeDef*PID,int t,uint16 p,uint16 i,uint16 d);
 extern int PID_Inc( PID_IncTypeDef *PID, int ActualValue );

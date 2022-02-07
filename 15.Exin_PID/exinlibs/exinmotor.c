@@ -22,14 +22,14 @@
  *这里默认频率为1000hz，所以最大占空比值为duty=24000000/1000=24000
  *
  ****************************/
-void Motor_PWM_INIT(SMOTOR_enum CHI)
+void Motor_PWM_INIT(SMOTOR_enum CHI,int fre)
 {
     switch(CHI)
     {
-    case(MOTOR_CHA):pwm_init(pwm_CHA,3000,0);break;//pwm A通道
-    case(MOTOR_CHB):pwm_init(pwm_CHB,3000,0);break;//pwm B通道（1000）1khz
-    case(MOTOR_CHC):pwm_init(pwm_CHC,3000,0);break;//pwm C通道
-    case(MOTOR_CHD):pwm_init(pwm_CHD,3000,0);break;//pwm D通道
+    case(MOTOR_CHA):pwm_init(pwm_CHA,fre,0);break;//pwm A通道
+    case(MOTOR_CHB):pwm_init(pwm_CHB,fre,0);break;//pwm B通道（1000）1khz
+    case(MOTOR_CHC):pwm_init(pwm_CHC,fre,0);break;//pwm C通道
+    case(MOTOR_CHD):pwm_init(pwm_CHD,fre,0);break;//pwm D通道
     }
 }
 
@@ -60,11 +60,11 @@ void Motor_DIR_PIN_INIT(SMOTOR_enum CHI)
  *MOTOR_CHC pwm:p2.5 Dir:p8.6
  *MOTOR_CHD pwm:p2.4 Dir:p8.7
  ****************************/
-void Motor_init(SMOTOR_enum CHI)
+void Motor_init(SMOTOR_enum CHI,int fre)
 {
 
     Motor_DIR_PIN_INIT(CHI);
-    Motor_PWM_INIT(CHI);
+    Motor_PWM_INIT(CHI,fre);
 }
 
 /*******************************
@@ -159,8 +159,8 @@ int PID_Inc( PID_IncTypeDef *PID, int ActualValue )
 void MOTOR_TEST()
 {
     system_init(0);
-    Motor_init(MOTOR_CHC);
-    Motor_init(MOTOR_CHD);
+    Motor_init(MOTOR_CHC,1000);
+    Motor_init(MOTOR_CHD,1000);
     Motor_pwm_duty(MOTOR_CHC,1,1000);
     Motor_pwm_duty(MOTOR_CHD,0,1000);
     while(1);
