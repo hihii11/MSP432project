@@ -208,23 +208,23 @@ void Encoder_clr(Encoder_Channel_enum CHI)
 /****************
  * 测试函数
  */
-int time_counter=0;
 void OLED_show()
 {
-    char tmp[20]={};
-    OLED_ShowString(0, 0, "sp/dr:");
+    unsigned char tmp[20]={};
+    OLED_ShowString(0,0, "CH ");
+    OLED_ShowString(40,0, "speed");
+    OLED_ShowString(100,0, "dir");
 
-    sprintf(tmp,"%d  ", GET_encoder_num(ENCODER_CHA));
-    OLED_ShowString(64, 0, tmp);
+    OLED_ShowString(0,1, "CHA");
+    sprintf((char*)tmp,"%d   ", (int32)(GET_encoder_num(ENCODER_CHA)));
+    OLED_ShowString(40, 1,tmp);
 
-    OLED_ShowNum(96, 0,  GET_encoder_dir(ENCODER_CHA), 4, 12);
+    OLED_ShowNum(100, 1,  GET_encoder_dir(ENCODER_CHA), 1, 12);
 
-    sprintf(tmp,"%d  ",  GET_encoder_num(ENCODER_CHB));
-    OLED_ShowString(64, 1, tmp);
-
-    OLED_ShowNum(96, 1,  GET_encoder_dir(ENCODER_CHB), 4, 12);
-    OLED_ShowNum(64, 2,  time_counter, 4, 12);
-
+    OLED_ShowString(0,2, "CHB");
+    sprintf((char*)tmp,"%d   ", (int32)(GET_encoder_num(ENCODER_CHB)));
+    OLED_ShowString(40, 2,  tmp);
+    OLED_ShowNum(100, 2,  GET_encoder_dir(ENCODER_CHB), 1, 12);
 }
 /*
 Interrupt_setPriority（interrupt_number_1,0x00）; //最高优先级
@@ -240,14 +240,15 @@ void ENCODER_TEST()
 {
    system_init(0);
    OLED_Init();
-   gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,1);
+     OLED_Clear();
    encoder_init(ENCODER_CHA,INT);//其他通道根据需要自行配制
 
    encoder_init(ENCODER_CHB,INT);
-   //Interrupt_setPriority(INT_PORT6,0xE0);
+
    TimerA_CCR0INT_init(TIMERA_A3 , 100);
    while(1)
    {
        OLED_show();
    }
 }
+

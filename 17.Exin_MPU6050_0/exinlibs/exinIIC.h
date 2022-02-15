@@ -37,7 +37,7 @@ extern "C"
 #define IIC_SDA_READ          gpio_get(IIC_SDA_PORT,IIC_SDA_PIN)
 #define IIC_SCL_READ          gpio_get(IIC_SCL_PORT,IIC_SCL_PIN)
 
-#define IIC_delay            delay_us(20)
+#define IIC_delay            delay_us(2)
 
 uint8 IIC_DATA;
 
