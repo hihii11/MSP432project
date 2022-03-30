@@ -62,10 +62,10 @@ exinlibs/exineeprom.obj: ../exinlibs/exinisr.h
 exinlibs/exineeprom.obj: ../exinlibs/exingpio.h
 exinlibs/exineeprom.obj: ../exinlibs/dat.h
 exinlibs/exineeprom.obj: ../exinlibs/exinpwm.h
-exinlibs/exineeprom.obj: ../exinlibs/exin_pit.h
+exinlibs/exineeprom.obj: ../exinlibs/exinTimerA.h
+exinlibs/exineeprom.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/exineeprom.obj: ../exinlibs/exinADC.h
 exinlibs/exineeprom.obj: ../exinlibs/exinmotor.h
-exinlibs/exineeprom.obj: ../exinlibs/oled.h
 exinlibs/exineeprom.obj: ../exinlibs/exinencoder.h
 exinlibs/exineeprom.obj: ../exinlibs/exinsystem.h
 exinlibs/exineeprom.obj: ../exinlibs/exinuart.h
@@ -82,6 +82,7 @@ exinlibs/exineeprom.obj: ../exinlibs/exinIIC.h
 exinlibs/exineeprom.obj: ../exinlibs/exinMPU6050.h
 exinlibs/exineeprom.obj: ../exinlibs/exineeprom.h
 exinlibs/exineeprom.obj: ../exinlibs/exinADC0832.h
+exinlibs/exineeprom.obj: ../exinlibs/exinoled.h
 
 ../exinlibs/exineeprom.c: 
 ../exinlibs/headfile.h: 
@@ -145,10 +146,10 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exingpio.h: 
 ../exinlibs/dat.h: 
 ../exinlibs/exinpwm.h: 
-../exinlibs/exin_pit.h: 
+../exinlibs/exinTimerA.h: 
+../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
-../exinlibs/oled.h: 
 ../exinlibs/exinencoder.h: 
 ../exinlibs/exinsystem.h: 
 ../exinlibs/exinuart.h: 
@@ -165,3 +166,4 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinMPU6050.h: 
 ../exinlibs/exineeprom.h: 
 ../exinlibs/exinADC0832.h: 
+../exinlibs/exinoled.h: 

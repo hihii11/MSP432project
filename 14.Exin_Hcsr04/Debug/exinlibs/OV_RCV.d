@@ -67,7 +67,6 @@ exinlibs/OV_RCV.obj: ../exinlibs/exinTimerA.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinADC.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinmotor.h
-exinlibs/OV_RCV.obj: ../exinlibs/oled.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinencoder.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinsystem.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinuart.h
@@ -84,6 +83,7 @@ exinlibs/OV_RCV.obj: ../exinlibs/exinIIC.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinMPU6050.h
 exinlibs/OV_RCV.obj: ../exinlibs/exineeprom.h
 exinlibs/OV_RCV.obj: ../exinlibs/exinADC0832.h
+exinlibs/OV_RCV.obj: ../exinlibs/exinoled.h
 
 ../exinlibs/OV_RCV.c: 
 ../exinlibs/OV_RCV.h: 
@@ -152,7 +152,6 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
-../exinlibs/oled.h: 
 ../exinlibs/exinencoder.h: 
 ../exinlibs/exinsystem.h: 
 ../exinlibs/exinuart.h: 
@@ -169,3 +168,4 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinMPU6050.h: 
 ../exinlibs/exineeprom.h: 
 ../exinlibs/exinADC0832.h: 
+../exinlibs/exinoled.h: 

@@ -211,20 +211,20 @@ void Encoder_clr(Encoder_Channel_enum CHI)
 void OLED_show()
 {
     unsigned char tmp[20]={};
-    OLED_ShowString(0,0, "CH ");
-    OLED_ShowString(40,0, "speed");
-    OLED_ShowString(100,0, "dir");
+    OLED_Show_String(0,1, "CH ",8);
+    OLED_Show_String(40,1, "speed",8);
+    OLED_Show_String(100,1, "dir",8);
 
-    OLED_ShowString(0,1, "CHA");
+    OLED_Show_String(0,2, "CHA",8);
     sprintf((char*)tmp,"%d   ", (int32)(GET_encoder_num(ENCODER_CHA)));
-    OLED_ShowString(40, 1,tmp);
+    OLED_Show_String(40, 2,tmp,8);
 
-    OLED_ShowNum(100, 1,  GET_encoder_dir(ENCODER_CHA), 1, 12);
+    OLED_Show_Num(100, 2,  GET_encoder_dir(ENCODER_CHA), 1, 8);
 
-    OLED_ShowString(0,2, "CHB");
+    OLED_Show_String(0,3, "CHB",8);
     sprintf((char*)tmp,"%d   ", (int32)(GET_encoder_num(ENCODER_CHB)));
-    OLED_ShowString(40, 2,  tmp);
-    OLED_ShowNum(100, 2,  GET_encoder_dir(ENCODER_CHB), 1, 12);
+    OLED_Show_String(40, 3,  tmp,8);
+    OLED_Show_Num(100, 3,  GET_encoder_dir(ENCODER_CHB), 1, 8);
 }
 /*
 Interrupt_setPriority（interrupt_number_1,0x00）; //最高优先级
@@ -239,8 +239,8 @@ Interrupt_setPriority（interrupt_number_8,0xE0）; //最低优先级
 void ENCODER_TEST()
 {
    system_init(0);
-   OLED_Init();
-     OLED_Clear();
+   OLED_init();
+     OLED_clr();
    encoder_init(ENCODER_CHA,INT);//其他通道根据需要自行配制
 
    encoder_init(ENCODER_CHB,INT);

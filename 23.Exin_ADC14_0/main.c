@@ -47,35 +47,35 @@ void ADC14_once_recv()
 void ADC14_once_show()
 {
     //通道名称打印
-       OLED_ShowString(0,1,"CH0");
-       OLED_ShowString(0,2,"CH1");
-       OLED_ShowString(0,3,"CH2");
-       OLED_ShowString(0,4,"CH3");
-       OLED_ShowString(0,5,"CH4");
+       OLED_Show_String(0,2,"CH0",8);
+       OLED_Show_String(0,3,"CH1",8);
+       OLED_Show_String(0,4,"CH2",8);
+       OLED_Show_String(0,5,"CH3",8);
+       OLED_Show_String(0,6,"CH4",8);
     //ADC采样原始数据打印
-       OLED_ShowNum(35, 1,  ADC_CH0_dat, 5, 12);
-       OLED_ShowNum(35, 2,  ADC_CH1_dat, 5, 12);
-       OLED_ShowNum(35, 3,  ADC_CH2_dat, 5, 12);
-       OLED_ShowNum(35, 4,  ADC_CH3_dat, 5, 12);
-       OLED_ShowNum(35, 5,  ADC_CH4_dat, 5, 12);
+       OLED_Show_Num(35, 2,  ADC_CH0_dat, 5, 8);
+       OLED_Show_Num(35, 3,  ADC_CH1_dat, 5, 8);
+       OLED_Show_Num(35, 4,  ADC_CH2_dat, 5, 8);
+       OLED_Show_Num(35, 5,  ADC_CH3_dat, 5, 8);
+       OLED_Show_Num(35, 6,  ADC_CH4_dat, 5, 8);
        //转换电压后的数据打印
-       OLED_Showfloat(90, 1,  get_voltage(ADC_CH0_dat , 3.3 , 256));
-       OLED_Showfloat(90, 2,  get_voltage(ADC_CH1_dat , 3.3 , 256));
-       OLED_Showfloat(90, 3,  get_voltage(ADC_CH2_dat , 3.3 , 256));
-       OLED_Showfloat(90, 4,  get_voltage(ADC_CH3_dat , 3.3 , 256));
-       OLED_Showfloat(90, 5,  get_voltage(ADC_CH4_dat , 3.3 , 256));
+       OLED_Show_float(90, 2,  get_voltage(ADC_CH0_dat , 3.3 , 256),2,8);
+       OLED_Show_float(90, 3,  get_voltage(ADC_CH1_dat , 3.3 , 256),2,8);
+       OLED_Show_float(90, 4,  get_voltage(ADC_CH2_dat , 3.3 , 256),2,8);
+       OLED_Show_float(90, 5,  get_voltage(ADC_CH3_dat , 3.3 , 256),2,8);
+       OLED_Show_float(90, 6,  get_voltage(ADC_CH4_dat , 3.3 , 256),2,8);
 }
 
 void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
-    OLED_Clear();
+    OLED_init();
+    OLED_clr();
     //进行各通道的初始化，详见该函数
     ADC14_once_init();//初始化ADC_CH0(A0)通道 端口为P5.5
 
-    OLED_ShowString(0,0,"CHA");OLED_ShowString(50,0,"val");OLED_ShowString(90,0,"u(v)");//打印表头
+    OLED_Show_String(0,1,"CHA",8);OLED_Show_String(50,1,"val",8);OLED_Show_String(90,1,"u(v)",8);//打印表头
 
     while(1)
     {

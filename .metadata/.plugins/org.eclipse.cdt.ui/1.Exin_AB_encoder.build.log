@@ -3,6 +3,103 @@
 
 "D:\\CCS\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
  
-gmake[1]: '1.Exin_AB_encoder.out' is up to date.
+Building file: "../exinlibs/exinencoder.c"
+Invoking: ARM Compiler
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="D:/CCS/ccs/ccs_base/arm/include" --include_path="C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx" --include_path="D:/CCS/ccs/ccs_base/arm/include/CMSIS" --include_path="D:/CCS/MSP432project/1.Exin_AB_encoder" --include_path="D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="exinlibs/exinencoder.d_raw" --obj_directory="exinlibs"  "../exinlibs/exinencoder.c"
+"../exinlibs/exinencoder.c", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exingpio.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\dat.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinpwm.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinTimerA.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinTimerAINT.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinmotor.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinencoder.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsystem.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinuart.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinadjust.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinkey.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinsteer.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\headfile.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinHC_SR04.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinIIC.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinMPU6050.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exineeprom.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinADC0832.h", line 6: warning #9-D: nested comment is not allowed
+"..\exinlibs\exinoled.h", line 6: warning #9-D: nested comment is not allowed
+"../exinlibs/exinencoder.c", line 157: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 158: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 159: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 160: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 162: warning #994-D: missing return statement at end of non-void function "GET_encoder_num"
+"../exinlibs/exinencoder.c", line 178: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 179: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 180: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 181: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 183: warning #994-D: missing return statement at end of non-void function "GET_encoder_dir"
+"../exinlibs/exinencoder.c", line 200: warning #121-D: return value type does not match the function type
+"../exinlibs/exinencoder.c", line 200: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 201: warning #121-D: return value type does not match the function type
+"../exinlibs/exinencoder.c", line 201: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 202: warning #121-D: return value type does not match the function type
+"../exinlibs/exinencoder.c", line 202: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 203: warning #121-D: return value type does not match the function type
+"../exinlibs/exinencoder.c", line 203: warning #112-D: statement is unreachable
+"../exinlibs/exinencoder.c", line 219: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../exinlibs/exinencoder.c", line 225: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 333 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 334 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 337 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 338 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 340 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 341 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 342 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 346 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 347 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 348 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 350 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 351 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 352 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 358 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 359 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 360 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 362 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 363 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 366 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 367 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 375 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 376 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 377 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 378 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 412 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 414 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 416 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 420 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 422 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 429 (col. 37): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 431 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 433 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 437 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/_defs.h", line 439 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+Finished building: "../exinlibs/exinencoder.c"
+ 
+Building target: "1.Exin_AB_encoder.out"
+Invoking: ARM Linker
+"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"1.Exin_AB_encoder.map" --heap_size=1024 --stack_size=512 -i"D:/CCS/ccs/ccs_base/arm/include" -i"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/lib" -i"D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="1.Exin_AB_encoder_linkInfo.xml" --rom_model -o "1.Exin_AB_encoder.out" "./main.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "./exinlibs/ADS1292.obj" "./exinlibs/ADS_RCV.obj" "./exinlibs/LMT70RD.obj" "./exinlibs/OV_RCV.obj" "./exinlibs/Oscill_OLED.obj" "./exinlibs/exinADC.obj" "./exinlibs/exinADC0832.obj" "./exinlibs/exinHC_SR04.obj" "./exinlibs/exinIIC.obj" "./exinlibs/exinMPU6050.obj" "./exinlibs/exinTimerA.obj" "./exinlibs/exinTimerAINT.obj" "./exinlibs/exin_library_map_guide.obj" "./exinlibs/exinadjust.obj" "./exinlibs/exineeprom.obj" "./exinlibs/exinencoder.obj" "./exinlibs/exinfilter.obj" "./exinlibs/exingpio.obj" "./exinlibs/exinisr.obj" "./exinlibs/exinkey.obj" "./exinlibs/exinmotor.obj" "./exinlibs/exinoled.obj" "./exinlibs/exinpwm.obj" "./exinlibs/exinsteer.obj" "./exinlibs/exinsystem.obj" "./exinlibs/exinuart.obj" "./exinlibs/serial.obj" "../msp432p401r.cmd"  -llibc.a -l"C:/ti/msp/MSP432Ware_3_40_00_25/driverlib/driverlib/MSP432P4xx/ccs/msp432p4xx_driverlib.lib" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "1.Exin_AB_encoder.out"
+ 
 
 **** Build Finished ****

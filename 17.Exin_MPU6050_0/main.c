@@ -33,72 +33,72 @@ void OLED_MPU_SHOW()
 {
     if(Page % 3 == 0)
     {
-        OLED_ShowString(11,0,"MPU_6050:Gyro  ");
+        OLED_Show_String(11,1,"MPU_6050:Gyro  ",8);
 
-        OLED_ShowString(0,1,"Gyrox:");
+        OLED_Show_String(0,2,"Gyrox:",8);
         sprintf(MPU_txt,"%d    ",gx);
-        OLED_ShowString(41,1,MPU_txt);//显示x轴角加速度
+        OLED_Show_String(41,2,MPU_txt,8);//显示x轴角加速度
 
-        OLED_ShowString(0,2,"Gyroy:");
+        OLED_Show_String(0,3,"Gyroy:",8);
         sprintf(MPU_txt,"%d    ",gy);
-        OLED_ShowString(41,2,MPU_txt);//显示y轴角加速度
+        OLED_Show_String(41,3,MPU_txt,8);//显示y轴角加速度
 
 
-        OLED_ShowString(0,3,"Gytoz:");
+        OLED_Show_String(0,4,"Gytoz:",8);
         sprintf(MPU_txt,"%d    ",gz);
-        OLED_ShowString(41,3,MPU_txt);//显示z轴角加速度
+        OLED_Show_String(41,4,MPU_txt,8);//显示z轴角加速度
 
 
-        OLED_ShowString(0,4,"temp:");
-        OLED_Showfloat(41,4,((float)temp/100));//器件当前温度值
+        OLED_Show_String(0,5,"temp:",8);
+        OLED_Show_float(41,5,((float)temp/100),2,8);//器件当前温度值
     }
     else if(Page % 3 == 1)
     {
-        OLED_ShowString(11,0,"MPU_6050:Acc  ");
+        OLED_Show_String(11,1,"MPU_6050:Acc  ",8);
 
-        OLED_ShowString(0,1,"Accx:");
+        OLED_Show_String(0,2,"Accx:",8);
         sprintf(MPU_txt,"%d    ",ax);
-        OLED_ShowString(41,1,MPU_txt);//显示x轴加速度
+        OLED_Show_String(41,2,MPU_txt,8);//显示x轴加速度
 
-        OLED_ShowString(0,2,"Accy:");
+        OLED_Show_String(0,3,"Accy:",8);
         sprintf(MPU_txt,"%d    ",ay);
-        OLED_ShowString(41,2,MPU_txt);//显示y轴加速度
+        OLED_Show_String(41,3,MPU_txt,8);//显示y轴加速度
 
 
-        OLED_ShowString(0,3,"Accz:");
+        OLED_Show_String(0,4,"Accz:",8);
         sprintf(MPU_txt,"%d    ",az);
-        OLED_ShowString(41,3,MPU_txt);//显示z轴加速度
+        OLED_Show_String(41,4,MPU_txt,8);//显示z轴加速度
 
 
-        OLED_ShowString(0,4,"temp:");
-        OLED_Showfloat(41,4,((float)temp/100));//器件当前温度值
+        OLED_Show_String(0,5,"temp:",8);
+        OLED_Show_float(41,5,((float)temp/100),2,8);//器件当前温度值
     }
     else
     {
-        OLED_ShowString(11,0,"MPU_6050:Angle  ");
+        OLED_Show_String(11,1,"MPU_6050:Angle  ",8);
 
-        OLED_ShowString(0,1,"Pitch:");
+        OLED_Show_String(0,2,"Pitch:",8);
         sprintf(MPU_txt,"%.2f    ",pitch);
-        OLED_ShowString(41,1,MPU_txt);//显示x轴加速度
+        OLED_Show_String(41,2,MPU_txt,8);//显示x轴加速度
 
-        OLED_ShowString(0,2,"Roll:");
+        OLED_Show_String(0,3,"Roll:",8);
         sprintf(MPU_txt,"%.2f    ",roll);
-        OLED_ShowString(41,2,MPU_txt);//显示y轴加速度
+        OLED_Show_String(41,3,MPU_txt,8);//显示y轴加速度
 
 
-        OLED_ShowString(0,3,"Yaw:");
+        OLED_Show_String(0,4,"Yaw:",8);
         sprintf(MPU_txt,"%.2f    ",yaw);
-        OLED_ShowString(41,3,MPU_txt);//显示z轴加速度
+        OLED_Show_String(41,4,MPU_txt,8);//显示z轴加速度
 
 
-        OLED_ShowString(0,4,"temp:");
-        OLED_Showfloat(41,4,((float)temp/100));//器件当前温度值
+        OLED_Show_String(0,5,"temp:",8);
+        OLED_Show_float(41,5,((float)temp/100),2,8);//器件当前温度值
     }
     if(!key_get(KEY1))
     {
         delay_ms(10);
         Page--;
-        OLED_Clear();//清屏
+        OLED_clr();//清屏
         if(Page == -1)
             Page=3;
         while(!key_get(KEY1));
@@ -107,7 +107,7 @@ void OLED_MPU_SHOW()
     {
         delay_ms(10);
         Page++;
-        OLED_Clear();//清屏
+        OLED_clr();//清屏
         if(Page == 3)
             Page=0;
         while(!key_get(KEY2));
@@ -119,8 +119,8 @@ void main()
     system_init(1);//初始化滴答计时器
     set_DCO_48MH();
     gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,0);//初始化LED  IO口
-    OLED_Init();//OLED初始化
-    OLED_Clear();//清屏
+    OLED_init();//OLED初始化
+    OLED_clr();//清屏
     MPU_init();//MPU6050寄存器初始化
     key_init(KEY1|KEY2);//初始化按键S1、S2用于翻页
 

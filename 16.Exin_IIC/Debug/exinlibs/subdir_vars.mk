@@ -16,8 +16,9 @@ C_SRCS += \
 ../exinlibs/exinHC_SR04.c \
 ../exinlibs/exinIIC.c \
 ../exinlibs/exinMPU6050.c \
+../exinlibs/exinTimerA.c \
+../exinlibs/exinTimerAINT.c \
 ../exinlibs/exin_library_map_guide.c \
-../exinlibs/exin_pit.c \
 ../exinlibs/exinadjust.c \
 ../exinlibs/exineeprom.c \
 ../exinlibs/exinencoder.c \
@@ -25,11 +26,11 @@ C_SRCS += \
 ../exinlibs/exinisr.c \
 ../exinlibs/exinkey.c \
 ../exinlibs/exinmotor.c \
+../exinlibs/exinoled.c \
 ../exinlibs/exinpwm.c \
 ../exinlibs/exinsteer.c \
 ../exinlibs/exinsystem.c \
 ../exinlibs/exinuart.c \
-../exinlibs/oled.c \
 ../exinlibs/serial.c 
 
 C_DEPS += \
@@ -43,8 +44,9 @@ C_DEPS += \
 ./exinlibs/exinHC_SR04.d \
 ./exinlibs/exinIIC.d \
 ./exinlibs/exinMPU6050.d \
+./exinlibs/exinTimerA.d \
+./exinlibs/exinTimerAINT.d \
 ./exinlibs/exin_library_map_guide.d \
-./exinlibs/exin_pit.d \
 ./exinlibs/exinadjust.d \
 ./exinlibs/exineeprom.d \
 ./exinlibs/exinencoder.d \
@@ -52,11 +54,11 @@ C_DEPS += \
 ./exinlibs/exinisr.d \
 ./exinlibs/exinkey.d \
 ./exinlibs/exinmotor.d \
+./exinlibs/exinoled.d \
 ./exinlibs/exinpwm.d \
 ./exinlibs/exinsteer.d \
 ./exinlibs/exinsystem.d \
 ./exinlibs/exinuart.d \
-./exinlibs/oled.d \
 ./exinlibs/serial.d 
 
 OBJS += \
@@ -70,8 +72,9 @@ OBJS += \
 ./exinlibs/exinHC_SR04.obj \
 ./exinlibs/exinIIC.obj \
 ./exinlibs/exinMPU6050.obj \
+./exinlibs/exinTimerA.obj \
+./exinlibs/exinTimerAINT.obj \
 ./exinlibs/exin_library_map_guide.obj \
-./exinlibs/exin_pit.obj \
 ./exinlibs/exinadjust.obj \
 ./exinlibs/exineeprom.obj \
 ./exinlibs/exinencoder.obj \
@@ -79,11 +82,11 @@ OBJS += \
 ./exinlibs/exinisr.obj \
 ./exinlibs/exinkey.obj \
 ./exinlibs/exinmotor.obj \
+./exinlibs/exinoled.obj \
 ./exinlibs/exinpwm.obj \
 ./exinlibs/exinsteer.obj \
 ./exinlibs/exinsystem.obj \
 ./exinlibs/exinuart.obj \
-./exinlibs/oled.obj \
 ./exinlibs/serial.obj 
 
 OBJS__QUOTED += \
@@ -97,8 +100,9 @@ OBJS__QUOTED += \
 "exinlibs\exinHC_SR04.obj" \
 "exinlibs\exinIIC.obj" \
 "exinlibs\exinMPU6050.obj" \
+"exinlibs\exinTimerA.obj" \
+"exinlibs\exinTimerAINT.obj" \
 "exinlibs\exin_library_map_guide.obj" \
-"exinlibs\exin_pit.obj" \
 "exinlibs\exinadjust.obj" \
 "exinlibs\exineeprom.obj" \
 "exinlibs\exinencoder.obj" \
@@ -106,11 +110,11 @@ OBJS__QUOTED += \
 "exinlibs\exinisr.obj" \
 "exinlibs\exinkey.obj" \
 "exinlibs\exinmotor.obj" \
+"exinlibs\exinoled.obj" \
 "exinlibs\exinpwm.obj" \
 "exinlibs\exinsteer.obj" \
 "exinlibs\exinsystem.obj" \
 "exinlibs\exinuart.obj" \
-"exinlibs\oled.obj" \
 "exinlibs\serial.obj" 
 
 C_DEPS__QUOTED += \
@@ -124,8 +128,9 @@ C_DEPS__QUOTED += \
 "exinlibs\exinHC_SR04.d" \
 "exinlibs\exinIIC.d" \
 "exinlibs\exinMPU6050.d" \
+"exinlibs\exinTimerA.d" \
+"exinlibs\exinTimerAINT.d" \
 "exinlibs\exin_library_map_guide.d" \
-"exinlibs\exin_pit.d" \
 "exinlibs\exinadjust.d" \
 "exinlibs\exineeprom.d" \
 "exinlibs\exinencoder.d" \
@@ -133,11 +138,11 @@ C_DEPS__QUOTED += \
 "exinlibs\exinisr.d" \
 "exinlibs\exinkey.d" \
 "exinlibs\exinmotor.d" \
+"exinlibs\exinoled.d" \
 "exinlibs\exinpwm.d" \
 "exinlibs\exinsteer.d" \
 "exinlibs\exinsystem.d" \
 "exinlibs\exinuart.d" \
-"exinlibs\oled.d" \
 "exinlibs\serial.d" 
 
 C_SRCS__QUOTED += \
@@ -151,8 +156,9 @@ C_SRCS__QUOTED += \
 "../exinlibs/exinHC_SR04.c" \
 "../exinlibs/exinIIC.c" \
 "../exinlibs/exinMPU6050.c" \
+"../exinlibs/exinTimerA.c" \
+"../exinlibs/exinTimerAINT.c" \
 "../exinlibs/exin_library_map_guide.c" \
-"../exinlibs/exin_pit.c" \
 "../exinlibs/exinadjust.c" \
 "../exinlibs/exineeprom.c" \
 "../exinlibs/exinencoder.c" \
@@ -160,11 +166,11 @@ C_SRCS__QUOTED += \
 "../exinlibs/exinisr.c" \
 "../exinlibs/exinkey.c" \
 "../exinlibs/exinmotor.c" \
+"../exinlibs/exinoled.c" \
 "../exinlibs/exinpwm.c" \
 "../exinlibs/exinsteer.c" \
 "../exinlibs/exinsystem.c" \
 "../exinlibs/exinuart.c" \
-"../exinlibs/oled.c" \
 "../exinlibs/serial.c" 
 
 

@@ -36,9 +36,9 @@ char txt[20]="";
 void OLED_SHOW_PID()
 {
     sprintf(txt,"speed:%d  ", Motor1_speed);
-    OLED_ShowString(0,0,txt);//速度显示
+    OLED_Show_String(0,1,txt,8);//速度显示
     sprintf(txt, "duty:%d  ",  Motor1_pwm_duty);
-    OLED_ShowString(0,1,txt);//当前占空比显示
+    OLED_Show_String(0,2,txt,8);//当前占空比显示
 }
 
 
@@ -109,8 +109,8 @@ void main()
     set_DCO_48MH();//注意这边的函数与其他例程不同，其他例程SMCLK为3MHZ，为了得到更高占空比可调范围，以及更高的电机基频率，本例程分频SMCLK为24MHZ
     delay_ms(200);//等待外设上电
     UART_init(UART0,115200); //初始化串口0，用于上位机波形分析与调试
-    OLED_Init();   //OLED初始化
-    OLED_Clear();
+    OLED_init();   //OLED初始化
+    OLED_clr();
     //电机相关初始化
     //电机初始化A通道
     Motor_PWM_INIT(MOTOR_CHA,1000);//注意，这边的初始化函数也与之前例程不同，电机基频率为3500hz，同时周期计算方式也有改变，查看本函数与pwm_init函数

@@ -45,23 +45,23 @@ void ADC0832_show()
 {
 
     sprintf(txt_ADC0832,"CH0:  %d  %.2f",CH0_dat,CH0_vol);
-    OLED_ShowString(0,1,txt_ADC0832);
+    OLED_Show_String(0,2,txt_ADC0832,8);
 
     sprintf(txt_ADC0832,"CH1:  %d  %.2f",CH1_dat,CH1_vol);
-    OLED_ShowString(0,2,txt_ADC0832);
+    OLED_Show_String(0,3,txt_ADC0832,8);
 
     sprintf(txt_ADC0832,"CH2:  %d  %.2f",CH2_dat,CH2_vol);
-    OLED_ShowString(0,3,txt_ADC0832);
+    OLED_Show_String(0,4,txt_ADC0832,8);
 
     sprintf(txt_ADC0832,"CH3:  %d  %.2f",CH3_dat,CH3_vol);
-    OLED_ShowString(0,4,txt_ADC0832);
+    OLED_Show_String(0,5,txt_ADC0832,8);
 }
 
 void main()
 {
     system_init(0);
-    OLED_Init();//OLED初始化
-    OLED_Clear();//清屏
+    OLED_init();//OLED初始化
+    OLED_clr();//清屏
 
    //ADC引脚初始化
     ADC0832_init(CH0);
@@ -69,7 +69,7 @@ void main()
     ADC0832_init(CH2);
     ADC0832_init(CH3);
 
-    OLED_ShowString(0,0,"CHA");OLED_ShowString(50,0,"val");OLED_ShowString(90,0,"u(v)");//打印表头
+    OLED_Show_String(0,1,"CHA",8);OLED_Show_String(50,1,"val",8);OLED_Show_String(90,1,"u(v)",8);//打印表头
     while(1)
     {
         ADC_run();ADC0832_show();

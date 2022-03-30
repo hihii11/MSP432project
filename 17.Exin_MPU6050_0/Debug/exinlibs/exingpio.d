@@ -66,7 +66,6 @@ exinlibs/exingpio.obj: ../exinlibs/exinTimerA.h
 exinlibs/exingpio.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/exingpio.obj: ../exinlibs/exinADC.h
 exinlibs/exingpio.obj: ../exinlibs/exinmotor.h
-exinlibs/exingpio.obj: ../exinlibs/oled.h
 exinlibs/exingpio.obj: ../exinlibs/exinencoder.h
 exinlibs/exingpio.obj: ../exinlibs/exinsystem.h
 exinlibs/exingpio.obj: ../exinlibs/exinuart.h
@@ -83,6 +82,7 @@ exinlibs/exingpio.obj: ../exinlibs/exinIIC.h
 exinlibs/exingpio.obj: ../exinlibs/exinMPU6050.h
 exinlibs/exingpio.obj: ../exinlibs/exineeprom.h
 exinlibs/exingpio.obj: ../exinlibs/exinADC0832.h
+exinlibs/exingpio.obj: ../exinlibs/exinoled.h
 
 ../exinlibs/exingpio.c: 
 ../exinlibs/headfile.h: 
@@ -150,7 +150,6 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
-../exinlibs/oled.h: 
 ../exinlibs/exinencoder.h: 
 ../exinlibs/exinsystem.h: 
 ../exinlibs/exinuart.h: 
@@ -167,3 +166,4 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinMPU6050.h: 
 ../exinlibs/exineeprom.h: 
 ../exinlibs/exinADC0832.h: 
+../exinlibs/exinoled.h: 

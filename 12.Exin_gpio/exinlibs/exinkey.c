@@ -74,14 +74,14 @@ void key_test()
 {
     while(1)
        {
-           OLED_ShowString(0,0,"NO    KEY!");
+           OLED_Show_String(0,1,"NO    KEY!",8);
            if(!key_get(KEY1))
            {
                delay_ms(10);
                if(!key_get(KEY1))
                {
-                   OLED_Clear();
-                   OLED_ShowString(0,0,"KEY1 DOWN!");
+                   OLED_clr();
+                   OLED_Show_String(0,1,"KEY1 DOWN!",8);
                }
                while(!key_get(KEY1));
            }
@@ -90,8 +90,8 @@ void key_test()
                delay_ms(10);
                if(!key_get(KEY2))
                {
-                   OLED_Clear();
-                   OLED_ShowString(0,0,"KEY2 DOWN!");
+                   OLED_clr();
+                   OLED_Show_String(0,1,"KEY2 DOWN!",8);
                }
                while(!key_get(KEY2));
            }
@@ -100,8 +100,8 @@ void key_test()
                  delay_ms(10);
                  if(!key_get(KEY3))
                  {
-                     OLED_Clear();
-                     OLED_ShowString(0,0,"KEY3 DOWN!");
+                     OLED_clr();
+                     OLED_Show_String(0,1,"KEY3 DOWN!",8);
                  }
                  while(!key_get(KEY3));
              }
@@ -110,8 +110,8 @@ void key_test()
                  delay_ms(10);
                  if(!key_get(KEY4))
                  {
-                     OLED_Clear();
-                     OLED_ShowString(0,0,"KEY4 DOWN!");
+                     OLED_clr();
+                     OLED_Show_String(0,1,"KEY4 DOWN!",8);
                  }
                  while(!key_get(KEY4));
              }

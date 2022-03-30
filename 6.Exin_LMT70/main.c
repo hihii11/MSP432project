@@ -16,14 +16,14 @@ LMT70ÎÂ¶È´«¸ÐÆ÷
 #include "exinlibs\headfile.h"
 void OLED_SHOWTEMPTURE()
 {
-    OLED_ShowString(0,0,"TMP:");
-    OLED_ShowNum(43,0,  LMT_DataHandle(),4,16);
+    OLED_Show_String(0,0,"TMP:",8);
+    OLED_Show_Num(43,0,  LMT_DataHandle(),4,8);
 }
 void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
+    OLED_init();
 
     LMT_Init();
     while(1)

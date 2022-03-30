@@ -63,23 +63,23 @@ void ADC14_repeat_recv()//进行一次ADC数据读取
 void ADC14_repeat_show()//进行一次数据打印
 {
     //通道名称打印
-       OLED_ShowString(0,1,"CH0");
-       OLED_ShowString(0,2,"CH1");
-       OLED_ShowString(0,3,"CH2");
-       OLED_ShowString(0,4,"CH3");
-       OLED_ShowString(0,5,"CH4");
-    //ADC采样原始数据打印
-       OLED_ShowNum(35, 1,  ADC_CH0_dat, 5, 12);
-       OLED_ShowNum(35, 2,  ADC_CH1_dat, 5, 12);
-       OLED_ShowNum(35, 3,  ADC_CH2_dat, 5, 12);
-       OLED_ShowNum(35, 4,  ADC_CH3_dat, 5, 12);
-       OLED_ShowNum(35, 5,  ADC_CH4_dat, 5, 12);
-       //转换电压后的数据打印
-       OLED_Showfloat(90, 1,  get_voltage(ADC_CH0_dat , ADC14_REF , 256));
-       OLED_Showfloat(90, 2,  get_voltage(ADC_CH1_dat , ADC14_REF , 256));
-       OLED_Showfloat(90, 3,  get_voltage(ADC_CH2_dat , ADC14_REF , 256));
-       OLED_Showfloat(90, 4,  get_voltage(ADC_CH3_dat , ADC14_REF , 256));
-       OLED_Showfloat(90, 5,  get_voltage(ADC_CH4_dat , ADC14_REF , 256));
+           OLED_Show_String(0,2,"CH0",8);
+           OLED_Show_String(0,3,"CH1",8);
+           OLED_Show_String(0,4,"CH2",8);
+           OLED_Show_String(0,5,"CH3",8);
+           OLED_Show_String(0,6,"CH4",8);
+        //ADC采样原始数据打印
+           OLED_Show_Num(35, 2,  ADC_CH0_dat, 5, 8);
+           OLED_Show_Num(35, 3,  ADC_CH1_dat, 5, 8);
+           OLED_Show_Num(35, 4,  ADC_CH2_dat, 5, 8);
+           OLED_Show_Num(35, 5,  ADC_CH3_dat, 5, 8);
+           OLED_Show_Num(35, 6,  ADC_CH4_dat, 5, 8);
+           //转换电压后的数据打印
+           OLED_Show_float(90, 2,  get_voltage(ADC_CH0_dat , 3.3 , 256),2,8);
+           OLED_Show_float(90, 3,  get_voltage(ADC_CH1_dat , 3.3 , 256),2,8);
+           OLED_Show_float(90, 4,  get_voltage(ADC_CH2_dat , 3.3 , 256),2,8);
+           OLED_Show_float(90, 5,  get_voltage(ADC_CH3_dat , 3.3 , 256),2,8);
+           OLED_Show_float(90, 6,  get_voltage(ADC_CH4_dat , 3.3 , 256),2,8);
 
 }
 
@@ -94,10 +94,10 @@ void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
-    OLED_Clear();
+    OLED_init();
+    OLED_clr();
 
-    OLED_ShowString(0,0,"CHA");OLED_ShowString(50,0,"val");OLED_ShowString(90,0,"u(v)");//打印表头
+    OLED_Show_String(0,1,"CHA",8);OLED_Show_String(50,1,"val",8);OLED_Show_String(90,1,"u(v)",8);//打印表头
 
     key_init(KEY1|KEY2);//初始化KEY1 KEY2用于暂停和启动转换
 

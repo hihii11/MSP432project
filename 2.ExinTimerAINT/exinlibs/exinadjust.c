@@ -32,16 +32,16 @@ void OLED_SHOW()
 {
     if(page_count==0)
    {
-        OLED_ShowString(0,0,"1:");
-        OLED_ShowNum(21,0,(testA),4,16);
-        OLED_ShowString(0,1,"2:");
-        OLED_ShowNum(21,1,(testB),4,16);
-        OLED_ShowString(0,2,"3:");
-        OLED_ShowNum(21,2,(0),4,16);
-        OLED_ShowString(0,3,"4:");
-        OLED_ShowNum(21,3,(0),4,16);
-        OLED_ShowString(0,4,"5:");
-        OLED_ShowNum(21,4,(0),4,16);
+        OLED_Show_String(0,0,"1:",8);
+        OLED_Show_Num(21,0,(testA),4,8);
+        OLED_Show_String(0,1,"2:",8);
+        OLED_Show_Num(21,1,(testB),4,8);
+        OLED_Show_String(0,2,"3:",8);
+        OLED_Show_Num(21,2,(0),4,8);
+        OLED_Show_String(0,3,"4:",8);
+        OLED_Show_Num(21,3,(0),4,8);
+        OLED_Show_String(0,4,"5:",8);
+        OLED_Show_Num(21,4,(0),4,8);
    }
 
     if(page_count == 1)
@@ -50,7 +50,7 @@ void OLED_SHOW()
    }
 
 
-    OLED_ShowString(64,count%(count_max+1),"<--");
+    OLED_Show_String(64,count%(count_max+1),"<--",8);
 
 }
 char IRQ3_5flag=0;//3.5中断标志位
@@ -115,7 +115,7 @@ void bianmaqi_tiaocan()
          if(!gpio_get(GPIO_PORT_P3, GPIO_PIN7))
          {
            count++;//编码器按下,count+计数
-           OLED_Clear();
+           OLED_clr();
            if(count==count_max+1)
              count=0;
            while(!gpio_get(GPIO_PORT_P3, GPIO_PIN7));//0等待结束
@@ -154,7 +154,7 @@ void Rotate_INIT()
 void Rotate_adjust_TEST()
 {
     system_init(0);
-    OLED_Init();
+    OLED_init();
     Rotate_INIT();
     bianmaqi_tiaocan();
     while(1);

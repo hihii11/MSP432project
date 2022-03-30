@@ -18,16 +18,16 @@ ECHO P1.7
 float distance=0;
 void distance_SHOW()
 {
-    OLED_ShowString(0,0,"HCSR04 TEST DEMO");
-    OLED_ShowString(0,1,"dis:");
-    OLED_Showfloat(40,1,distance);
-    OLED_ShowString(82,1," cm");
+    OLED_Show_String(0,0,"HCSR04 TEST DEMO",8);
+    OLED_Show_String(0,1,"dis:",8);
+    OLED_Show_float(40,1,distance,2,8);
+    OLED_Show_String(82,1," cm",8);
 }
 void main()
 {
     system_init(1);//初始化滴答计时器
     set_DCO_48MH();
-    OLED_Init();//OLED初始化
+    OLED_init();//OLED初始化
     HC_SR04_init();
     while(1)
     {

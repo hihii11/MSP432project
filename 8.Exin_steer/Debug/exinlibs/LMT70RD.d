@@ -67,7 +67,6 @@ exinlibs/LMT70RD.obj: ../exinlibs/exinTimerA.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinTimerAINT.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinADC.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinmotor.h
-exinlibs/LMT70RD.obj: ../exinlibs/oled.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinencoder.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinsystem.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinuart.h
@@ -83,6 +82,7 @@ exinlibs/LMT70RD.obj: ../exinlibs/exinIIC.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinMPU6050.h
 exinlibs/LMT70RD.obj: ../exinlibs/exineeprom.h
 exinlibs/LMT70RD.obj: ../exinlibs/exinADC0832.h
+exinlibs/LMT70RD.obj: ../exinlibs/exinoled.h
 
 ../exinlibs/LMT70RD.c: 
 ../exinlibs/LMT70RD.h: 
@@ -151,7 +151,6 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinTimerAINT.h: 
 ../exinlibs/exinADC.h: 
 ../exinlibs/exinmotor.h: 
-../exinlibs/oled.h: 
 ../exinlibs/exinencoder.h: 
 ../exinlibs/exinsystem.h: 
 ../exinlibs/exinuart.h: 
@@ -167,3 +166,4 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinMPU6050.h: 
 ../exinlibs/exineeprom.h: 
 ../exinlibs/exinADC0832.h: 
+../exinlibs/exinoled.h: 

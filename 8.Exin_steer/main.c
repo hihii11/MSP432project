@@ -19,20 +19,20 @@ int steer_dutyB=steer_midA;
 int steer_flag=0;
 void OLED_STEER_show()
 {
-    OLED_ShowString(0, 0, "A:");
-    OLED_ShowNum(64, 0,  steer_dutyA, 8, 12);
-    OLED_ShowString(0, 1, "B:");
-    OLED_ShowNum(64, 1,  steer_dutyB, 8, 12);
+    OLED_Show_String(0, 0, "A:",8);
+    OLED_Show_Num(64, 0,  steer_dutyA, 4,8);
+    OLED_Show_String(0, 1, "B:",8);
+    OLED_Show_Num(64, 1,  steer_dutyB, 4,8);
 
-    OLED_ShowNum(64, 2,  steer_flag, 8, 12);
+    OLED_Show_Num(64, 2,  steer_flag, 4,8);
 }
 
 void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
-    OLED_Clear();
+    OLED_init();
+    OLED_clr();
     UART_init(UART0,9600);
     key_init(KEY1|KEY2|KEY3|KEY4);//按键初始化
     steer_pwm_init(steer_CHB,100,steer_midB);//云台yz平面

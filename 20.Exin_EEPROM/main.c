@@ -54,8 +54,8 @@ void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();//OLED初始化
-    OLED_Clear();//清屏
+    OLED_init();//OLED初始化
+    OLED_clr();//清屏
     EEPROM_init();
     EEPROM_reset();//进行IIC总线软件复位
 
@@ -70,22 +70,22 @@ void main()
 
     while(1)
     {
-        EEPROM_read_len(0 , data0_addr , txt_eprom , data0_len);          //读字符串
-        OLED_ShowString(0,0,txt_eprom);
+        EEPROM_read_len(0 ,data0_addr, txt_eprom , data0_len);           //读字符串
+        OLED_Show_String(0,1,txt_eprom,8);
 
         sprintf(txt_eprom,"data1:%d ",EEPROM_read_int(0 , data1_addr));   //读整形
-        OLED_ShowString(0,1,txt_eprom);
+        OLED_Show_String(0,2,txt_eprom,8);
 
         sprintf(txt_eprom,"data2:%d ",EEPROM_read_short(0 , data2_addr));  //读短整形
-        OLED_ShowString(0,2,txt_eprom);
+        OLED_Show_String(0,3,txt_eprom,8);
 
         sprintf(txt_eprom,"data3:%c",EEPROM_read_Byte(0 , data3_addr));    //读字符
-        OLED_ShowString(0,3,txt_eprom);
+        OLED_Show_String(0,4,txt_eprom,8);
 
         sprintf(txt_eprom,"data4:%.4f ",EEPROM_read_float(0 , data4_addr)); //读浮点数
-        OLED_ShowString(0,4,txt_eprom);
+        OLED_Show_String(0,5,txt_eprom,8);
 
         sprintf(txt_eprom,"data5:%.7f ",EEPROM_read_double(0 , data5_addr));//读双精度浮点数
-        OLED_ShowString(0,5,txt_eprom);
+        OLED_Show_String(0,6,txt_eprom,8);
     }
 }

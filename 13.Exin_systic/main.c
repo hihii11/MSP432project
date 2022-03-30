@@ -22,15 +22,15 @@ void main()
 {
     system_init(1);//1:初始化滴答计时器
     set_DCO_48MH();
-    OLED_Init();//OLED初始化
+    OLED_init();//OLED初始化
     key_init(KEY1|KEY2);
     gpio_init(GPIO_PORT_P1, GPIO_PIN0,GPO,1);//方向
     while(1)
     {
         if(!change_flag)//检测按键s1按下时间
         {
-           OLED_ShowString(0,2,"KEY1:");
-           OLED_Showfloat(64,2,press_time);
+           OLED_Show_String(0,2,"KEY1:",8);
+           OLED_Show_float(64,2,press_time,2,8);
             if(key_get(KEY1)==0)
             {
                 delay_ms(10);
@@ -45,12 +45,12 @@ void main()
         }
         else//秒表
         {
-            OLED_ShowString(96,0,"Ms");
-            OLED_ShowString(48,0,"Sec");
-            OLED_ShowString(0,0,"Min:");
-            OLED_ShowNum(90, 1, (int)(systic_read(ms) / 10 % 100),3,12);//毫秒
-            OLED_ShowNum(42,1,(int)(systic_read(s) % 60),2,12);//秒
-            OLED_ShowNum(0,1,(int)(systic_read(s) / 60),2,12);//分
+            OLED_Show_String(96,1,"Ms",8);
+            OLED_Show_String(48,1,"Sec",8);
+            OLED_Show_String(0,1,"Min:",8);
+            OLED_Show_Num(90, 2, (int)(systic_read(ms) / 10 % 100),3,8);//毫秒
+            OLED_Show_Num(42,2,(int)(systic_read(s) % 60),2,8);//秒
+            OLED_Show_Num(0,2,(int)(systic_read(s) / 60),2,8);//分
         }
         if(key_get(KEY2)==0)//按键key2用以状态切换
         {
@@ -58,7 +58,7 @@ void main()
            if(key_get(KEY2)==0)
            {
                change_flag=!change_flag;
-               OLED_Clear();
+               OLED_clr();
                systic_end();
                if(change_flag)
                {

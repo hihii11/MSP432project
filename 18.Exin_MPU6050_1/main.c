@@ -61,8 +61,8 @@ void main()
     system_init(1);//初始化滴答计时器
     set_DCO_48MH();
     gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,0);//初始化LED  IO口
-    OLED_Init();//OLED初始化
-    OLED_Clear();//清屏
+    OLED_init();//OLED初始化
+    OLED_clr();//清屏
     MPU_init();//MPU6050寄存器初始化
     key_init(KEY1|KEY2);//初始化按键S1、S2用于翻页
     UART_init(UART0,115200);//初始化串口

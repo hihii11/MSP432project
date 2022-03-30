@@ -23,7 +23,8 @@ void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
-    OLED_SHOW();
+    OLED_init();
+    OLED_clr();
+    OLED_test();
     while(1);
 }

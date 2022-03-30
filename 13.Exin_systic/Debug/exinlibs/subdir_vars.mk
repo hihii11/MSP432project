@@ -28,11 +28,11 @@ C_SRCS += \
 ../exinlibs/exinisr.c \
 ../exinlibs/exinkey.c \
 ../exinlibs/exinmotor.c \
+../exinlibs/exinoled.c \
 ../exinlibs/exinpwm.c \
 ../exinlibs/exinsteer.c \
 ../exinlibs/exinsystem.c \
 ../exinlibs/exinuart.c \
-../exinlibs/oled.c \
 ../exinlibs/serial.c 
 
 C_DEPS += \
@@ -58,11 +58,11 @@ C_DEPS += \
 ./exinlibs/exinisr.d \
 ./exinlibs/exinkey.d \
 ./exinlibs/exinmotor.d \
+./exinlibs/exinoled.d \
 ./exinlibs/exinpwm.d \
 ./exinlibs/exinsteer.d \
 ./exinlibs/exinsystem.d \
 ./exinlibs/exinuart.d \
-./exinlibs/oled.d \
 ./exinlibs/serial.d 
 
 OBJS += \
@@ -88,11 +88,11 @@ OBJS += \
 ./exinlibs/exinisr.obj \
 ./exinlibs/exinkey.obj \
 ./exinlibs/exinmotor.obj \
+./exinlibs/exinoled.obj \
 ./exinlibs/exinpwm.obj \
 ./exinlibs/exinsteer.obj \
 ./exinlibs/exinsystem.obj \
 ./exinlibs/exinuart.obj \
-./exinlibs/oled.obj \
 ./exinlibs/serial.obj 
 
 OBJS__QUOTED += \
@@ -118,11 +118,11 @@ OBJS__QUOTED += \
 "exinlibs\exinisr.obj" \
 "exinlibs\exinkey.obj" \
 "exinlibs\exinmotor.obj" \
+"exinlibs\exinoled.obj" \
 "exinlibs\exinpwm.obj" \
 "exinlibs\exinsteer.obj" \
 "exinlibs\exinsystem.obj" \
 "exinlibs\exinuart.obj" \
-"exinlibs\oled.obj" \
 "exinlibs\serial.obj" 
 
 C_DEPS__QUOTED += \
@@ -148,11 +148,11 @@ C_DEPS__QUOTED += \
 "exinlibs\exinisr.d" \
 "exinlibs\exinkey.d" \
 "exinlibs\exinmotor.d" \
+"exinlibs\exinoled.d" \
 "exinlibs\exinpwm.d" \
 "exinlibs\exinsteer.d" \
 "exinlibs\exinsystem.d" \
 "exinlibs\exinuart.d" \
-"exinlibs\oled.d" \
 "exinlibs\serial.d" 
 
 C_SRCS__QUOTED += \
@@ -178,11 +178,11 @@ C_SRCS__QUOTED += \
 "../exinlibs/exinisr.c" \
 "../exinlibs/exinkey.c" \
 "../exinlibs/exinmotor.c" \
+"../exinlibs/exinoled.c" \
 "../exinlibs/exinpwm.c" \
 "../exinlibs/exinsteer.c" \
 "../exinlibs/exinsystem.c" \
 "../exinlibs/exinuart.c" \
-"../exinlibs/oled.c" \
 "../exinlibs/serial.c" 
 
 

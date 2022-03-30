@@ -38,7 +38,6 @@ extern "C"
 #include "exinTimerAINT.h"
 #include "exinADC.h"
 #include "exinmotor.h"
-#include "oled.h"
 #include "exinencoder.h"
 #include "exinsystem.h"
 #include "exinuart.h"
@@ -56,6 +55,7 @@ extern "C"
 #include "exinMPU6050.h"
 #include "exineeprom.h"
 #include "exinADC0832.h"
+#include "exinoled.h"
 #ifdef __cplusplus
 }
 #endif

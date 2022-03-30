@@ -29,7 +29,7 @@ void main()
 {
     system_init(0);
     set_DCO_48MH();
-    OLED_Init();
+    OLED_init();
     gpio_init(GPIO_PORT_P1,GPIO_PIN0,GPO,0);//使能LED1
     gpio_init(GPIO_PORT_P2,GPIO_PIN2,GPO,0);//使能LED2蓝灯
     TimerA_CCR0INT_init(TIMERA_A0 , 500);//设置TimerA0 在UP模式下的中断周期为500ms

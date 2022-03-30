@@ -83,6 +83,7 @@ exinlibs/oled.obj: ../exinlibs/exinIIC.h
 exinlibs/oled.obj: ../exinlibs/exinMPU6050.h
 exinlibs/oled.obj: ../exinlibs/exineeprom.h
 exinlibs/oled.obj: ../exinlibs/exinADC0832.h
+exinlibs/oled.obj: ../exinlibs/exinoled.h
 exinlibs/oled.obj: ../exinlibs/oledfont.h
 
 ../exinlibs/oled.c: 
@@ -168,4 +169,5 @@ D:/CCS/ccs/tools/compiler/ti-cgt-arm_20.2.1.LTS/include/machine/_limits.h:
 ../exinlibs/exinMPU6050.h: 
 ../exinlibs/exineeprom.h: 
 ../exinlibs/exinADC0832.h: 
+../exinlibs/exinoled.h: 
 ../exinlibs/oledfont.h: 

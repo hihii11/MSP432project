@@ -9,7 +9,7 @@ Oscill oscill1;
 
 void Oscill_Title()
 {
-    OLED_ShowString(OLED_X_mid-10,0, oscill1.txt);
+    OLED_Show_String(OLED_X_mid-10,0, oscill1.txt,8);
 }
 
 
@@ -22,14 +22,14 @@ void Oscill_Show_Menu(Oscill*oscill)
 {
     if((oscill->configure&YLABEL_ON))
     {
-        OLED_ShowString(0, 2 , "8");
-        OLED_PutPixel(0, 2);
-        OLED_ShowString(0, 0 , "24");
-        OLED_PutPixel(0, 0 );
-        OLED_ShowString(0, 4 , "-8");
-        OLED_PutPixel(0, 4);
-        OLED_ShowString(0, 6 , "-24");
-        OLED_PutPixel(0,6);
+        OLED_Show_String(0, 2 , "8",8);
+        OLED_Draw_Pixel(0, 2,1);
+        OLED_Show_String(0, 0 , "24",8);
+        OLED_Draw_Pixel(0, 0,1 );
+        OLED_Show_String(0, 4 , "-8",8);
+        OLED_Draw_Pixel(0, 4,1);
+        OLED_Show_String(0, 6 , "-24",8);
+        OLED_Draw_Pixel(0,6,1);
     }
     if((oscill->configure&TITLE_ON))
     {
@@ -82,7 +82,7 @@ void Oscill_show(Oscill *oscill,char mod,int din)
         for(i=127;i>=0;i--)
         {
             OLED_pos_clr(i-1,oscill->middle_line-Oscill_data_buff[i-1]);
-            OLED_PutPixel(i,oscill->middle_line-Oscill_data_buff[i]);
+            OLED_Draw_Pixel(i,oscill->middle_line-Oscill_data_buff[i],1);
         }
     }
     else if(mod==1)//均值模式
@@ -94,7 +94,7 @@ void Oscill_show(Oscill *oscill,char mod,int din)
          date_get_count=0;
             for(i=127;i>=0;i--)
             {
-                  OLED_PutPixel(i,(unsigned int)(oscill->middle_line-Oscill_data_buff[i]));
+                  OLED_Draw_Pixel(i,(unsigned int)(oscill->middle_line-Oscill_data_buff[i]),1);
             }
         }
     }
@@ -103,12 +103,12 @@ void Oscill_show(Oscill *oscill,char mod,int din)
         dat_rcv[1] = Oscill_data_buff[count_x];
         dat_rcv[0] = 64 - din;
         Oscill_data_buff[count_x] = (dat_rcv[0] + dat_rcv[1])/2;
-        OLED_PutPixel(count_x,Oscill_data_buff[count_x]);
+        OLED_Draw_Pixel(count_x,Oscill_data_buff[count_x],1);
         count_x ++;
         if(count_x == 128)
         {
             count_x = 0;
-            OLED_Clear();
+            OLED_clr();
         }
     }
 }
@@ -139,7 +139,7 @@ void Oscill_test1()
                   Oscill_dataget(-10);
               if(countt==30)
                   countt=0;*/
-              Oscill_show(&oscill1,1,0);
+              Oscill_show(&oscill1,0,0);
 }
 int data_test=0;
 int cott2=0;
